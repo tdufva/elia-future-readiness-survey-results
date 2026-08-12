@@ -49,6 +49,7 @@ export default function VoiceExplorer({ sections }: { sections: VoiceSection[] }
   const [activeTheme, setActiveTheme] = useState("all");
   const [query, setQuery] = useState("");
   const activeSection = sections.find((section) => section.key === activeQuestion) ?? sections[0];
+  const activeQuestionIndex = sections.findIndex((section) => section.key === activeSection.key);
 
   const visibleEntries = useMemo(() => {
     const normalizedQuery = query.trim().toLocaleLowerCase();
@@ -65,8 +66,12 @@ export default function VoiceExplorer({ sections }: { sections: VoiceSection[] }
     setQuery("");
   };
 
-  return <div className="voice-explorer">
-    <div className="question-tabs" role="tablist" aria-label="Open-ended survey questions">
+  return <div className="voice-explorer" id="question-selector">
+    <header className="question-selector-head">
+      <div><p className="eyebrow">Three open-ended questions</p><h2>Select a question to see its answers.</h2></div>
+      <p>Choose one of the three numbered questions. The selected question is highlighted, and its 34 answers appear directly below.</p>
+    </header>
+    <div className="question-tabs" role="tablist" aria-label="Select one of the three open-ended survey questions">
       {sections.map((section, index) => <button
         type="button"
         role="tab"
@@ -75,7 +80,7 @@ export default function VoiceExplorer({ sections }: { sections: VoiceSection[] }
         id={`tab-${section.key}`}
         key={section.key}
         onClick={() => changeQuestion(section.key)}
-      ><span>{String(index + 1).padStart(2, "0")}</span>{section.shortLabel}</button>)}
+      ><span className="question-tab-number">Question {String(index + 1).padStart(2, "0")}</span><strong>{section.shortLabel}</strong><small>{section.title}</small><em>{section.entries.length} answers</em></button>)}
     </div>
 
     <section
@@ -86,7 +91,7 @@ export default function VoiceExplorer({ sections }: { sections: VoiceSection[] }
       tabIndex={0}
     >
       <header className="voices-panel-head">
-        <div><p className="eyebrow">Open question</p><h2>{activeSection.title}</h2></div>
+        <div><p className="eyebrow">Selected open-ended question · {activeQuestionIndex + 1} of {sections.length}</p><h2>{activeSection.title}</h2><p className="selected-question-note">Showing the answers respondents gave to this question.</p></div>
         <label className="voice-search"><span>Search these answers</span><input
           type="search"
           value={query}
@@ -108,7 +113,7 @@ export default function VoiceExplorer({ sections }: { sections: VoiceSection[] }
       </div>
 
       <div className="voice-results-line" aria-live="polite">
-        <strong>{visibleEntries.length}</strong> {visibleEntries.length === 1 ? "answer" : "answers"} shown
+        <span>Question {activeQuestionIndex + 1} of {sections.length}</span><strong>{visibleEntries.length}</strong> {visibleEntries.length === 1 ? "answer" : "answers"} shown
         {activeTheme !== "all" && <button type="button" onClick={() => setActiveTheme("all")}>Clear theme filter</button>}
       </div>
 

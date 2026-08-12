@@ -33,7 +33,17 @@ test("renders the complete public report", async () => {
 test("renders a navigable and privacy-checked respondent voices page", async () => {
   const html = await readFile(voicesHtmlUrl, "utf8");
   assert.match(html, /<title>Respondent voices · ELIA Future Readiness Survey Results<\/title>/i);
-  assert.match(html, /These are quotations from survey respondents/);
+  assert.match(html, /Choose a question, then explore its answers/);
+  assert.match(html, /The survey included three open-ended questions/);
+  assert.match(html, /Select a question to see its answers/);
+  assert.match(html, /Select one of the three open-ended survey questions/);
+  assert.match(html, /Question (?:<!-- -->)?01/);
+  assert.match(html, /Question (?:<!-- -->)?02/);
+  assert.match(html, /Question (?:<!-- -->)?03/);
+  assert.match(html, /What are your interests or concerns regarding the future/);
+  assert.match(html, /How do you sense or keep track of emerging change/);
+  assert.match(html, /What regular practices help your institution navigate what comes next/);
+  assert.match(html, /Showing the answers respondents gave to this question/);
   assert.match(html, /<strong>99<\/strong><span>written answers shown<\/span>/);
   assert.match(html, /<strong>3<\/strong><span>answers withheld<\/span>/);
   assert.match(html, /Quote from an anonymous survey respondent/);

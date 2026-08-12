@@ -26,7 +26,8 @@ export default function VoicesPage() {
         <div>
           <p className="eyebrow">Written answers · a thematic reader</p>
           <h1>Respondent voices</h1>
-          <p className="standfirst">Read what survey respondents wrote, organised by the three open questions and the overlapping themes used in the analysis.</p>
+          <p className="standfirst">The survey included three open-ended questions. Select a question below to read its answers, then browse all responses or narrow them by theme.</p>
+          <a className="voices-jump-link" href="#question-selector">Choose an open-ended question <span aria-hidden="true">↓</span></a>
         </div>
         <aside className="scope-card voices-scope" aria-label="Written-answer scope">
           <p className="eyebrow">What is included</p>
@@ -36,8 +37,8 @@ export default function VoicesPage() {
       </section>
 
       <section className="voices-reading-note" aria-label="How to read respondent voices">
-        <div><p className="eyebrow">Privacy and interpretation</p><h2>These are quotations from survey respondents.</h2></div>
-        <div><p>Spelling, grammar and wording are preserved except where square brackets mark a privacy redaction. Answers appear without role, age, country, institution, timestamps or respondent identifiers.</p><p>Themes overlap: selecting a theme retrieves every answer coded to it, and the same answer may appear under several theme filters. Coding is interpretive rather than a ranking of respondents.</p></div>
+        <div><p className="eyebrow">How this reader works</p><h2>Choose a question, then explore its answers.</h2></div>
+        <div><p>Each of the three question selectors opens the 34 answers given to that open-ended question. Once selected, you can read every answer, filter the answers by theme, or search for a word or phrase.</p><p>Spelling, grammar and wording are preserved except where square brackets mark a privacy redaction. Answers appear without role, age, country, institution, timestamps or respondent identifiers.</p><p>Themes overlap: the same answer can belong to several themes. Coding is interpretive rather than a ranking of respondents.</p></div>
       </section>
 
       <VoiceExplorer sections={voiceData.sections as VoiceSection[]} />
