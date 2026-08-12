@@ -65,20 +65,13 @@ export function CountryMap() {
   </div>;
 }
 
-export function DemographicCharts() {
-  return <div className="demographic-charts">
-    <article className="demographic-chart">
-      <div><p className="eyebrow">Age distribution</p><h3>All 34 respondents reported an age group.</h3></div>
-      <div className="pie-layout">
-        <div className="age-pie" role="img" aria-label="Age distribution: under 35, 9 respondents or 26 percent; age 35 to 44, 4 or 12 percent; age 45 to 54, 11 or 32 percent; age 55 and older, 10 or 29 percent." />
-        <ul className="pie-legend">{ageGroups.map((group) => <li key={group.label}><i style={{ background: group.color }} /><span>{group.label}</span><strong>{group.count} <small>{group.percent}%</small></strong></li>)}</ul>
-      </div>
-      <p className="chart-footnote">Original bands were combined into four broader groups for a legible small-sample view. Rounded percentages total 99%.</p>
-    </article>
-    <article className="demographic-chart demographic-chart--missing">
-      <div><p className="eyebrow">Sex and gender</p><h3>No pie chart can be calculated.</h3></div>
-      <div className="missing-data-mark" aria-label="Sex and gender data were not collected"><strong>Not collected</strong><span>The survey workbook contains no sex or gender question.</span></div>
-      <p className="chart-footnote">The absence is reported rather than inferred from names, roles, countries or written answers.</p>
-    </article>
-  </div>;
+export function AgeChart() {
+  return <article className="demographic-chart demographic-chart--age">
+    <div><p className="eyebrow">Age distribution</p><h3>All 34 respondents reported an age group.</h3></div>
+    <div className="pie-layout">
+      <div className="age-pie" role="img" aria-label="Age distribution: under 35, 9 respondents or 26 percent; age 35 to 44, 4 or 12 percent; age 45 to 54, 11 or 32 percent; age 55 and older, 10 or 29 percent." />
+      <ul className="pie-legend">{ageGroups.map((group) => <li key={group.label}><i style={{ background: group.color }} /><span>{group.label}</span><strong>{group.count} <small>{group.percent}%</small></strong></li>)}</ul>
+    </div>
+    <p className="chart-footnote">Original bands were combined into four broader groups for a legible small-sample view. Rounded percentages total 99%.</p>
+  </article>;
 }

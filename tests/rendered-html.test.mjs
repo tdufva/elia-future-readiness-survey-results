@@ -24,7 +24,7 @@ test("renders the complete public report", async () => {
   assert.match(html, /Countries represented in the substantive survey responses/);
   assert.match(html, /17 countries represented/);
   assert.match(html, /Age distribution: under 35, 9 respondents or 26 percent/);
-  assert.match(html, /The survey workbook contains no sex or gender question/);
+  assert.doesNotMatch(html, />Sex and gender<|No pie chart can be calculated|>Not collected<\/strong>/);
   assert.match(html, /aria-label="Main pages"/);
   assert.match(html, /aria-label="Overview sections"/);
   assert.doesNotMatch(html, /Collector ID|IP Address|Email Address|115152734/);
