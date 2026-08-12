@@ -6,6 +6,7 @@ const root = new URL("../", import.meta.url);
 const htmlUrl = new URL("../out/index.html", import.meta.url);
 const voicesHtmlUrl = new URL("../out/voices/index.html", import.meta.url);
 const voicesDataUrl = new URL("../app/voices/voice-data.json", import.meta.url);
+const stylesUrl = new URL("../app/globals.css", import.meta.url);
 
 test("renders the complete public report", async () => {
   const html = await readFile(htmlUrl, "utf8");
@@ -20,6 +21,12 @@ test("renders the complete public report", async () => {
   assert.match(html, /informal group with two fellow research students/);
   assert.match(html, /Quote from an anonymous survey respondent/);
   assert.match(html, /Respondent voices page shows 99 answers/);
+  assert.match(html, /Countries represented in the substantive survey responses/);
+  assert.match(html, /17 countries represented/);
+  assert.match(html, /Age distribution: under 35, 9 respondents or 26 percent/);
+  assert.match(html, /The survey workbook contains no sex or gender question/);
+  assert.match(html, /aria-label="Main pages"/);
+  assert.match(html, /aria-label="Overview sections"/);
   assert.doesNotMatch(html, /Collector ID|IP Address|Email Address|115152734/);
 });
 
@@ -31,7 +38,24 @@ test("renders a navigable and privacy-checked respondent voices page", async () 
   assert.match(html, /<strong>3<\/strong><span>answers withheld<\/span>/);
   assert.match(html, /Quote from an anonymous survey respondent/);
   assert.match(html, /Filter answers by theme/);
+  assert.match(html, /aria-label="Main pages"/);
+  assert.doesNotMatch(html, /aria-label="Overview sections"/);
   assert.doesNotMatch(html, /Newcastle|Lviv|Concordia|Unbroken University|Respondent ID|Collector ID|IP Address|Email Address/);
+});
+
+test("uses a two-tab sticky main menu", async () => {
+  const [overviewHtml, voicesHtml, styles] = await Promise.all([
+    readFile(htmlUrl, "utf8"),
+    readFile(voicesHtmlUrl, "utf8"),
+    readFile(stylesUrl, "utf8"),
+  ]);
+  for (const html of [overviewHtml, voicesHtml]) {
+    const mainNav = html.match(/<nav class="primary-nav"[^>]*>(.*?)<\/nav>/)?.[1] ?? "";
+    assert.equal((mainNav.match(/<a /g) ?? []).length, 2);
+    assert.match(mainNav, />Overview<\/a>/);
+    assert.match(mainNav, />Respondent voices<\/a>/);
+  }
+  assert.match(styles, /\.site-header\s*\{[^}]*position:\s*sticky;/s);
 });
 
 test("accounts for every substantive written answer without source identifiers", async () => {

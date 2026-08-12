@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import SiteHeader from "../site-header";
 import VoiceExplorer, { type VoiceSection } from "./voice-explorer";
 import voiceData from "./voice-data.json";
 
@@ -19,10 +20,7 @@ export const metadata: Metadata = {
 export default function VoicesPage() {
   return <>
     <a className="skip-link" href="#voices-content">Skip to respondent voices</a>
-    <header className="site-header">
-      <Link className="wordmark" href="/" aria-label="ELIA Future Readiness results home"><span className="wordmark-mark" aria-hidden="true">E·F</span><span>ELIA Future Readiness</span></Link>
-      <nav aria-label="Report pages"><Link href="/">Results overview</Link><Link className="nav-current" aria-current="page" href="/voices">Respondent voices</Link></nav>
-    </header>
+    <SiteHeader current="voices" />
     <main id="voices-content">
       <section className="voices-hero">
         <div>
