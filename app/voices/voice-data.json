@@ -1,0 +1,1185 @@
+{
+  "generatedFrom": "34 substantive survey responses",
+  "totalAnswers": 102,
+  "shownAnswers": 99,
+  "redactedAnswers": 5,
+  "withheldAnswers": 3,
+  "sections": [
+    {
+      "key": "future-concerns",
+      "shortLabel": "Future concerns",
+      "title": "What are your interests or concerns regarding the future?",
+      "themes": [
+        {
+          "key": "arts_education_practice",
+          "label": "Future of arts education and creative practice",
+          "definition": "Curriculum, learning, artistic research or practice, creative work, and the societal role of arts institutions.",
+          "count": 18
+        },
+        {
+          "key": "technology_ai",
+          "label": "AI, technology and digital change",
+          "definition": "Explicit attention to AI, digital systems, social media, surveillance or information technology.",
+          "count": 14
+        },
+        {
+          "key": "politics_conflict",
+          "label": "Politics, conflict and democratic pressure",
+          "definition": "War, safety, political polarisation, nationalism, far-right influence, democracy, human rights or policy pressure.",
+          "count": 13
+        },
+        {
+          "key": "social_cohesion_equity",
+          "label": "Social cohesion, equity and human values",
+          "definition": "Belonging, community, diversity, inclusion, inequality, connection, peace, rights or humanistic values.",
+          "count": 13
+        },
+        {
+          "key": "funding_legitimacy",
+          "label": "Funding, legitimacy and institutional pressure",
+          "definition": "Pressure to justify the arts, funding insecurity, institutional survival or employability metrics.",
+          "count": 7
+        },
+        {
+          "key": "adaptation_uncertainty",
+          "label": "Adaptation and uncertainty",
+          "definition": "Unpredictability, VUCA conditions, future-making, openness to change or uncertainty used as a resource.",
+          "count": 7
+        },
+        {
+          "key": "climate_ecology",
+          "label": "Climate, ecology and liveability",
+          "definition": "Climate change, ecological sustainability, biodiversity or liveable environments.",
+          "count": 6
+        }
+      ],
+      "entries": [
+        {
+          "id": "future-concerns-voice-01",
+          "text": "That we are loosing all contacts to the real world while replacing it with a digital one we hope will give us happiness and meaning. My interests is a mix of fighting and documenting this reality.",
+          "themes": [
+            "technology_ai",
+            "social_cohesion_equity"
+          ],
+          "redacted": false,
+          "withheld": false
+        },
+        {
+          "id": "future-concerns-voice-02",
+          "text": "I'm interested in how we might be able to reimagine our futures and how we can use uncertainty as a resource rather than seeing it as an obstacle. My concerns are the people are not open to change and just want to stay in their comfortable corners which they think they know best.",
+          "themes": [
+            "social_cohesion_equity",
+            "adaptation_uncertainty"
+          ],
+          "redacted": false,
+          "withheld": false
+        },
+        {
+          "id": "future-concerns-voice-03",
+          "text": "The future of craft within Art education. Are Artist becoming less and less creators?",
+          "themes": [
+            "arts_education_practice"
+          ],
+          "redacted": false,
+          "withheld": false
+        },
+        {
+          "id": "future-concerns-voice-04",
+          "text": "on a political level, my concerns are that right wing parties gain more and more influence which puts pressure on Art Institutions to justify their existence.",
+          "themes": [
+            "arts_education_practice",
+            "politics_conflict",
+            "funding_legitimacy"
+          ],
+          "redacted": false,
+          "withheld": false
+        },
+        {
+          "id": "future-concerns-voice-05",
+          "text": "Increasing polarity and reduced critical thinking tools. Misunderstanding and misinformation surrounding cultural diversity and immigration. Screen culture as a promotion of fear culture to speak outt",
+          "themes": [
+            "politics_conflict",
+            "social_cohesion_equity"
+          ],
+          "redacted": false,
+          "withheld": false
+        },
+        {
+          "id": "future-concerns-voice-06",
+          "text": "concerns: capitalism, Ai, dismantling democracy, demographic drop handling measures interests: sustaining humanistic values,",
+          "themes": [
+            "technology_ai",
+            "politics_conflict",
+            "social_cohesion_equity"
+          ],
+          "redacted": false,
+          "withheld": false
+        },
+        {
+          "id": "future-concerns-voice-07",
+          "text": "I usually try to focus on just few interests at a time and right now they are improving the artistic research field, and study + promote its applications and impact within society.",
+          "themes": [
+            "arts_education_practice"
+          ],
+          "redacted": false,
+          "withheld": false
+        },
+        {
+          "id": "future-concerns-voice-08",
+          "text": "When it comes to the future of art universities, I am concerned with the political changes that are increasing the pressure on the artistic sector to justify their raison d’être. As agents and pioneers of social change, art universities will continue to play a central role in society in the future – perhaps an even greater one – whilst at the same time facing increasing pressure to justify their existence and secure their funding. In the newly created university developement unit, we focus on how the contexts in which artists work are set to change, how art and artificial intelligence complement one another, and what impact this will have on curricula and learning outcomes.",
+          "themes": [
+            "arts_education_practice",
+            "technology_ai",
+            "politics_conflict",
+            "funding_legitimacy"
+          ],
+          "redacted": false,
+          "withheld": false
+        },
+        {
+          "id": "future-concerns-voice-09",
+          "text": "unpredictability in general",
+          "themes": [
+            "adaptation_uncertainty"
+          ],
+          "redacted": false,
+          "withheld": false
+        },
+        {
+          "id": "future-concerns-voice-10",
+          "text": "AI is a big one, particularly the impact on future creativity and craftsmanship.",
+          "themes": [
+            "arts_education_practice",
+            "technology_ai"
+          ],
+          "redacted": false,
+          "withheld": false
+        },
+        {
+          "id": "future-concerns-voice-11",
+          "text": "I'm interested in highlighting knowledge that connects people across cultures, disciplines, and perspectives.",
+          "themes": [
+            "social_cohesion_equity"
+          ],
+          "redacted": false,
+          "withheld": false
+        },
+        {
+          "id": "future-concerns-voice-12",
+          "text": "I find the question almost impossibly open. As everything I will do lies in the future, everything I do is of interest regarding the future. When thinking about what the future might hold for myself, my colleagues, my students, my field, I am interested in/concerned about how AI will influence creative practices and our perception of the world: How will we regard and perceive information, creativity, originality, contribution, usefulness, human(?) expression, empathy? I have many of the same concerns in connection to the relentlessly increasing dominance of social media. In a world of continuous posing and individualism, what does it mean to be a community? What does it mean to collaborate, to be useful, to contribute? What will it mean to linger, to take time, to reflect, to be slow?  I am also very concerned with how the arts will be perceived in times of conflict, war, climate change, far-right extremism. How can our fields articulate and argue for our (obvious) relevance in creating and maintaining solid democracies and healthy societies?",
+          "themes": [
+            "arts_education_practice",
+            "technology_ai",
+            "politics_conflict",
+            "social_cohesion_equity",
+            "funding_legitimacy",
+            "adaptation_uncertainty",
+            "climate_ecology"
+          ],
+          "redacted": false,
+          "withheld": false
+        },
+        {
+          "id": "future-concerns-voice-13",
+          "text": "How does AI affect student learning",
+          "themes": [
+            "arts_education_practice",
+            "technology_ai"
+          ],
+          "redacted": false,
+          "withheld": false
+        },
+        {
+          "id": "future-concerns-voice-14",
+          "text": "As [specific role and institution removed for privacy], I am in particular concerned around changes in the HEI learning environments with 1) regards to technical advances and impact of AI, but also 2) general concerns about the arts sector in the UK (e.g. Funding structure, role of the creative industries in the UK etc). It seems very challenging situation to be equipped for challenges of the department in the next years amongst funding cuts and cutting of positions, among and other threats.",
+          "themes": [
+            "arts_education_practice",
+            "technology_ai",
+            "funding_legitimacy"
+          ],
+          "redacted": true,
+          "withheld": false
+        },
+        {
+          "id": "future-concerns-voice-15",
+          "text": "The decrease of sense of belonging concerns me. The governmental decisions, politics and policy are concerning me. I am (also) interested in the learning methods of our future generation and how we can reach out as art institutes to our future generation.",
+          "themes": [
+            "arts_education_practice",
+            "social_cohesion_equity"
+          ],
+          "redacted": false,
+          "withheld": false
+        },
+        {
+          "id": "future-concerns-voice-16",
+          "text": "I am interested in either helping people or raise awareness through Games. I believe it’s a strong medium with great potential. I beleive my concerns will be solved as the time passes. For example people were worried about not being employed in big studios so as a reaction artists started to collaborate and indie studios are getting more popular artists have a scene for their own work and people can support them directly without the need for big budgets. Another concern is the AI and how it will discourage people from creating and everything will be generated, the reaction was a lot of Artists and Game developers refused it and they gained confidence just by the fact that it’s human made and I am one of those people. After generative AI I stopped overthinking my work and sharing it became easier. Of course my concerns about AI and genocides and surveillance still  remain but as time passes by the truth unfolds infront of the everyone it may seem as the world is getting worse but I know I am getting older and that’s the curse of awarness. And we are living in very active time I think. A lot of technologies wars etc… not what I imagined the future will be but people can only take so much and I believe in the goodness of the people and that we will collectively make a change in these corrupt systems we live in . And as Artists it’s our role to inspire change and independent thinking.",
+          "themes": [
+            "arts_education_practice",
+            "technology_ai",
+            "politics_conflict",
+            "social_cohesion_equity"
+          ],
+          "redacted": false,
+          "withheld": false
+        },
+        {
+          "id": "future-concerns-voice-17",
+          "text": "Will the economic and political Framework of the Future (rising conservativsm and nationalism, not climate friendly, rising Social gaps and inequality) will be manageble for the Arts when aiming to work sustainable in ecological and Social regards.  How can the Arts be established as a Tool to Creating a livable Future, instead of being Seen as a luxury of a functioning Society and Economy or being Instrumentalist by particular Ideologies?",
+          "themes": [
+            "arts_education_practice",
+            "politics_conflict",
+            "social_cohesion_equity",
+            "funding_legitimacy",
+            "climate_ecology"
+          ],
+          "redacted": false,
+          "withheld": false
+        },
+        {
+          "id": "future-concerns-voice-18",
+          "text": "How to shape the curriculum properly according to what in the future might be needed",
+          "themes": [
+            "arts_education_practice",
+            "adaptation_uncertainty"
+          ],
+          "redacted": false,
+          "withheld": false
+        },
+        {
+          "id": "future-concerns-voice-19",
+          "text": "conformity.",
+          "themes": [],
+          "redacted": false,
+          "withheld": false
+        },
+        {
+          "id": "future-concerns-voice-20",
+          "text": "I am interested in how technology will impact humanity and concerned that we are not regulating it enough.",
+          "themes": [
+            "technology_ai"
+          ],
+          "redacted": false,
+          "withheld": false
+        },
+        {
+          "id": "future-concerns-voice-21",
+          "text": "My main concern is how to adapt to major societal shifts, the evolving needs of younger generations, emerging technologies, and new teaching methodologies.",
+          "themes": [
+            "arts_education_practice",
+            "technology_ai",
+            "adaptation_uncertainty"
+          ],
+          "redacted": false,
+          "withheld": false
+        },
+        {
+          "id": "future-concerns-voice-22",
+          "text": "I am interested in how governments and public decision-makers understand the value of the arts in society, and how this understanding influences cultural policy and public funding. In particular, I am concerned with the long-term sustainability of the arts sector, higher arts education, and research in, on, and through the arts amid competing policy priorities and fiscal pressures.",
+          "themes": [
+            "arts_education_practice",
+            "politics_conflict",
+            "funding_legitimacy"
+          ],
+          "redacted": false,
+          "withheld": false
+        },
+        {
+          "id": "future-concerns-voice-23",
+          "text": "In the context of the ongoing war in Ukraine, my primary concern is safety, along with the preservation of cultural heritage.",
+          "themes": [
+            "politics_conflict"
+          ],
+          "redacted": false,
+          "withheld": false
+        },
+        {
+          "id": "future-concerns-voice-24",
+          "text": "Liveable enviroment for every living being, Inhabiting this world respectfully and in peace",
+          "themes": [
+            "politics_conflict",
+            "social_cohesion_equity",
+            "climate_ecology"
+          ],
+          "redacted": false,
+          "withheld": false
+        },
+        {
+          "id": "future-concerns-voice-25",
+          "text": "This answer is withheld because it contains multiple personal, organisational and location details that could not be removed without substantially changing its meaning.",
+          "themes": [
+            "arts_education_practice",
+            "politics_conflict"
+          ],
+          "redacted": true,
+          "withheld": true
+        },
+        {
+          "id": "future-concerns-voice-26",
+          "text": "Impact of climate change and AI",
+          "themes": [
+            "technology_ai",
+            "climate_ecology"
+          ],
+          "redacted": false,
+          "withheld": false
+        },
+        {
+          "id": "future-concerns-voice-27",
+          "text": "Utopia in the here and now, inventing futures and sowing seeds from which trees might once grow.",
+          "themes": [
+            "adaptation_uncertainty"
+          ],
+          "redacted": false,
+          "withheld": false
+        },
+        {
+          "id": "future-concerns-voice-28",
+          "text": "the future scares me. i find the rise of fascism frightening and all i can think about is ways in which i can shape my life and my art so it keeps me focused and present",
+          "themes": [
+            "politics_conflict",
+            "social_cohesion_equity"
+          ],
+          "redacted": false,
+          "withheld": false
+        },
+        {
+          "id": "future-concerns-voice-29",
+          "text": "Ecology, Bio-diversity, inclusion, equity, social accessibility, Arts",
+          "themes": [
+            "social_cohesion_equity",
+            "climate_ecology"
+          ],
+          "redacted": false,
+          "withheld": false
+        },
+        {
+          "id": "future-concerns-voice-30",
+          "text": "AI Community Art Cross-sectorial cooperation",
+          "themes": [
+            "arts_education_practice",
+            "technology_ai"
+          ],
+          "redacted": false,
+          "withheld": false
+        },
+        {
+          "id": "future-concerns-voice-31",
+          "text": "how to teach our students to create balance between AI and hands-on / making and thinking",
+          "themes": [
+            "arts_education_practice",
+            "technology_ai"
+          ],
+          "redacted": false,
+          "withheld": false
+        },
+        {
+          "id": "future-concerns-voice-32",
+          "text": "The changing higher education landscape in the UK. The shift in student expectations and engagement The current focus on employability alters the conversation with Fine Art students.",
+          "themes": [
+            "arts_education_practice",
+            "funding_legitimacy"
+          ],
+          "redacted": false,
+          "withheld": false
+        },
+        {
+          "id": "future-concerns-voice-33",
+          "text": "The Global climat crisis, the rise of fascism and the erosion of human rigths and the endless dictatorship of information technologies.",
+          "themes": [
+            "technology_ai",
+            "politics_conflict",
+            "social_cohesion_equity",
+            "climate_ecology"
+          ],
+          "redacted": false,
+          "withheld": false
+        },
+        {
+          "id": "future-concerns-voice-34",
+          "text": "VUCA, critical thinking, design",
+          "themes": [
+            "adaptation_uncertainty"
+          ],
+          "redacted": false,
+          "withheld": false
+        }
+      ]
+    },
+    {
+      "key": "personal-sensing",
+      "shortLabel": "Personal sensing",
+      "title": "How do you sense or keep track of emerging change?",
+      "themes": [
+        {
+          "key": "published_information",
+          "label": "Reading, research and media",
+          "definition": "News, publications, reports, policy documents, research, exhibitions, broadcasts or other published sources.",
+          "count": 25
+        },
+        {
+          "key": "dialogue_networks",
+          "label": "Dialogue and professional networks",
+          "definition": "Conversation with colleagues, peers, partners, communities, professional groups or conference networks.",
+          "count": 22
+        },
+        {
+          "key": "students_youth",
+          "label": "Listening to students and younger generations",
+          "definition": "Students, learners or younger people used as sources of insight about emerging change.",
+          "count": 10
+        },
+        {
+          "key": "embodied_reflective",
+          "label": "Embodied, reflective and creative sensing",
+          "definition": "Feeling, journaling, writing, making or reflecting on lived experience as a way to sense change.",
+          "count": 7
+        },
+        {
+          "key": "limited_method",
+          "label": "Information overload or no structured method",
+          "definition": "An explicit lack of method, difficulty keeping up, or desire for a more systematic practice.",
+          "count": 4
+        }
+      ],
+      "entries": [
+        {
+          "id": "personal-sensing-voice-01",
+          "text": "I have no specific strategies for sensing change. Sensing just happens and there is always the question if the change sensed just impacted a small micro-cosmos or if it is a sign for a general tendency.  I am a regular radio listener and sometimes go to a large bookshop and looking at the books that are prominently displayed there, and of course I talk to people",
+          "themes": [
+            "published_information",
+            "dialogue_networks",
+            "embodied_reflective",
+            "limited_method"
+          ],
+          "redacted": false,
+          "withheld": false
+        },
+        {
+          "id": "personal-sensing-voice-02",
+          "text": "This answer is withheld because it contains multiple personal, organisational and location details that could not be removed without substantially changing its meaning.",
+          "themes": [
+            "published_information",
+            "dialogue_networks"
+          ],
+          "redacted": true,
+          "withheld": true
+        },
+        {
+          "id": "personal-sensing-voice-03",
+          "text": "books with future researchers, talking to different generations of music teachers and students,",
+          "themes": [
+            "published_information",
+            "dialogue_networks",
+            "students_youth"
+          ],
+          "redacted": false,
+          "withheld": false
+        },
+        {
+          "id": "personal-sensing-voice-04",
+          "text": "Reading news, magazines, literature about the topics, follow discussions, meet people, visit conferences abroad, being in a workgroup of ELIA, teaching our future generation and reflect in our institute the learning outcomes etc.",
+          "themes": [
+            "published_information",
+            "dialogue_networks",
+            "students_youth"
+          ],
+          "redacted": false,
+          "withheld": false
+        },
+        {
+          "id": "personal-sensing-voice-05",
+          "text": "I read the news locally and internationally at least once a day, and try to keep abreast of what my peers/colleagues/students are discussing.",
+          "themes": [
+            "published_information",
+            "dialogue_networks",
+            "students_youth"
+          ],
+          "redacted": false,
+          "withheld": false
+        },
+        {
+          "id": "personal-sensing-voice-06",
+          "text": "Personally, I combine different sources of information rather than relying on a single indicator. I regularly analyse institutional data and evaluation results, follow developments in higher education, the creative sector and society, and pay close attention to conversations with colleagues, students and external partners. I also actively look for weak signals and emerging patterns that may have implications for curriculum development and institutional strategy. In our unit we rely on regular exchances with peers [location removed for privacy] and abroad to gather trends and signs of changes.",
+          "themes": [
+            "published_information",
+            "dialogue_networks",
+            "students_youth"
+          ],
+          "redacted": true,
+          "withheld": false
+        },
+        {
+          "id": "personal-sensing-voice-07",
+          "text": "reading, listening to students, meeting people and finding out how they feel, collaborating with students on joint projects.",
+          "themes": [
+            "published_information",
+            "dialogue_networks",
+            "students_youth"
+          ],
+          "redacted": false,
+          "withheld": false
+        },
+        {
+          "id": "personal-sensing-voice-08",
+          "text": "I am reading newsletters from people (politics, diversity, philosophy) who are smarter and more up to date than I am. I try to attend ELIA conferences on Internationalisation (PIE) and the Biannial Conferences.",
+          "themes": [
+            "published_information",
+            "dialogue_networks"
+          ],
+          "redacted": false,
+          "withheld": false
+        },
+        {
+          "id": "personal-sensing-voice-09",
+          "text": "Masters research about this topic",
+          "themes": [
+            "published_information"
+          ],
+          "redacted": false,
+          "withheld": false
+        },
+        {
+          "id": "personal-sensing-voice-10",
+          "text": "I stay alert to new advancements and research, paying close attention to how they shape future pathways and milestones.",
+          "themes": [
+            "published_information"
+          ],
+          "redacted": false,
+          "withheld": false
+        },
+        {
+          "id": "personal-sensing-voice-11",
+          "text": "News / reading related scholars / engaging with relevant art works, including exhibitions, films, theatre etc",
+          "themes": [
+            "published_information"
+          ],
+          "redacted": false,
+          "withheld": false
+        },
+        {
+          "id": "personal-sensing-voice-12",
+          "text": "symposia, panels, discussions with colleagues, team, implementation into teachings, discussions with students.",
+          "themes": [
+            "published_information",
+            "dialogue_networks",
+            "students_youth"
+          ],
+          "redacted": false,
+          "withheld": false
+        },
+        {
+          "id": "personal-sensing-voice-13",
+          "text": "Reading on and off-line, learning, trying not to be devoured by technologies",
+          "themes": [
+            "published_information"
+          ],
+          "redacted": false,
+          "withheld": false
+        },
+        {
+          "id": "personal-sensing-voice-14",
+          "text": "I am not proud to say that but through social media or the news. Even though I take breaks from social media for like 6 months sometimes I use it on the desktop. And I like to journal when I feel the need to for me it acts as the opposite effect of mindlessly scrolling on social media. I pour my heart out on paper and take a breath to reflect and think and reach a conclusion it’s slow which is what I often need but can’t reach. As I feel the need of always being stimulated by work projects and end up procrastinating by looking for more opportunities. I never had free time I always need a project or two plus university work to feel fulfilled I guess. I can’t stay just doing things for fun. My fun is to learn and add value to my community.",
+          "themes": [
+            "published_information",
+            "embodied_reflective"
+          ],
+          "redacted": false,
+          "withheld": false
+        },
+        {
+          "id": "personal-sensing-voice-15",
+          "text": "Research new subjects, try to find new vendors/ commercial partners",
+          "themes": [
+            "published_information",
+            "dialogue_networks"
+          ],
+          "redacted": false,
+          "withheld": false
+        },
+        {
+          "id": "personal-sensing-voice-16",
+          "text": "Many changes are implemented without choice: My university (and many other universities) has incorporated Co-Pilot in our Microsoft package and AI is used for many purposes that affect my daily life. Similarly, Social Media is omnipresent and almost impossible to ignore if one wants to reach (future) students, share important news and opinions. In short, I don't really feel like I have to do something to keep track of emerging changes, but rather do something to be able to recall how I used to do things and what the changes do to my being in the world.  I do wish to find time to more systematically learn about emerging changes, both in order to better navigate in my own practice and also to better advise my students whose lives and practices will obviously be deeply affected by environmental, digital, and social shifts.",
+          "themes": [
+            "embodied_reflective",
+            "limited_method"
+          ],
+          "redacted": false,
+          "withheld": false
+        },
+        {
+          "id": "personal-sensing-voice-17",
+          "text": "Mostly by looking into youngsters (teenagers) and their ways of looking into things, but also students and discussing how they see things, what they fear of, what they expect. On the other hand, social media and journals and podcasts I trust.",
+          "themes": [
+            "published_information",
+            "dialogue_networks",
+            "students_youth",
+            "embodied_reflective"
+          ],
+          "redacted": false,
+          "withheld": false
+        },
+        {
+          "id": "personal-sensing-voice-18",
+          "text": "It's very difficult to keep up with all the news, acheavements, updates and researches and I'm still trying to figure out an effective way, but I usually catalogue links, pdfs, info in a specific folder. I know it's really naive but I'm really trying to find the most effective way for me and I have found nothing more efficient for now",
+          "themes": [
+            "published_information",
+            "limited_method"
+          ],
+          "redacted": false,
+          "withheld": false
+        },
+        {
+          "id": "personal-sensing-voice-19",
+          "text": "Research conversation and seeking out diverse classroom materials and methodologies",
+          "themes": [
+            "published_information",
+            "dialogue_networks"
+          ],
+          "redacted": false,
+          "withheld": false
+        },
+        {
+          "id": "personal-sensing-voice-20",
+          "text": "Through writing",
+          "themes": [
+            "embodied_reflective"
+          ],
+          "redacted": false,
+          "withheld": false
+        },
+        {
+          "id": "personal-sensing-voice-21",
+          "text": "Overall sensing pressure and stress around me and withing myself - a.o. wars, environmental catastrophe(s), economic uncertainty and pressure. Instead of sticking together, people get seperated over \"minor\" differences of opinion.",
+          "themes": [
+            "dialogue_networks",
+            "embodied_reflective"
+          ],
+          "redacted": false,
+          "withheld": false
+        },
+        {
+          "id": "personal-sensing-voice-22",
+          "text": "I keep track of emerging trends by reading scientific publications, participating in conferences and research projects, communicating with colleagues, and using AI tools to explore new developments.",
+          "themes": [
+            "published_information",
+            "dialogue_networks"
+          ],
+          "redacted": false,
+          "withheld": false
+        },
+        {
+          "id": "personal-sensing-voice-23",
+          "text": "I keep track of emerging changes by regularly skimming news, policy documents, reports, research publications, and interviews related to the arts, higher arts education, and arts research. I pay particular attention to the rhetoric, discourses, and narratives used to frame their value and societal role, while also looking for emerging trends, tensions, and weak signals that may indicate future shifts in policy, funding, and public understanding.",
+          "themes": [
+            "published_information"
+          ],
+          "redacted": false,
+          "withheld": false
+        },
+        {
+          "id": "personal-sensing-voice-24",
+          "text": "I try to spend 30-45 minutes a day reading about these things in magazines, academic papers and online.",
+          "themes": [
+            "published_information"
+          ],
+          "redacted": false,
+          "withheld": false
+        },
+        {
+          "id": "personal-sensing-voice-25",
+          "text": "To Check in in theory and practice simutaneously. To keep Track of Reports Like the nostradamus Report for example. By joining societies and Clubs of Special interests in my Branche to keep in touch with other practitioners.",
+          "themes": [
+            "published_information",
+            "dialogue_networks"
+          ],
+          "redacted": false,
+          "withheld": false
+        },
+        {
+          "id": "personal-sensing-voice-26",
+          "text": "This is a very good question and I feel,  becoming more involved in ELIA would be very positive move and has been on my bucket list for awhile.  I know this is not a place for this but if there are possibilities to get involved in discussion around the Readiness Working Group I would be interested to hear from you.",
+          "themes": [
+            "dialogue_networks",
+            "limited_method"
+          ],
+          "redacted": false,
+          "withheld": false
+        },
+        {
+          "id": "personal-sensing-voice-27",
+          "text": "I keep track of emerging changes by regularly exchanging ideas with colleagues and staying informed about what is happening at the university, both on a micro level within my own department and on a macro level across the institution. These conversations and observations help me identify new trends, emerging challenges, and opportunities for collaboration",
+          "themes": [
+            "dialogue_networks"
+          ],
+          "redacted": false,
+          "withheld": false
+        },
+        {
+          "id": "personal-sensing-voice-28",
+          "text": "I read, write and publish texts, films and art and communicate with my collegeges.",
+          "themes": [
+            "published_information",
+            "embodied_reflective"
+          ],
+          "redacted": false,
+          "withheld": false
+        },
+        {
+          "id": "personal-sensing-voice-29",
+          "text": "as I am involved  in the Teaching and International workshop  Japan my mind is always  looking for ways how to educate and engage the next generation of designers.",
+          "themes": [
+            "dialogue_networks",
+            "students_youth"
+          ],
+          "redacted": false,
+          "withheld": false
+        },
+        {
+          "id": "personal-sensing-voice-30",
+          "text": "Research, news media",
+          "themes": [
+            "published_information"
+          ],
+          "redacted": false,
+          "withheld": false
+        },
+        {
+          "id": "personal-sensing-voice-31",
+          "text": "Requirements from Office for Student Industry information - Higher Education Academy etc Student Feedback",
+          "themes": [
+            "published_information",
+            "dialogue_networks",
+            "students_youth"
+          ],
+          "redacted": false,
+          "withheld": false
+        },
+        {
+          "id": "personal-sensing-voice-32",
+          "text": "Inter-academic exchange Personal research Commnity-based cultural activity",
+          "themes": [
+            "dialogue_networks"
+          ],
+          "redacted": false,
+          "withheld": false
+        },
+        {
+          "id": "personal-sensing-voice-33",
+          "text": "Connectiveness on all levels, with all ages by all media",
+          "themes": [
+            "dialogue_networks"
+          ],
+          "redacted": false,
+          "withheld": false
+        },
+        {
+          "id": "personal-sensing-voice-34",
+          "text": "i tend to look at what my peers do but especially this knowledge for me comes from my students (age 17-21) who, aside from aesthetic trends, share the fears, hopes, dreams and disillusions of their generation, which in turn help me in formulating the questions about my own generational outlook on art and politics, as well as my very personal despair and its roots.",
+          "themes": [
+            "dialogue_networks",
+            "students_youth"
+          ],
+          "redacted": false,
+          "withheld": false
+        }
+      ]
+    },
+    {
+      "key": "institutional-practices",
+      "shortLabel": "Institutional practices",
+      "title": "What regular practices help your institution navigate what comes next?",
+      "themes": [
+        {
+          "key": "dialogue_reflection",
+          "label": "Recurring dialogue and collective reflection",
+          "definition": "Meetings, forums, retreats, workshops, consultations, discussion or shared reflection.",
+          "count": 28
+        },
+        {
+          "key": "external_networks",
+          "label": "External networks, partnerships and projects",
+          "definition": "Professional associations, cross-institutional partners, research networks, grants or external stakeholders.",
+          "count": 13
+        },
+        {
+          "key": "student_voice",
+          "label": "Student and young-person voice",
+          "definition": "Students or younger people are explicitly engaged in dialogue, consultation or co-creation.",
+          "count": 9
+        },
+        {
+          "key": "curriculum_learning",
+          "label": "Curriculum, learning and capability adaptation",
+          "definition": "Courses, curricula, teaching practices, guidance or learning provision are adjusted in response to change.",
+          "count": 8
+        },
+        {
+          "key": "formal_foresight",
+          "label": "Formal foresight, strategy and quality processes",
+          "definition": "Explicit future workshops, horizon scanning, observatories, multi-year projections, future strategy or structured governance/quality cycles.",
+          "count": 7
+        },
+        {
+          "key": "informal_reactive_gap",
+          "label": "Informal, reactive or absent routines",
+          "definition": "Practices are described as informal, limited, late, momentum-driven, difficult to address, absent or primarily reactive.",
+          "count": 15
+        }
+      ],
+      "entries": [
+        {
+          "id": "institutional-practices-voice-01",
+          "text": "As part of our initiatives to prepare for challenges in coming years, the Fine Art apartment created [a named committee removed for privacy], 2 years ago, which discussed and proposed curriculum changes, initiative such as [a named initiative and link removed for privacy]. We have regular student consultation meetings around sustainability, community building or freedom of expression. Again, I would be interested to share further good practices and contribute to a discussion. Thank you for reaching out via this survey.",
+          "themes": [
+            "dialogue_reflection",
+            "external_networks",
+            "student_voice",
+            "curriculum_learning",
+            "formal_foresight"
+          ],
+          "redacted": true,
+          "withheld": false
+        },
+        {
+          "id": "institutional-practices-voice-02",
+          "text": "Input of students/ teachers/ proffesional workfield",
+          "themes": [
+            "dialogue_reflection",
+            "external_networks",
+            "student_voice"
+          ],
+          "redacted": false,
+          "withheld": false
+        },
+        {
+          "id": "institutional-practices-voice-03",
+          "text": "We have regular meetings and opportunities to exchange, but it often feels like the momentum of ongoing activities drives the direction forward. There is less of a structured space for stepping back together, reflecting on emerging changes, and proactively shaping future directions.",
+          "themes": [
+            "dialogue_reflection",
+            "informal_reactive_gap"
+          ],
+          "redacted": false,
+          "withheld": false
+        },
+        {
+          "id": "institutional-practices-voice-04",
+          "text": "engaging with young people from different backgrounds. genuinely ask young people what are their thoughts and how they culturally navigate the idea of the “new and scary”  another practice is the introduction of an anthropology lecture. it helps to broaden our sense of the so-called universal.",
+          "themes": [
+            "dialogue_reflection",
+            "student_voice",
+            "curriculum_learning"
+          ],
+          "redacted": false,
+          "withheld": false
+        },
+        {
+          "id": "institutional-practices-voice-05",
+          "text": "None that I'm aware of",
+          "themes": [
+            "informal_reactive_gap"
+          ],
+          "redacted": false,
+          "withheld": false
+        },
+        {
+          "id": "institutional-practices-voice-06",
+          "text": "This is complex. Institutions are struggling to survive and so take a wholistic approach which can impact on areas that are not seem as producing outcomes that enhance metrics - so Fine Art for example may not lead to what is considered to be graduate level employment and so can impact negatively. This has consequences.",
+          "themes": [
+            "informal_reactive_gap"
+          ],
+          "redacted": false,
+          "withheld": false
+        },
+        {
+          "id": "institutional-practices-voice-07",
+          "text": "Having Chats in informal Settings and keep an Open ear and Budgets for the Needs and interest of fellow peers and colleagues. Flexibility in planning of timetables.",
+          "themes": [
+            "dialogue_reflection",
+            "informal_reactive_gap"
+          ],
+          "redacted": false,
+          "withheld": false
+        },
+        {
+          "id": "institutional-practices-voice-08",
+          "text": "Conferences Inter-academic projects  Lifelong learning",
+          "themes": [
+            "dialogue_reflection",
+            "external_networks"
+          ],
+          "redacted": false,
+          "withheld": false
+        },
+        {
+          "id": "institutional-practices-voice-09",
+          "text": "We organize [a named annual international scientific conference removed for privacy] and regularly participate in conferences hosted by other universities. We are also involved in grant projects focused on innovation and actively participate in professional networks and communities, such as ELIA.",
+          "themes": [
+            "dialogue_reflection",
+            "external_networks"
+          ],
+          "redacted": true,
+          "withheld": false
+        },
+        {
+          "id": "institutional-practices-voice-10",
+          "text": "Our institution has recently used an extensive futures-oriented strategy process to explore possible futures relevant to the university. Through surveys, workshops, and discussions involving both the university community and external stakeholders, we collectively identified emerging opportunities, challenges, and strategic directions. This collaborative foresight work has informed the development of our vision, values, and future strategy, and continues through ongoing community engagement and dialogue.",
+          "themes": [
+            "dialogue_reflection",
+            "external_networks",
+            "student_voice",
+            "formal_foresight"
+          ],
+          "redacted": false,
+          "withheld": false
+        },
+        {
+          "id": "institutional-practices-voice-11",
+          "text": "No habitual routine for the cohort of PhD students I am n but I have an informal group with two fellow research students where we meet once a month.",
+          "themes": [
+            "dialogue_reflection",
+            "informal_reactive_gap"
+          ],
+          "redacted": false,
+          "withheld": false
+        },
+        {
+          "id": "institutional-practices-voice-12",
+          "text": "As a team staying in touch with each other by sitting together over food and exchanging what is on our minds. Institutionally: comminucation from the side of decision makers, co-creational processes are offered to shape the future of the institution together.",
+          "themes": [
+            "dialogue_reflection",
+            "student_voice"
+          ],
+          "redacted": false,
+          "withheld": false
+        },
+        {
+          "id": "institutional-practices-voice-13",
+          "text": "The evershifting medialandscape when it comes to technological plattforms and powerstructures is a steady concern hard to adress. In my opinion you should have one track for tradition and continuity and not overstate things like AI. It is a clever strategy to stay avaw from all kind of hype.",
+          "themes": [
+            "informal_reactive_gap"
+          ],
+          "redacted": false,
+          "withheld": false
+        },
+        {
+          "id": "institutional-practices-voice-14",
+          "text": "I think we are slowly preparing and having a discussion . I think a bit late . to be able to deliver educational program. based on the balance - it requires testing and ....",
+          "themes": [
+            "dialogue_reflection",
+            "curriculum_learning",
+            "informal_reactive_gap"
+          ],
+          "redacted": false,
+          "withheld": false
+        },
+        {
+          "id": "institutional-practices-voice-15",
+          "text": "The invented or imaginary future is constantly reviewed for any pitfalls and corrected where necessary. The past is studied in order to learn from it and to prevent mistakes from being repeated.",
+          "themes": [
+            "informal_reactive_gap"
+          ],
+          "redacted": false,
+          "withheld": false
+        },
+        {
+          "id": "institutional-practices-voice-16",
+          "text": "This answer is withheld because it contains multiple personal, organisational and location details that could not be removed without substantially changing its meaning.",
+          "themes": [
+            "dialogue_reflection",
+            "external_networks"
+          ],
+          "redacted": true,
+          "withheld": true
+        },
+        {
+          "id": "institutional-practices-voice-17",
+          "text": "Workshops with Future-thinking items, Taking to students about their needs. having a good relationship with the professional field the students are going to work in.",
+          "themes": [
+            "dialogue_reflection",
+            "external_networks",
+            "student_voice",
+            "curriculum_learning",
+            "formal_foresight"
+          ],
+          "redacted": false,
+          "withheld": false
+        },
+        {
+          "id": "institutional-practices-voice-18",
+          "text": "me: interdisciplinary conversations with people from digital humanities, economics, or the literary field from different locations in Europe. institution: navigating the education market, currently in the AI teaching race.",
+          "themes": [
+            "dialogue_reflection",
+            "external_networks",
+            "curriculum_learning",
+            "informal_reactive_gap"
+          ],
+          "redacted": false,
+          "withheld": false
+        },
+        {
+          "id": "institutional-practices-voice-19",
+          "text": "We have our futur geneartion in doors and have 6 tracks with diverse programmes to teach them within our institute in between the BA and MA students. We collaborate as an art academy with many secondary schools and initiatives for young artists, as well as a national platform for young makers. We have a secondary school as an art academy, it's with the conservatoire and ballet-academy together. Music, dance and art are integrated in the school, a professional preparatory track where we can learn from for ourselves too. We are a member of an European organization of many Conservatoires with secondary education, this does not (yet?) exsist for the arts, but we can learn from these colleagues too. So: connect with peers abroad and having the future generation indoors.",
+          "themes": [
+            "dialogue_reflection",
+            "external_networks",
+            "student_voice",
+            "curriculum_learning"
+          ],
+          "redacted": false,
+          "withheld": false
+        },
+        {
+          "id": "institutional-practices-voice-20",
+          "text": "We ask our head of study programms to project themselves 5 years ahead and to describe how their progamm will look like and what challenges they will have overcome. They present their visions in a retreat with all the heads of programms and the directors of the school.",
+          "themes": [
+            "dialogue_reflection",
+            "formal_foresight"
+          ],
+          "redacted": false,
+          "withheld": false
+        },
+        {
+          "id": "institutional-practices-voice-21",
+          "text": "Faculty/staff meetings, department town halls",
+          "themes": [
+            "dialogue_reflection"
+          ],
+          "redacted": false,
+          "withheld": false
+        },
+        {
+          "id": "institutional-practices-voice-22",
+          "text": "Rather than treating foresight as a separate activity, we are embedding it into our regular quality and governance processes. We are developing a quality architecture that combines continuous monitoring, quality dialogues and periodic programme reviews with dedicated future-oriented activities. These include regular future workshops, systematic scanning for weak signals, the establishment of a strategic observatory, and ongoing engagement with key stakeholder groups—including students, graduates, academic staff and external partners—to better understand changing expectations, needs and emerging opportunities. Collaboration is central to this approach. We deliberately bring together different perspectives and combine institutional data with qualitative insights and external developments. Our aim is to foster an institutional culture in which asking “What is changing, and what does this mean for us?” becomes a regular leadership practice. We see quality management, Institutional Research and foresight as complementary functions that strengthen the university’s capacity to learn, adapt and shape its future proactively.",
+          "themes": [
+            "dialogue_reflection",
+            "external_networks",
+            "student_voice",
+            "formal_foresight"
+          ],
+          "redacted": false,
+          "withheld": false
+        },
+        {
+          "id": "institutional-practices-voice-23",
+          "text": "We try to share as much as possible when we find news and interesting info, as well as to comment them together.  Maybe an idea could be to implement like a portal with sectorial updates (-> it could be then difficult to cathegorize and find clusters for every single update, but it's still a possibility)",
+          "themes": [
+            "dialogue_reflection",
+            "informal_reactive_gap"
+          ],
+          "redacted": false,
+          "withheld": false
+        },
+        {
+          "id": "institutional-practices-voice-24",
+          "text": "I guess they try to adapt new technologies in a responsible way even though untill now I haven’t seen been excuted successfully. That’s from my personal perspective students either rely too much on AI and let it think for them or they refuse to use it. I am leaning towards the not using it at all as I noticed that my critical thinking skills were decreasing the more I relied on such tools. But at the same time the internet is full of content that we need to go through so I ise the appropriate tools to narrow down my resources in a research for example. Other thing they did was make the library person give us a lecture on how to use these AI tools ethically and how to give credit to our resources.",
+          "themes": [
+            "curriculum_learning",
+            "informal_reactive_gap"
+          ],
+          "redacted": false,
+          "withheld": false
+        },
+        {
+          "id": "institutional-practices-voice-25",
+          "text": "Seminars, discussion forums, staff/students area as for discussion of content, challenge and policies",
+          "themes": [
+            "dialogue_reflection",
+            "student_voice"
+          ],
+          "redacted": false,
+          "withheld": false
+        },
+        {
+          "id": "institutional-practices-voice-26",
+          "text": "We have meetings where we discuss this",
+          "themes": [
+            "dialogue_reflection",
+            "informal_reactive_gap"
+          ],
+          "redacted": false,
+          "withheld": false
+        },
+        {
+          "id": "institutional-practices-voice-27",
+          "text": "On a strategic level, my institution performs a yearly internal control, a sort of SWOT analysis, with focus on W and T, where we assess potential risks of potential developments. My institution has established several courses in digital media and AI, as well as a series of AI seminars. All faculties have or are about to develop guidelines for use of AI. For our study programs (BA, MA, PhD), we have program committees and program leaders responsible for looking ahead and undertake quality assurance measurements, which e.g. might include adapting course descriptions, exam forms and evaluation criteria to the emerging technologies. More importantly, we participate in significant research projects and research centers revolving around new technologies, particularly AI, as well as research on climate change and digital changes. We are also partners of [a named external initiative removed for privacy].",
+          "themes": [
+            "dialogue_reflection",
+            "external_networks",
+            "curriculum_learning",
+            "formal_foresight"
+          ],
+          "redacted": true,
+          "withheld": false
+        },
+        {
+          "id": "institutional-practices-voice-28",
+          "text": "As members of the AEC and ELIA, we regularly attend their congresses and conferences to stay updated on the latest news, trends, and developments in the field of education.",
+          "themes": [
+            "dialogue_reflection",
+            "external_networks"
+          ],
+          "redacted": false,
+          "withheld": false
+        },
+        {
+          "id": "institutional-practices-voice-29",
+          "text": "Infromal practices are dominant, instituion is very traditional. In small circles of collegues from different departments, we discuss scenarios and from our positions try to influence formal decisions - it could be named internal advocacy and coalitions building.",
+          "themes": [
+            "dialogue_reflection",
+            "informal_reactive_gap"
+          ],
+          "redacted": false,
+          "withheld": false
+        },
+        {
+          "id": "institutional-practices-voice-30",
+          "text": "jour fixes each week. planning conference of team before each semester, identifying overall topic and developing seminars, studio projects and exhibitions/publications out of that.",
+          "themes": [
+            "dialogue_reflection",
+            "formal_foresight"
+          ],
+          "redacted": false,
+          "withheld": false
+        },
+        {
+          "id": "institutional-practices-voice-31",
+          "text": "There is no nook where AI isn't considered absolutely vital.",
+          "themes": [
+            "informal_reactive_gap"
+          ],
+          "redacted": false,
+          "withheld": false
+        },
+        {
+          "id": "institutional-practices-voice-32",
+          "text": "Keeping an eye on the field, talking to others, reading etc",
+          "themes": [
+            "dialogue_reflection",
+            "informal_reactive_gap"
+          ],
+          "redacted": false,
+          "withheld": false
+        },
+        {
+          "id": "institutional-practices-voice-33",
+          "text": "Sharing practice and research / engaging in knowledge exchange / embracing inter - multi and transdisciplinary practices",
+          "themes": [
+            "dialogue_reflection",
+            "external_networks"
+          ],
+          "redacted": false,
+          "withheld": false
+        },
+        {
+          "id": "institutional-practices-voice-34",
+          "text": "Focus group",
+          "themes": [
+            "dialogue_reflection"
+          ],
+          "redacted": false,
+          "withheld": false
+        }
+      ]
+    }
+  ]
+}
