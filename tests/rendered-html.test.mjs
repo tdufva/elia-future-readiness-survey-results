@@ -27,6 +27,7 @@ test("renders the complete public report", async () => {
   assert.doesNotMatch(html, />Sex and gender<|No pie chart can be calculated|>Not collected<\/strong>/);
   assert.match(html, /aria-label="Main pages"/);
   assert.match(html, /aria-label="Overview sections"/);
+  assert.doesNotMatch(html, /readiness[ -]?score/i);
   assert.doesNotMatch(html, /Collector ID|IP Address|Email Address|115152734/);
 });
 
