@@ -13,6 +13,10 @@ test("renders the complete public report", async () => {
   assert.match(html, /3 test submissions excluded/);
   assert.match(html, /The numbers do not speak for themselves/);
   assert.match(html, /Data Feminism sources/);
+  assert.match(html, /AI will influence creative practices/);
+  assert.match(html, /read the news locally and internationally/);
+  assert.match(html, /informal group with two fellow research students/);
+  assert.match(html, /Three short quotations were selected/);
   assert.doesNotMatch(html, /Collector ID|IP Address|Email Address|115152734/);
 });
 
