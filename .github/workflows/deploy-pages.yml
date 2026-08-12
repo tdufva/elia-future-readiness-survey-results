@@ -17,6 +17,8 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      pnpm_config_dangerously_allow_all_builds: "true"
     steps:
       - uses: actions/checkout@v4
       - uses: pnpm/action-setup@v4
