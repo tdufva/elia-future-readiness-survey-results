@@ -1,8 +1,8 @@
 # ELIA Future Readiness Survey Results
 
-An accessible, privacy-preserving overview of 34 substantive responses to the ELIA Future Readiness Survey, collected in July and August 2026.
+An accessible overview of 34 substantive responses to the ELIA Future Readiness Survey, collected in July and August 2026.
 
-The public report combines descriptive counts with reflexive thematic analysis. It keeps counts beside percentages, documents exclusions and limitations, preserves overlapping categories, and withholds sensitive cross-tabulations. Its Respondent voices page publishes 99 written answers without respondent metadata; five are lightly redacted and three are withheld because de-identification would remove too much meaning.
+The protected report combines descriptive counts with reflexive thematic analysis. It keeps counts beside percentages, documents exclusions and limitations, and preserves overlapping categories. Respondent voices links each thematic quote to an anonymous profile. The encrypted All answers reader groups all 102 original written answers by respondent and includes country, age group and standardised institutional position; direct source identifiers are excluded.
 
 ## Local development
 
@@ -14,8 +14,9 @@ pnpm run dev
 ## Checks
 
 ```bash
-pnpm run build
-pnpm run build:pages
+ELIA_SURVEY_PASSWORD="..." pnpm test
+ELIA_SURVEY_PASSWORD="..." pnpm run encrypt:pages
+pnpm run test:protected
 ```
 
-GitHub Pages is deployed from the static `out/` directory by the workflow in `.github/workflows/deploy-pages.yml`.
+GitHub Pages is deployed from the encrypted static `out/` directory. The password is supplied through the repository secret `ELIA_SURVEY_PASSWORD` and is never committed to source or generated files.

@@ -30,6 +30,15 @@ jobs:
           cache: pnpm
       - run: pnpm install --frozen-lockfile
       - run: pnpm run build:pages
+      - run: node --test tests/rendered-html.test.mjs
+        env:
+          ELIA_SURVEY_PASSWORD: ${{ secrets.ELIA_SURVEY_PASSWORD }}
+      - run: pnpm run encrypt:pages
+        env:
+          ELIA_SURVEY_PASSWORD: ${{ secrets.ELIA_SURVEY_PASSWORD }}
+      - run: node --test tests/protected-output.test.mjs
+        env:
+          ELIA_SURVEY_PASSWORD: ${{ secrets.ELIA_SURVEY_PASSWORD }}
       - uses: actions/upload-pages-artifact@v3
         with:
           path: out

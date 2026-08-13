@@ -1,11 +1,17 @@
 import assert from "node:assert/strict";
+import { createDecipheriv, pbkdf2Sync } from "node:crypto";
 import { access, readFile } from "node:fs/promises";
 import test from "node:test";
 
 const root = new URL("../", import.meta.url);
 const htmlUrl = new URL("../out/index.html", import.meta.url);
 const voicesHtmlUrl = new URL("../out/voices/index.html", import.meta.url);
+const allAnswersHtmlUrl = new URL("../out/all-answers/index.html", import.meta.url);
+const methodsHtmlUrl = new URL("../out/methods/index.html", import.meta.url);
+const respondentsHtmlUrl = new URL("../out/respondents/index.html", import.meta.url);
 const voicesDataUrl = new URL("../app/voices/voice-data.json", import.meta.url);
+const encryptedDataUrl = new URL("../public/data/respondents.enc.json", import.meta.url);
+const accessConfigUrl = new URL("../public/access-config.json", import.meta.url);
 const stylesUrl = new URL("../app/globals.css", import.meta.url);
 
 test("renders the complete public report", async () => {
@@ -14,19 +20,19 @@ test("renders the complete public report", async () => {
   assert.match(html, /34 substantive responses/);
   assert.match(html, /<strong>17<\/strong><span>countries represented<\/span>/);
   assert.match(html, /3 test submissions excluded/);
-  assert.match(html, /The numbers do not speak for themselves/);
-  assert.match(html, /Data Feminism sources/);
+  assert.doesNotMatch(html, /The numbers do not speak for themselves|Data Feminism sources|Discussion agenda|Turn relational intelligence into shared capacity/);
   assert.match(html, /AI will influence creative practices/);
   assert.match(html, /read the news locally and internationally/);
   assert.match(html, /informal group with two fellow research students/);
   assert.match(html, /Quote from an anonymous survey respondent/);
-  assert.match(html, /Respondent voices page shows 99 answers/);
   assert.match(html, /Countries represented in the substantive survey responses/);
   assert.match(html, /17 countries represented/);
   assert.match(html, /Age distribution: under 35, 9 respondents or 26 percent/);
   assert.doesNotMatch(html, />Sex and gender<|No pie chart can be calculated|>Not collected<\/strong>/);
   assert.match(html, /aria-label="Main pages"/);
   assert.match(html, /aria-label="Overview sections"/);
+  assert.match(html, /All answers/);
+  assert.match(html, /Methods/);
   assert.doesNotMatch(html, /readiness[ -]?score/i);
   assert.doesNotMatch(html, /Collector ID|IP Address|Email Address|115152734/);
 });
@@ -48,6 +54,8 @@ test("renders a navigable and privacy-checked respondent voices page", async () 
   assert.match(html, /<strong>99<\/strong><span>written answers shown<\/span>/);
   assert.match(html, /<strong>3<\/strong><span>answers withheld<\/span>/);
   assert.match(html, /Quote from an anonymous survey respondent/);
+  assert.match(html, /Hover over or focus a quote/);
+  assert.match(html, /All answers page/);
   assert.match(html, /Filter answers by theme/);
   assert.match(html, /aria-label="Main pages"/);
   assert.doesNotMatch(html, /aria-label="Overview sections"/);
@@ -55,18 +63,37 @@ test("renders a navigable and privacy-checked respondent voices page", async () 
 });
 
 test("uses a two-tab sticky main menu", async () => {
-  const [overviewHtml, voicesHtml, styles] = await Promise.all([
+  const [overviewHtml, voicesHtml, allAnswersHtml, methodsHtml, respondentsHtml, styles] = await Promise.all([
     readFile(htmlUrl, "utf8"),
     readFile(voicesHtmlUrl, "utf8"),
+    readFile(allAnswersHtmlUrl, "utf8"),
+    readFile(methodsHtmlUrl, "utf8"),
+    readFile(respondentsHtmlUrl, "utf8"),
     readFile(stylesUrl, "utf8"),
   ]);
-  for (const html of [overviewHtml, voicesHtml]) {
+  for (const html of [overviewHtml, voicesHtml, allAnswersHtml, methodsHtml, respondentsHtml]) {
     const mainNav = html.match(/<nav class="primary-nav"[^>]*>(.*?)<\/nav>/)?.[1] ?? "";
     assert.equal((mainNav.match(/<a /g) ?? []).length, 2);
     assert.match(mainNav, />Overview<\/a>/);
     assert.match(mainNav, />Respondent voices<\/a>/);
   }
   assert.match(styles, /\.site-header\s*\{[^}]*position:\s*sticky;/s);
+});
+
+test("renders separate methods, all-answers, and respondent pages", async () => {
+  const [methodsHtml, allAnswersHtml, respondentsHtml] = await Promise.all([
+    readFile(methodsHtmlUrl, "utf8"),
+    readFile(allAnswersHtmlUrl, "utf8"),
+    readFile(respondentsHtmlUrl, "utf8"),
+  ]);
+  assert.match(methodsHtml, /The numbers do not speak for themselves/);
+  assert.match(methodsHtml, /Data Feminism sources/);
+  assert.match(methodsHtml, /Privacy and protected access/);
+  assert.match(allAnswersHtml, /All written answers/);
+  assert.match(allAnswersHtml, /34<\/strong><span>respondents/);
+  assert.match(allAnswersHtml, /102<\/strong><span>written answers/);
+  assert.match(allAnswersHtml, /Handle with care/);
+  assert.match(respondentsHtml, /Loading the respondent/);
 });
 
 test("accounts for every substantive written answer without source identifiers", async () => {
@@ -78,6 +105,26 @@ test("accounts for every substantive written answer without source identifiers",
   assert.equal(data.withheldAnswers, 3);
   assert.deepEqual(data.sections.map((section) => section.entries.length), [34, 34, 34]);
   assert.doesNotMatch(dataText, /"sourceId"|Newcastle|Lviv|Concordia|Unbroken University|https?:\/\//);
+});
+
+test("encrypted respondent data links every voice to one anonymous profile", async () => {
+  const password = process.env.ELIA_SURVEY_PASSWORD;
+  assert.ok(password, "ELIA_SURVEY_PASSWORD is required for the protected-data test");
+  const [config, payload] = await Promise.all([
+    readFile(accessConfigUrl, "utf8").then(JSON.parse),
+    readFile(encryptedDataUrl, "utf8").then(JSON.parse),
+  ]);
+  const key = pbkdf2Sync(password, Buffer.from(config.salt, "base64"), config.iterations, 32, "sha256");
+  const decipher = createDecipheriv("aes-256-gcm", key, Buffer.from(payload.iv, "base64"));
+  decipher.setAuthTag(Buffer.from(payload.tag, "base64"));
+  const cleartext = Buffer.concat([decipher.update(Buffer.from(payload.ciphertext, "base64")), decipher.final()]).toString("utf8");
+  const data = JSON.parse(cleartext);
+  assert.equal(data.respondentCount, 34);
+  assert.equal(data.answerCount, 102);
+  assert.equal(Object.keys(data.voiceIndex).length, 102);
+  assert.ok(data.respondents.every((respondent) => respondent.answers.length === 3));
+  assert.ok(data.respondents.every((respondent) => respondent.country && respondent.age && respondent.roles.length));
+  assert.doesNotMatch(cleartext, /Collector ID|IP Address|Email Address|Respondent ID/);
 });
 
 test("ships the social card and no starter preview", async () => {

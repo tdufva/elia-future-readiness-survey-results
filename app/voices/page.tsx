@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import SiteHeader from "../site-header";
+import { sitePath } from "../site-path";
 import VoiceExplorer, { type VoiceSection } from "./voice-explorer";
 import voiceData from "./voice-data.json";
 
@@ -26,7 +26,7 @@ export default function VoicesPage() {
         <div>
           <p className="eyebrow">Written answers · a thematic reader</p>
           <h1>Respondent voices</h1>
-          <p className="standfirst">The survey included three open-ended questions. Select a question below to read its answers, then browse all responses or narrow them by theme.</p>
+          <p className="standfirst">The survey included three open-ended questions. Select a question below to read its answers, explore themes and connect each quote to the respondent’s other answers.</p>
           <a className="voices-jump-link" href="#question-selector">Choose an open-ended question <span aria-hidden="true">↓</span></a>
         </div>
         <aside className="scope-card voices-scope" aria-label="Written-answer scope">
@@ -38,16 +38,16 @@ export default function VoicesPage() {
 
       <section className="voices-reading-note" aria-label="How to read respondent voices">
         <div><p className="eyebrow">How this reader works</p><h2>Choose a question, then explore its answers.</h2></div>
-        <div><p>Each of the three question selectors opens the 34 answers given to that open-ended question. Once selected, you can read every answer, filter the answers by theme, or search for a word or phrase.</p><p>Spelling, grammar and wording are preserved except where square brackets mark a privacy redaction. Answers appear without role, age, country, institution, timestamps or respondent identifiers.</p><p>Themes overlap: the same answer can belong to several themes. Coding is interpretive rather than a ranking of respondents.</p></div>
+        <div><p>Each of the three question selectors opens the 34 answers given to that open-ended question. Once selected, you can read every answer, filter by theme, or search for a word or phrase.</p><p><strong>Hover over or focus a quote</strong> to see the respondent’s country, age group and position. Follow the link in that profile to read the same respondent’s other two answers.</p><p>Spelling, grammar and wording are preserved except where square brackets mark a privacy redaction. Themes overlap: the same answer can belong to several themes.</p></div>
       </section>
 
       <VoiceExplorer sections={voiceData.sections as VoiceSection[]} />
 
       <section className="voices-method-note">
-        <div><p className="eyebrow">A privacy boundary</p><h2>Three answers remain private.</h2></div>
-        <p>Those answers contained a combination of personal roles, named organisations, project titles and locations. They are represented in the thematic counts, but their text is withheld because removing the identifying detail would substantially change their meaning.</p>
+        <div><p className="eyebrow">Read every response</p><h2>The complete written-answer reader is available.</h2></div>
+        <p>The <a href={sitePath("/all-answers/")}>All answers page</a> groups the original wording of all three answers by respondent and offers search and profile filters. This protected view can contain identifying context; share the password only with intended readers.</p>
       </section>
     </main>
-    <footer className="footer"><div><strong>ELIA Future Readiness Survey Results</strong><span>Respondent voices · 34 substantive responses</span></div><p><Link href="/">Return to the results overview</Link>. The original response-level workbook remains private.</p></footer>
+    <footer className="footer"><div><strong>ELIA Future Readiness Survey Results</strong><span>Respondent voices · 34 substantive responses</span></div><p><a href={sitePath("/")}>Return to the results overview</a> · <a href={sitePath("/methods/")}>Read the methods and limits</a></p></footer>
   </>;
 }

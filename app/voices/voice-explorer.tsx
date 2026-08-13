@@ -1,6 +1,8 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import DataUnlock from "../data-unlock";
+import { type Respondent, useSurveyData } from "../survey-data";
 
 export type Theme = {
   key: string;
@@ -25,7 +27,7 @@ export type VoiceSection = {
   entries: VoiceEntry[];
 };
 
-function VoiceCard({ entry, themes }: { entry: VoiceEntry; themes: Theme[] }) {
+function VoiceCard({ entry, themes, respondent }: { entry: VoiceEntry; themes: Theme[]; respondent?: Respondent }) {
   const entryThemes = entry.themes
     .map((key) => themes.find((theme) => theme.key === key))
     .filter((theme): theme is Theme => Boolean(theme));
@@ -41,15 +43,25 @@ function VoiceCard({ entry, themes }: { entry: VoiceEntry; themes: Theme[] }) {
     {entryThemes.length > 0 && <ul className="voice-tags" aria-label="Themes assigned to this answer">
       {entryThemes.map((theme) => <li key={theme.key}>{theme.label}</li>)}
     </ul>}
+    {respondent && <div className="voice-profile-trigger" tabIndex={0} aria-label={`Show profile for ${respondent.label}`}>
+      <span>Respondent profile</span>
+      <aside className="respondent-popover" aria-label={`${respondent.label} statistics`}>
+        <p>{respondent.label}</p>
+        <dl><div><dt>Country</dt><dd>{respondent.country}</dd></div><div><dt>Age</dt><dd>{respondent.age}</dd></div><div><dt>Position</dt><dd>{respondent.roles.join(", ")}</dd></div></dl>
+        <a href={`../respondents/?respondent=${respondent.id}`}>See all answers from this respondent <span aria-hidden="true">→</span></a>
+      </aside>
+    </div>}
   </article>;
 }
 
 export default function VoiceExplorer({ sections }: { sections: VoiceSection[] }) {
+  const { data, loading, locked, error, unlock } = useSurveyData();
   const [activeQuestion, setActiveQuestion] = useState(sections[0].key);
   const [activeTheme, setActiveTheme] = useState("all");
   const [query, setQuery] = useState("");
   const activeSection = sections.find((section) => section.key === activeQuestion) ?? sections[0];
   const activeQuestionIndex = sections.findIndex((section) => section.key === activeSection.key);
+  const respondentsById = useMemo(() => new Map(data?.respondents.map((respondent) => [respondent.id, respondent]) ?? []), [data]);
 
   const visibleEntries = useMemo(() => {
     const normalizedQuery = query.trim().toLocaleLowerCase();
@@ -66,11 +78,14 @@ export default function VoiceExplorer({ sections }: { sections: VoiceSection[] }
     setQuery("");
   };
 
+  if (locked) return <div className="voice-explorer" id="question-selector"><DataUnlock error={error} loading={loading} onUnlock={unlock} /></div>;
+
   return <div className="voice-explorer" id="question-selector">
     <header className="question-selector-head">
       <div><p className="eyebrow">Three open-ended questions</p><h2>Select a question to see its answers.</h2></div>
       <p>Choose one of the three numbered questions. The selected question is highlighted, and its 34 answers appear directly below.</p>
     </header>
+    {loading && <p className="voice-profile-status" aria-live="polite">Loading protected respondent profiles…</p>}
     <div className="question-tabs" role="tablist" aria-label="Select one of the three open-ended survey questions">
       {sections.map((section, index) => <button
         type="button"
@@ -118,7 +133,7 @@ export default function VoiceExplorer({ sections }: { sections: VoiceSection[] }
       </div>
 
       {visibleEntries.length > 0
-        ? <div className="voice-grid">{visibleEntries.map((entry) => <VoiceCard key={entry.id} entry={entry} themes={activeSection.themes} />)}</div>
+        ? <div className="voice-grid">{visibleEntries.map((entry) => <VoiceCard key={entry.id} entry={entry} themes={activeSection.themes} respondent={data ? respondentsById.get(data.voiceIndex[entry.id]) : undefined} />)}</div>
         : <div className="no-results"><h3>No answers match this search.</h3><button type="button" onClick={() => setQuery("")}>Clear search</button></div>}
     </section>
   </div>;
