@@ -43,8 +43,10 @@ function VoiceCard({ entry, themes, respondent }: { entry: VoiceEntry; themes: T
     {entryThemes.length > 0 && <ul className="voice-tags" aria-label="Themes assigned to this answer">
       {entryThemes.map((theme) => <li key={theme.key}>{theme.label}</li>)}
     </ul>}
-    {respondent && <div className="voice-profile-trigger" tabIndex={0} aria-label={`Show profile for ${respondent.label}`}>
-      <span>Respondent profile</span>
+    {respondent && <div className="voice-profile">
+      <a className="voice-profile-trigger" href={`../respondents/?respondent=${respondent.id}`} aria-label={`See all answers from ${respondent.label}`}>
+        Respondent profile <span aria-hidden="true">→</span>
+      </a>
       <aside className="respondent-popover" aria-label={`${respondent.label} statistics`}>
         <p>{respondent.label}</p>
         <dl><div><dt>Country</dt><dd>{respondent.country}</dd></div><div><dt>Age</dt><dd>{respondent.age}</dd></div><div><dt>Position</dt><dd>{respondent.roles.join(", ")}</dd></div></dl>

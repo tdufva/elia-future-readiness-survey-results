@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function RespondentsPage() {
   return <>
     <a className="skip-link" href="#respondent-content">Skip to respondent answers</a>
-    <SiteHeader />
+    <SiteHeader current="voices" />
     <main id="respondent-content"><RespondentReader /></main>
     <footer className="footer"><div><strong>ELIA Future Readiness Survey Results</strong><span>Anonymous respondent record · protected view</span></div><p><a href={sitePath("/all-answers/")}>Browse all written answers</a> · <a href={sitePath("/methods/")}>Methods, ethics and limits</a></p></footer>
   </>;

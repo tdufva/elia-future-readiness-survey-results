@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 export default function MethodsPage() {
   return <>
     <a className="skip-link" href="#methods-content">Skip to methods</a>
-    <SiteHeader />
+    <SiteHeader current="overview" />
     <main id="methods-content">
       <section className="subpage-hero">
         <p className="eyebrow">Methods, ethics and limits</p>

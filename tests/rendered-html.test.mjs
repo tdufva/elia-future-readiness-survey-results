@@ -10,6 +10,7 @@ const allAnswersHtmlUrl = new URL("../out/all-answers/index.html", import.meta.u
 const methodsHtmlUrl = new URL("../out/methods/index.html", import.meta.url);
 const respondentsHtmlUrl = new URL("../out/respondents/index.html", import.meta.url);
 const voicesDataUrl = new URL("../app/voices/voice-data.json", import.meta.url);
+const voiceExplorerUrl = new URL("../app/voices/voice-explorer.tsx", import.meta.url);
 const encryptedDataUrl = new URL("../public/data/respondents.enc.json", import.meta.url);
 const accessConfigUrl = new URL("../public/access-config.json", import.meta.url);
 const stylesUrl = new URL("../app/globals.css", import.meta.url);
@@ -62,7 +63,7 @@ test("renders a navigable and privacy-checked respondent voices page", async () 
   assert.doesNotMatch(html, /Newcastle|Lviv|Concordia|Unbroken University|Respondent ID|Collector ID|IP Address|Email Address/);
 });
 
-test("uses a two-tab sticky main menu", async () => {
+test("uses a three-page sticky main menu with All answers promoted", async () => {
   const [overviewHtml, voicesHtml, allAnswersHtml, methodsHtml, respondentsHtml, styles] = await Promise.all([
     readFile(htmlUrl, "utf8"),
     readFile(voicesHtmlUrl, "utf8"),
@@ -73,10 +74,12 @@ test("uses a two-tab sticky main menu", async () => {
   ]);
   for (const html of [overviewHtml, voicesHtml, allAnswersHtml, methodsHtml, respondentsHtml]) {
     const mainNav = html.match(/<nav class="primary-nav"[^>]*>(.*?)<\/nav>/)?.[1] ?? "";
-    assert.equal((mainNav.match(/<a /g) ?? []).length, 2);
+    assert.equal((mainNav.match(/<a /g) ?? []).length, 3);
     assert.match(mainNav, />Overview<\/a>/);
     assert.match(mainNav, />Respondent voices<\/a>/);
+    assert.match(mainNav, />All answers<\/a>/);
   }
+  assert.match(allAnswersHtml, /class="nav-current" aria-current="page" href="\/elia-future-readiness-survey-results\/all-answers\/"/);
   assert.match(styles, /\.site-header\s*\{[^}]*position:\s*sticky;/s);
 });
 
@@ -91,6 +94,22 @@ test("uses ELIA's website palette and pronounced bundled rounded headings", asyn
   assert.match(styles, /body\s*\{[^}]*background:\s*var\(--paper\)/s);
   assert.match(styles, /h1, h2, h3,[^{]*\{[^}]*font-weight:\s*900;/s);
   assert.match(styles, /\.scope-card,\s*\.finding-card[^{]*\{[^}]*border-radius:\s*22px/s);
+  assert.match(styles, /html\[data-text-size="large"\]\s*\{[^}]*font-size:\s*17px;/s);
+  assert.match(styles, /@media \(prefers-color-scheme:\s*dark\)/);
+});
+
+test("keeps respondent profile links clickable and makes All answers information dense", async () => {
+  const [voiceExplorer, styles, allAnswersHtml] = await Promise.all([
+    readFile(voiceExplorerUrl, "utf8"),
+    readFile(stylesUrl, "utf8"),
+    readFile(allAnswersHtmlUrl, "utf8"),
+  ]);
+  assert.match(voiceExplorer, /<a className="voice-profile-trigger" href=\{`\.\.\/respondents\/\?respondent=\$\{respondent\.id\}`\}/);
+  assert.match(styles, /\.voice-profile:hover \.respondent-popover, \.voice-profile:focus-within \.respondent-popover/);
+  assert.match(styles, /\.respondent-list\s*\{[^}]*gap:\s*14px;/s);
+  assert.match(styles, /\.raw-respondent\s*\{[^}]*padding:\s*24px;/s);
+  assert.match(styles, /\.raw-answer-grid p\s*\{[^}]*font-size:\s*\.88rem;/s);
+  assert.match(allAnswersHtml, /class="text-size-button"/);
 });
 
 test("renders separate methods, all-answers, and respondent pages", async () => {
