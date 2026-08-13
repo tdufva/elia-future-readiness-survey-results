@@ -80,12 +80,16 @@ test("uses a two-tab sticky main menu", async () => {
   assert.match(styles, /\.site-header\s*\{[^}]*position:\s*sticky;/s);
 });
 
-test("uses the modern gray-turquoise visual system and bundled rounded headings", async () => {
+test("uses ELIA's website palette and pronounced bundled rounded headings", async () => {
   const styles = await readFile(stylesUrl, "utf8");
-  assert.match(styles, /--paper:\s*#dce8e6/);
+  assert.match(styles, /--elia-pink:\s*#db0962/);
+  assert.match(styles, /--elia-mint:\s*#00fdcb/);
+  assert.match(styles, /--elia-slate:\s*#2d3c41/);
+  assert.match(styles, /--paper:\s*#f0f0f0/);
   assert.match(styles, /--serif:\s*"Nunito Sans Variable"/);
   assert.match(styles, /--sans:\s*"Inter Variable"/);
   assert.match(styles, /body\s*\{[^}]*background:\s*var\(--paper\)/s);
+  assert.match(styles, /h1, h2, h3,[^{]*\{[^}]*font-weight:\s*900;/s);
   assert.match(styles, /\.scope-card,\s*\.finding-card[^{]*\{[^}]*border-radius:\s*22px/s);
 });
 

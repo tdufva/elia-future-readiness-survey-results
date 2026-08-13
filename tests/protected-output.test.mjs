@@ -24,6 +24,9 @@ test("every exported page is password protected and page-data files are removed"
     const html = await readFile(file, "utf8");
     assert.match(html, /Enter the password to continue/);
     assert.match(html, /Incorrect password/);
+    assert.match(html, /--signal:#db0962/);
+    assert.match(html, /--mint:#00fdcb/);
+    assert.match(html, /h1\{[^}]*font-weight:900/);
     assert.doesNotMatch(html, /34 substantive responses|That we are loosing all contacts|The numbers do not speak for themselves/);
   }
   assert.equal(files.filter((file) => file.endsWith(".txt")).length, 0);
