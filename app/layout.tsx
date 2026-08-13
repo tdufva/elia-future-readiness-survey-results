@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import "@fontsource-variable/inter";
+import "@fontsource-variable/nunito-sans";
 import "./globals.css";
 
 const title = "ELIA Future Readiness Survey Results";

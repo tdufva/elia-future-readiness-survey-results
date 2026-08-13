@@ -80,6 +80,15 @@ test("uses a two-tab sticky main menu", async () => {
   assert.match(styles, /\.site-header\s*\{[^}]*position:\s*sticky;/s);
 });
 
+test("uses the modern gray-turquoise visual system and bundled rounded headings", async () => {
+  const styles = await readFile(stylesUrl, "utf8");
+  assert.match(styles, /--paper:\s*#dce8e6/);
+  assert.match(styles, /--serif:\s*"Nunito Sans Variable"/);
+  assert.match(styles, /--sans:\s*"Inter Variable"/);
+  assert.match(styles, /body\s*\{[^}]*background:\s*var\(--paper\)/s);
+  assert.match(styles, /\.scope-card,\s*\.finding-card[^{]*\{[^}]*border-radius:\s*22px/s);
+});
+
 test("renders separate methods, all-answers, and respondent pages", async () => {
   const [methodsHtml, allAnswersHtml, respondentsHtml] = await Promise.all([
     readFile(methodsHtmlUrl, "utf8"),
