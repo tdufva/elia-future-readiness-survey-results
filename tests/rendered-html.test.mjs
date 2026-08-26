@@ -18,6 +18,8 @@ const stylesUrl = new URL("../app/globals.css", import.meta.url);
 test("renders the complete public report", async () => {
   const html = await readFile(htmlUrl, "utf8");
   assert.match(html, /<title>ELIA Future Readiness Survey Results<\/title>/i);
+  assert.match(html, />Survey results<\/p>/);
+  assert.doesNotMatch(html, /a situated reading/i);
   assert.match(html, /38 substantive responses/);
   assert.match(html, /<strong>18<\/strong><span>countries represented<\/span>/);
   assert.match(html, /3 test submissions excluded/);
