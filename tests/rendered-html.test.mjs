@@ -28,9 +28,10 @@ test("renders the complete public report", async () => {
   assert.match(html, /finding-card finding-card--mint/);
   assert.match(html, /finding-card finding-card--pink/);
   assert.match(html, /finding-card finding-card--blue/);
-  assert.match(html, /Respondents rarely described future change as a single technology problem/);
-  assert.match(html, /combines published evidence with lived experience/);
-  assert.match(html, /does not automatically become a repeatable process that shapes decisions/);
+  assert.match(html, /cultural, technical and civic choices need to be considered together/);
+  assert.match(html, /Foresight here is social infrastructure as much as an analytical technique/);
+  assert.match(html, /The gap is not an absence of attention or care/);
+  assert.match(html, /finding-summary/);
   assert.match(html, /Quote from an anonymous survey respondent/);
   assert.match(html, /Countries represented in the substantive survey responses/);
   assert.match(html, /18 countries represented/);

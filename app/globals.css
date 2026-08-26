@@ -65,6 +65,7 @@ h2 { max-width: 940px; margin: 0; font-family: var(--serif); font-size: clamp(2.
 .finding-number { color: var(--signal-dark); font-size: .74rem; font-weight: 800; letter-spacing: .12em; }
 .finding-card h3 { margin: 46px 0 18px; font-family: var(--serif); font-size: clamp(1.65rem, 2.2vw, 2.35rem); font-weight: 400; letter-spacing: -.025em; line-height: 1.08; }
 .finding-card p { margin: 0; color: var(--ink-soft); }
+.finding-summary { display: grid; gap: 12px; }
 .respondent-quote { margin: 28px 0 0; padding: 20px 0 0 20px; border-top: 1px solid var(--rule); border-left: 3px solid var(--finding-accent); }
 .respondent-quote p { color: var(--ink); font-family: var(--serif); font-size: 1.02rem; font-style: italic; line-height: 1.46; }
 .respondent-quote cite { display: block; margin-top: 12px; color: var(--ink-soft); font-size: .66rem; font-style: normal; font-weight: 750; letter-spacing: .09em; text-transform: uppercase; }
