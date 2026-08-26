@@ -1,8 +1,8 @@
 # ELIA Future Readiness Survey Results
 
-An accessible overview of 34 substantive responses to the ELIA Future Readiness Survey, collected in July and August 2026.
+An accessible overview of 38 substantive responses to the ELIA Future Readiness Survey, collected in July and August 2026.
 
-The protected report combines descriptive counts with reflexive thematic analysis. It keeps counts beside percentages, documents exclusions and limitations, and preserves overlapping categories. Respondent voices links each thematic quote to an anonymous profile. The encrypted All answers reader groups all 102 original written answers by respondent and includes country, age group and standardised institutional position; direct source identifiers are excluded.
+The protected report combines descriptive counts with reflexive thematic analysis. It keeps counts beside percentages, documents exclusions and limitations, and preserves overlapping categories. Respondent voices links each thematic quote to an anonymous profile. The encrypted All answers reader groups all 114 original written answers by respondent and includes country, age group and standardised institutional position; direct source identifiers are excluded.
 
 ## Local development
 

@@ -85,7 +85,7 @@ export default function VoiceExplorer({ sections }: { sections: VoiceSection[] }
   return <div className="voice-explorer" id="question-selector">
     <header className="question-selector-head">
       <div><p className="eyebrow">Three open-ended questions</p><h2>Select a question to see its answers.</h2></div>
-      <p>Choose one of the three numbered questions. The selected question is highlighted, and its 34 answers appear directly below.</p>
+      <p>Choose one of the three numbered questions. The selected question is highlighted, and its 38 answers appear directly below.</p>
     </header>
     {loading && <p className="voice-profile-status" aria-live="polite">Loading protected respondent profiles…</p>}
     <div className="question-tabs" role="tablist" aria-label="Select one of the three open-ended survey questions">

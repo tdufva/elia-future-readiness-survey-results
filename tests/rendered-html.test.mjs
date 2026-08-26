@@ -18,8 +18,8 @@ const stylesUrl = new URL("../app/globals.css", import.meta.url);
 test("renders the complete public report", async () => {
   const html = await readFile(htmlUrl, "utf8");
   assert.match(html, /<title>ELIA Future Readiness Survey Results<\/title>/i);
-  assert.match(html, /34 substantive responses/);
-  assert.match(html, /<strong>17<\/strong><span>countries represented<\/span>/);
+  assert.match(html, /38 substantive responses/);
+  assert.match(html, /<strong>18<\/strong><span>countries represented<\/span>/);
   assert.match(html, /3 test submissions excluded/);
   assert.doesNotMatch(html, /The numbers do not speak for themselves|Data Feminism sources|Discussion agenda|Turn relational intelligence into shared capacity/);
   assert.match(html, /AI will influence creative practices/);
@@ -27,8 +27,9 @@ test("renders the complete public report", async () => {
   assert.match(html, /informal group with two fellow research students/);
   assert.match(html, /Quote from an anonymous survey respondent/);
   assert.match(html, /Countries represented in the substantive survey responses/);
-  assert.match(html, /17 countries represented/);
-  assert.match(html, /Age distribution: under 35, 9 respondents or 26 percent/);
+  assert.match(html, /18 countries represented/);
+  assert.match(html, /aria-label="Belgium represented"/);
+  assert.match(html, /Age distribution: under 35, 10 respondents or 26 percent/);
   assert.doesNotMatch(html, />Sex and gender<|No pie chart can be calculated|>Not collected<\/strong>/);
   assert.match(html, /aria-label="Main pages"/);
   assert.match(html, /aria-label="Overview sections"/);
@@ -52,7 +53,7 @@ test("renders a navigable and privacy-checked respondent voices page", async () 
   assert.match(html, /How do you sense or keep track of emerging change/);
   assert.match(html, /What regular practices help your institution navigate what comes next/);
   assert.match(html, /Showing the answers respondents gave to this question/);
-  assert.match(html, /<strong>99<\/strong><span>written answers shown<\/span>/);
+  assert.match(html, /<strong>111<\/strong><span>written answers shown<\/span>/);
   assert.match(html, /<strong>3<\/strong><span>answers withheld<\/span>/);
   assert.match(html, /Quote from an anonymous survey respondent/);
   assert.match(html, /Hover over or focus a quote/);
@@ -121,9 +122,10 @@ test("renders separate methods, all-answers, and respondent pages", async () => 
   assert.match(methodsHtml, /The numbers do not speak for themselves/);
   assert.match(methodsHtml, /Data Feminism sources/);
   assert.match(methodsHtml, /Privacy and protected access/);
+  assert.match(methodsHtml, /primary base is <strong>n = 38<\/strong>/);
   assert.match(allAnswersHtml, /All written answers/);
-  assert.match(allAnswersHtml, /34<\/strong><span>respondents/);
-  assert.match(allAnswersHtml, /102<\/strong><span>written answers/);
+  assert.match(allAnswersHtml, /38<\/strong><span>respondents/);
+  assert.match(allAnswersHtml, /114<\/strong><span>written answers/);
   assert.match(allAnswersHtml, /Handle with care/);
   assert.match(respondentsHtml, /Loading the respondent/);
 });
@@ -131,11 +133,12 @@ test("renders separate methods, all-answers, and respondent pages", async () => 
 test("accounts for every substantive written answer without source identifiers", async () => {
   const dataText = await readFile(voicesDataUrl, "utf8");
   const data = JSON.parse(dataText);
-  assert.equal(data.totalAnswers, 102);
-  assert.equal(data.shownAnswers, 99);
+  assert.equal(data.totalAnswers, 114);
+  assert.equal(data.shownAnswers, 111);
   assert.equal(data.redactedAnswers, 5);
   assert.equal(data.withheldAnswers, 3);
-  assert.deepEqual(data.sections.map((section) => section.entries.length), [34, 34, 34]);
+  assert.deepEqual(data.sections.map((section) => section.entries.length), [38, 38, 38]);
+  assert.deepEqual(data.sections.map((section) => section.themes[0].count), [22, 28, 31]);
   assert.doesNotMatch(dataText, /"sourceId"|Newcastle|Lviv|Concordia|Unbroken University|https?:\/\//);
 });
 
@@ -151,9 +154,9 @@ test("encrypted respondent data links every voice to one anonymous profile", asy
   decipher.setAuthTag(Buffer.from(payload.tag, "base64"));
   const cleartext = Buffer.concat([decipher.update(Buffer.from(payload.ciphertext, "base64")), decipher.final()]).toString("utf8");
   const data = JSON.parse(cleartext);
-  assert.equal(data.respondentCount, 34);
-  assert.equal(data.answerCount, 102);
-  assert.equal(Object.keys(data.voiceIndex).length, 102);
+  assert.equal(data.respondentCount, 38);
+  assert.equal(data.answerCount, 114);
+  assert.equal(Object.keys(data.voiceIndex).length, 114);
   assert.ok(data.respondents.every((respondent) => respondent.answers.length === 3));
   assert.ok(data.respondents.every((respondent) => respondent.country && respondent.age && respondent.roles.length));
   assert.doesNotMatch(cleartext, /Collector ID|IP Address|Email Address|Respondent ID/);

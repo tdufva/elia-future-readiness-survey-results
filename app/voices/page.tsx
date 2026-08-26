@@ -38,7 +38,7 @@ export default function VoicesPage() {
 
       <section className="voices-reading-note" aria-label="How to read respondent voices">
         <div><p className="eyebrow">How this reader works</p><h2>Choose a question, then explore its answers.</h2></div>
-        <div><p>Each of the three question selectors opens the 34 answers given to that open-ended question. Once selected, you can read every answer, filter by theme, or search for a word or phrase.</p><p><strong>Hover over or focus a quote</strong> to see the respondent’s country, age group and position. Follow the link in that profile to read the same respondent’s other two answers.</p><p>Spelling, grammar and wording are preserved except where square brackets mark a privacy redaction. Themes overlap: the same answer can belong to several themes.</p></div>
+        <div><p>Each of the three question selectors opens the 38 answers given to that open-ended question. Once selected, you can read every answer, filter by theme, or search for a word or phrase.</p><p><strong>Hover over or focus a quote</strong> to see the respondent’s country, age group and position. Follow the link in that profile to read the same respondent’s other two answers.</p><p>Spelling, grammar and wording are preserved except where square brackets mark a privacy redaction. Themes overlap: the same answer can belong to several themes.</p></div>
       </section>
 
       <VoiceExplorer sections={voiceData.sections as VoiceSection[]} />
@@ -48,6 +48,6 @@ export default function VoicesPage() {
         <p>The <a href={sitePath("/all-answers/")}>All answers page</a> groups the original wording of all three answers by respondent and offers search and profile filters. This protected view can contain identifying context; share the password only with intended readers.</p>
       </section>
     </main>
-    <footer className="footer"><div><strong>ELIA Future Readiness Survey Results</strong><span>Respondent voices · 34 substantive responses</span></div><p><a href={sitePath("/")}>Return to the results overview</a> · <a href={sitePath("/methods/")}>Read the methods and limits</a></p></footer>
+    <footer className="footer"><div><strong>ELIA Future Readiness Survey Results</strong><span>Respondent voices · 38 substantive responses</span></div><p><a href={sitePath("/")}>Return to the results overview</a> · <a href={sitePath("/methods/")}>Read the methods and limits</a></p></footer>
   </>;
 }

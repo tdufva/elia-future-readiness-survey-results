@@ -1,7 +1,7 @@
 {
-  "generatedFrom": "34 substantive survey responses",
-  "totalAnswers": 102,
-  "shownAnswers": 99,
+  "generatedFrom": "38 substantive survey responses · 25 August 2026 export",
+  "totalAnswers": 114,
+  "shownAnswers": 111,
   "redactedAnswers": 5,
   "withheldAnswers": 3,
   "sections": [
@@ -14,7 +14,19 @@
           "key": "arts_education_practice",
           "label": "Future of arts education and creative practice",
           "definition": "Curriculum, learning, artistic research or practice, creative work, and the societal role of arts institutions.",
-          "count": 18
+          "count": 22
+        },
+        {
+          "key": "social_cohesion_equity",
+          "label": "Social cohesion, equity and human values",
+          "definition": "Belonging, community, diversity, inclusion, inequality, connection, peace, rights or humanistic values.",
+          "count": 16
+        },
+        {
+          "key": "politics_conflict",
+          "label": "Politics, conflict and democratic pressure",
+          "definition": "War, safety, political polarisation, nationalism, far-right influence, democracy, human rights or policy pressure.",
+          "count": 15
         },
         {
           "key": "technology_ai",
@@ -23,34 +35,22 @@
           "count": 14
         },
         {
-          "key": "politics_conflict",
-          "label": "Politics, conflict and democratic pressure",
-          "definition": "War, safety, political polarisation, nationalism, far-right influence, democracy, human rights or policy pressure.",
-          "count": 13
+          "key": "adaptation_uncertainty",
+          "label": "Adaptation and uncertainty",
+          "definition": "Unpredictability, VUCA conditions, future-making, openness to change or uncertainty used as a resource.",
+          "count": 9
         },
         {
-          "key": "social_cohesion_equity",
-          "label": "Social cohesion, equity and human values",
-          "definition": "Belonging, community, diversity, inclusion, inequality, connection, peace, rights or humanistic values.",
-          "count": 13
+          "key": "climate_ecology",
+          "label": "Climate, ecology and liveability",
+          "definition": "Climate change, ecological sustainability, biodiversity or liveable environments.",
+          "count": 8
         },
         {
           "key": "funding_legitimacy",
           "label": "Funding, legitimacy and institutional pressure",
           "definition": "Pressure to justify the arts, funding insecurity, institutional survival or employability metrics.",
           "count": 7
-        },
-        {
-          "key": "adaptation_uncertainty",
-          "label": "Adaptation and uncertainty",
-          "definition": "Unpredictability, VUCA conditions, future-making, openness to change or uncertainty used as a resource.",
-          "count": 7
-        },
-        {
-          "key": "climate_ecology",
-          "label": "Climate, ecology and liveability",
-          "definition": "Climate change, ecological sustainability, biodiversity or liveable environments.",
-          "count": 6
         }
       ],
       "entries": [
@@ -402,6 +402,51 @@
           ],
           "redacted": false,
           "withheld": false
+        },
+        {
+          "id": "future-concerns-voice-35",
+          "text": "How could we go from reacting to changes in climate, political environment etc to proactive approach where we (as artists, arts schools etc) create actually better sustainable peaceful future  for everyone and not just trying to survive.",
+          "themes": [
+            "arts_education_practice",
+            "politics_conflict",
+            "social_cohesion_equity",
+            "adaptation_uncertainty",
+            "climate_ecology"
+          ],
+          "redacted": false,
+          "withheld": false
+        },
+        {
+          "id": "future-concerns-voice-36",
+          "text": "Lifelong learning & artistic intelligence.",
+          "themes": [
+            "arts_education_practice"
+          ],
+          "redacted": false,
+          "withheld": false
+        },
+        {
+          "id": "future-concerns-voice-37",
+          "text": "Looking to the near future (5-10 years), I am interested in the direction we as humanity are heading, as reflected in the choices we make. Do we choose out of fear, trying to preserve and control what we know and 'own', or do we dare to embrace this liminal time, embracing the unknown, insecurity and working together to explore and shape our future? As humanity, we are capable of destroying the world; will we acknowledge this and make the choice to recognise that the world can only continue to exist if we choose to be hopeful and caring. I love the new generation that we are educating, it is up to them to see new futures. It is up to us to help the transition. I am curious to see new futures arising and look forward to shape them together with all living.  Translated with DeepL.com (free version)",
+          "themes": [
+            "arts_education_practice",
+            "social_cohesion_equity",
+            "adaptation_uncertainty"
+          ],
+          "redacted": false,
+          "withheld": false
+        },
+        {
+          "id": "future-concerns-voice-38",
+          "text": "Capitalism on steroides, global warming, lack of resources for the quality of life, public sphere abd interest, commons, endless economic growth on finite Planet, unvisible intristic non-material values of culture, nature and indogenous knowledge",
+          "themes": [
+            "arts_education_practice",
+            "politics_conflict",
+            "social_cohesion_equity",
+            "climate_ecology"
+          ],
+          "redacted": false,
+          "withheld": false
         }
       ]
     },
@@ -414,25 +459,25 @@
           "key": "published_information",
           "label": "Reading, research and media",
           "definition": "News, publications, reports, policy documents, research, exhibitions, broadcasts or other published sources.",
-          "count": 25
+          "count": 28
         },
         {
           "key": "dialogue_networks",
           "label": "Dialogue and professional networks",
           "definition": "Conversation with colleagues, peers, partners, communities, professional groups or conference networks.",
-          "count": 22
+          "count": 26
         },
         {
           "key": "students_youth",
           "label": "Listening to students and younger generations",
           "definition": "Students, learners or younger people used as sources of insight about emerging change.",
-          "count": 10
+          "count": 12
         },
         {
           "key": "embodied_reflective",
           "label": "Embodied, reflective and creative sensing",
           "definition": "Feeling, journaling, writing, making or reflecting on lived experience as a way to sense change.",
-          "count": 7
+          "count": 8
         },
         {
           "key": "limited_method",
@@ -781,6 +826,48 @@
           ],
           "redacted": false,
           "withheld": false
+        },
+        {
+          "id": "personal-sensing-voice-35",
+          "text": "For me the best way is to talk with students and listen what they say because from those conversations I see the reality and visions they have for present but also about the future.",
+          "themes": [
+            "dialogue_networks",
+            "students_youth"
+          ],
+          "redacted": false,
+          "withheld": false
+        },
+        {
+          "id": "personal-sensing-voice-36",
+          "text": "I use a lot of methodologies concerning futures thinking, try to follow as many workshops & lectures concerning my field that transcend borders & other fields of education.",
+          "themes": [
+            "published_information",
+            "dialogue_networks"
+          ],
+          "redacted": false,
+          "withheld": false
+        },
+        {
+          "id": "personal-sensing-voice-37",
+          "text": "I follow the news and try to find trends in it. I read newsletters, ranging from ELIA to Maria Popovan, Radical Candor, vernieuwenderwijs, bestuursacademie, Npuls etcetera. I listen to my children, friends, colleaugues and students. I garden and take long walks in nature to wonder. I know change is what happens all the time, nothing is constant, everything is moving, I move along and sometimes I move against the tide, on my own pace. I hope we lose the idea and thinking of lineair improvement and acknowledge the more natural cyclical way of being.",
+          "themes": [
+            "published_information",
+            "dialogue_networks",
+            "students_youth",
+            "embodied_reflective"
+          ],
+          "redacted": false,
+          "withheld": false
+        },
+        {
+          "id": "personal-sensing-voice-38",
+          "text": "I conduct the research about it, do my vest to spread the messages and tech further others, collavorate with all sectors and different audiences",
+          "themes": [
+            "published_information",
+            "dialogue_networks"
+          ],
+          "redacted": false,
+          "withheld": false
         }
       ]
     },
@@ -793,13 +880,19 @@
           "key": "dialogue_reflection",
           "label": "Recurring dialogue and collective reflection",
           "definition": "Meetings, forums, retreats, workshops, consultations, discussion or shared reflection.",
-          "count": 28
+          "count": 31
+        },
+        {
+          "key": "informal_reactive_gap",
+          "label": "Informal, reactive or absent routines",
+          "definition": "Practices are described as informal, limited, late, momentum-driven, difficult to address, absent or primarily reactive.",
+          "count": 18
         },
         {
           "key": "external_networks",
           "label": "External networks, partnerships and projects",
           "definition": "Professional associations, cross-institutional partners, research networks, grants or external stakeholders.",
-          "count": 13
+          "count": 14
         },
         {
           "key": "student_voice",
@@ -817,13 +910,7 @@
           "key": "formal_foresight",
           "label": "Formal foresight, strategy and quality processes",
           "definition": "Explicit future workshops, horizon scanning, observatories, multi-year projections, future strategy or structured governance/quality cycles.",
-          "count": 7
-        },
-        {
-          "key": "informal_reactive_gap",
-          "label": "Informal, reactive or absent routines",
-          "definition": "Practices are described as informal, limited, late, momentum-driven, difficult to address, absent or primarily reactive.",
-          "count": 15
+          "count": 8
         }
       ],
       "entries": [
@@ -1175,6 +1262,46 @@
           "text": "Focus group",
           "themes": [
             "dialogue_reflection"
+          ],
+          "redacted": false,
+          "withheld": false
+        },
+        {
+          "id": "institutional-practices-voice-35",
+          "text": "At the moment we do have quite good system for short term planning (e.g what happens next year). Also there is bigger strategic planning occurring every five years where the whole university community is involved. But personally I think there should be more \"dreaming\" about better future and not so much reacting to data or surveys etc when planning ahead.",
+          "themes": [
+            "dialogue_reflection",
+            "formal_foresight",
+            "informal_reactive_gap"
+          ],
+          "redacted": false,
+          "withheld": false
+        },
+        {
+          "id": "institutional-practices-voice-36",
+          "text": "Not many. We are a difficult institution as we span different fields and regions. For this reason, we do our best to connect people in their expertises and don't usually get beyond that.",
+          "themes": [
+            "dialogue_reflection",
+            "informal_reactive_gap"
+          ],
+          "redacted": false,
+          "withheld": false
+        },
+        {
+          "id": "institutional-practices-voice-37",
+          "text": "We do not know what's coming next, we are building a culture that is able to deal with this.",
+          "themes": [
+            "informal_reactive_gap"
+          ],
+          "redacted": false,
+          "withheld": false
+        },
+        {
+          "id": "institutional-practices-voice-38",
+          "text": "Creating and making more firm communities and networks of resistance",
+          "themes": [
+            "dialogue_reflection",
+            "external_networks"
           ],
           "redacted": false,
           "withheld": false
