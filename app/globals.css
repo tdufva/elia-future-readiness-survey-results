@@ -57,13 +57,15 @@ h1 { max-width: 900px; margin: 0; font-family: var(--serif); font-size: clamp(3.
 h2 { max-width: 940px; margin: 0; font-family: var(--serif); font-size: clamp(2.15rem, 3.7vw, 4.05rem); font-weight: 400; letter-spacing: -.045em; line-height: .99; }
 .section-intro { max-width: 780px; margin: 20px 0 0; color: var(--ink-soft); }
 .finding-grid { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); }
-.finding-card { display: flex; min-width: 0; padding: 36px 34px 30px; flex-direction: column; border-left: 1px solid var(--rule); }
+.finding-card { --finding-accent: var(--signal); display: flex; min-width: 0; padding: 36px 34px 30px; flex-direction: column; border-left: 1px solid var(--rule); }
 .finding-card:first-child { border-left: 0; }
-.finding-card--signal { background: rgb(0 253 203 / 16%); }
+.finding-card--mint { --finding-accent: var(--elia-mint); }
+.finding-card--pink { --finding-accent: var(--elia-pink); }
+.finding-card--blue { --finding-accent: var(--elia-blue); }
 .finding-number { color: var(--signal-dark); font-size: .74rem; font-weight: 800; letter-spacing: .12em; }
 .finding-card h3 { margin: 46px 0 18px; font-family: var(--serif); font-size: clamp(1.65rem, 2.2vw, 2.35rem); font-weight: 400; letter-spacing: -.025em; line-height: 1.08; }
 .finding-card p { margin: 0; color: var(--ink-soft); }
-.respondent-quote { margin: 28px 0 0; padding: 20px 0 0 20px; border-top: 1px solid var(--rule); border-left: 3px solid var(--signal); }
+.respondent-quote { margin: 28px 0 0; padding: 20px 0 0 20px; border-top: 1px solid var(--rule); border-left: 3px solid var(--finding-accent); }
 .respondent-quote p { color: var(--ink); font-family: var(--serif); font-size: 1.02rem; font-style: italic; line-height: 1.46; }
 .respondent-quote cite { display: block; margin-top: 12px; color: var(--ink-soft); font-size: .66rem; font-style: normal; font-weight: 750; letter-spacing: .09em; text-transform: uppercase; }
 .mini-stats { display: grid; gap: 8px; margin-top: auto; padding-top: 30px; }
@@ -343,7 +345,10 @@ h2 { letter-spacing: -.042em; line-height: .98; }
 
 .finding-grid { gap: 16px; border: 0; }
 .finding-card, .finding-card:first-child { border: 1px solid rgb(45 60 65 / 16%); }
-.finding-card--signal { background: rgb(0 253 203 / 18%); }
+.finding-card { box-shadow: inset 0 6px 0 var(--finding-accent); }
+.finding-card--mint { background: rgb(0 253 203 / 22%); }
+.finding-card--pink { background: rgb(219 9 98 / 10%); }
+.finding-card--blue { background: rgb(30 131 158 / 15%); }
 .finding-card h3, .voices-cta h3, .participation-role > article h3, .participation-block-head h3, .demographic-chart h3, .absence-note--compact h3, .method-grid h3, .sources h3, .feminism-grid h3, .profile-grid article h3, .raw-answer-grid h3 {
   font-weight: 850;
   font-variation-settings: "wght" 850;
@@ -418,7 +423,9 @@ h2 { letter-spacing: -.042em; line-height: .98; }
   .skip-link, .data-unlock button { color: #000; background: var(--elia-mint); }
   .data-unlock button:hover { color: #fff; background: var(--elia-pink); }
   .section--who { background: rgb(255 255 255 / 3%); box-shadow: 48px 0 0 rgb(255 255 255 / 3%), -48px 0 0 rgb(255 255 255 / 3%); }
-  .finding-card--signal { background: rgb(219 9 98 / 17%); }
+  .finding-card--mint { background: rgb(0 253 203 / 13%); }
+  .finding-card--pink { background: rgb(219 9 98 / 17%); }
+  .finding-card--blue { background: rgb(30 131 158 / 22%); }
   .interpretation-note { background: rgb(219 9 98 / 16%); }
   .interpretation-note--green { background: rgb(24 187 172 / 14%); }
   .interpretation-note--gold { background: rgb(30 131 158 / 18%); }

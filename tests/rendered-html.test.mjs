@@ -25,6 +25,12 @@ test("renders the complete public report", async () => {
   assert.match(html, /AI will influence creative practices/);
   assert.match(html, /read the news locally and internationally/);
   assert.match(html, /informal group with two fellow research students/);
+  assert.match(html, /finding-card finding-card--mint/);
+  assert.match(html, /finding-card finding-card--pink/);
+  assert.match(html, /finding-card finding-card--blue/);
+  assert.match(html, /Respondents rarely described future change as a single technology problem/);
+  assert.match(html, /combines published evidence with lived experience/);
+  assert.match(html, /does not automatically become a repeatable process that shapes decisions/);
   assert.match(html, /Quote from an anonymous survey respondent/);
   assert.match(html, /Countries represented in the substantive survey responses/);
   assert.match(html, /18 countries represented/);
@@ -95,6 +101,9 @@ test("uses ELIA's website palette and pronounced bundled rounded headings", asyn
   assert.match(styles, /body\s*\{[^}]*background:\s*var\(--paper\)/s);
   assert.match(styles, /h1, h2, h3,[^{]*\{[^}]*font-weight:\s*900;/s);
   assert.match(styles, /\.scope-card,\s*\.finding-card[^{]*\{[^}]*border-radius:\s*22px/s);
+  assert.match(styles, /\.finding-card--mint\s*\{[^}]*background:\s*rgb\(0 253 203 \/ 22%\)/s);
+  assert.match(styles, /\.finding-card--pink\s*\{[^}]*background:\s*rgb\(219 9 98 \/ 10%\)/s);
+  assert.match(styles, /\.finding-card--blue\s*\{[^}]*background:\s*rgb\(30 131 158 \/ 15%\)/s);
   assert.match(styles, /html\[data-text-size="large"\]\s*\{[^}]*font-size:\s*17px;/s);
   assert.match(styles, /@media \(prefers-color-scheme:\s*dark\)/);
 });
