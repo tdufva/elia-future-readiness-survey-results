@@ -5,11 +5,13 @@ import test from "node:test";
 
 const root = new URL("../", import.meta.url);
 const htmlUrl = new URL("../out/index.html", import.meta.url);
+const areasHtmlUrl = new URL("../out/areas/index.html", import.meta.url);
 const voicesHtmlUrl = new URL("../out/voices/index.html", import.meta.url);
 const allAnswersHtmlUrl = new URL("../out/all-answers/index.html", import.meta.url);
 const methodsHtmlUrl = new URL("../out/methods/index.html", import.meta.url);
 const respondentsHtmlUrl = new URL("../out/respondents/index.html", import.meta.url);
 const voicesDataUrl = new URL("../app/voices/voice-data.json", import.meta.url);
+const areasDataUrl = new URL("../app/areas/areas-data.json", import.meta.url);
 const voiceExplorerUrl = new URL("../app/voices/voice-explorer.tsx", import.meta.url);
 const encryptedDataUrl = new URL("../public/data/respondents.enc.json", import.meta.url);
 const accessConfigUrl = new URL("../public/access-config.json", import.meta.url);
@@ -73,24 +75,64 @@ test("renders a navigable and privacy-checked respondent voices page", async () 
   assert.doesNotMatch(html, /Newcastle|Lviv|Concordia|Unbroken University|Respondent ID|Collector ID|IP Address|Email Address/);
 });
 
-test("uses a three-page sticky main menu with All answers promoted", async () => {
-  const [overviewHtml, voicesHtml, allAnswersHtml, methodsHtml, respondentsHtml, styles] = await Promise.all([
+test("uses a four-page sticky main menu with AREAS and All answers promoted", async () => {
+  const [overviewHtml, areasHtml, voicesHtml, allAnswersHtml, methodsHtml, respondentsHtml, styles] = await Promise.all([
     readFile(htmlUrl, "utf8"),
+    readFile(areasHtmlUrl, "utf8"),
     readFile(voicesHtmlUrl, "utf8"),
     readFile(allAnswersHtmlUrl, "utf8"),
     readFile(methodsHtmlUrl, "utf8"),
     readFile(respondentsHtmlUrl, "utf8"),
     readFile(stylesUrl, "utf8"),
   ]);
-  for (const html of [overviewHtml, voicesHtml, allAnswersHtml, methodsHtml, respondentsHtml]) {
+  for (const html of [overviewHtml, areasHtml, voicesHtml, allAnswersHtml, methodsHtml, respondentsHtml]) {
     const mainNav = html.match(/<nav class="primary-nav"[^>]*>(.*?)<\/nav>/)?.[1] ?? "";
-    assert.equal((mainNav.match(/<a /g) ?? []).length, 3);
+    assert.equal((mainNav.match(/<a /g) ?? []).length, 4);
     assert.match(mainNav, />Overview<\/a>/);
+    assert.match(mainNav, />AREAS<\/a>/);
     assert.match(mainNav, />Respondent voices<\/a>/);
     assert.match(mainNav, />All answers<\/a>/);
   }
+  assert.match(areasHtml, /class="nav-current" aria-current="page" href="\/elia-future-readiness-survey-results\/areas\/"/);
   assert.match(allAnswersHtml, /class="nav-current" aria-current="page" href="\/elia-future-readiness-survey-results\/all-answers\/"/);
   assert.match(styles, /\.site-header\s*\{[^}]*position:\s*sticky;/s);
+});
+
+test("renders a transparent and verifiable AREAS analysis", async () => {
+  const [html, dataText] = await Promise.all([
+    readFile(areasHtmlUrl, "utf8"),
+    readFile(areasDataUrl, "utf8"),
+  ]);
+  const data = JSON.parse(dataText);
+  assert.match(html, /<title>AREAS analysis · ELIA Future Readiness Survey Results<\/title>/i);
+  assert.match(html, /Five positions in transformation/);
+  assert.match(html, /AI-assisted first coding pass/);
+  assert.match(html, /Exploiting.*neutral term/s);
+  assert.match(html, /https:\/\/www\.10fconsortium\.org\/areas/);
+  assert.match(html, /Quote from an anonymous survey respondent · excerpt/);
+  assert.match(html, /Read all answers from (?:<!-- -->)?Respondent 11/);
+  assert.match(html, /Verify the coding evidence/);
+  assert.match(html, /No second coder or respondent validation has yet been completed/);
+  assert.doesNotMatch(html, /Collector ID|IP Address|Email Address|Respondent ID/);
+
+  assert.equal(data.respondentCount, 38);
+  assert.equal(data.answerCount, 114);
+  assert.equal(data.codedRespondentCount, 30);
+  assert.equal(data.multiplePositionCount, 17);
+  assert.deepEqual(data.positions.map((position) => position.label), ["Architecting", "Resisting", "Exploiting", "Avoiding", "Shaped"]);
+  assert.deepEqual(data.positions.map((position) => position.count), [16, 5, 5, 3, 22]);
+  assert.deepEqual(data.positions.map((position) => position.percent), [42, 13, 13, 8, 58]);
+  for (const position of data.positions) {
+    assert.equal(position.evidence.length, position.count);
+    assert.equal(new Set(position.evidence.map((item) => item.respondentId)).size, position.count);
+    assert.ok(position.quotes.length >= 2);
+  }
+  const positionCountsByRespondent = new Map();
+  for (const position of data.positions) for (const item of position.evidence) {
+    positionCountsByRespondent.set(item.respondentId, (positionCountsByRespondent.get(item.respondentId) ?? 0) + 1);
+  }
+  assert.equal(positionCountsByRespondent.size, data.codedRespondentCount);
+  assert.equal([...positionCountsByRespondent.values()].filter((count) => count > 1).length, data.multiplePositionCount);
 });
 
 test("uses ELIA's website palette and pronounced bundled rounded headings", async () => {
@@ -126,10 +168,11 @@ test("keeps respondent profile links clickable and makes All answers information
 });
 
 test("renders separate methods, all-answers, and respondent pages", async () => {
-  const [methodsHtml, allAnswersHtml, respondentsHtml] = await Promise.all([
+  const [methodsHtml, allAnswersHtml, respondentsHtml, areasHtml] = await Promise.all([
     readFile(methodsHtmlUrl, "utf8"),
     readFile(allAnswersHtmlUrl, "utf8"),
     readFile(respondentsHtmlUrl, "utf8"),
+    readFile(areasHtmlUrl, "utf8"),
   ]);
   assert.match(methodsHtml, /The numbers do not speak for themselves/);
   assert.match(methodsHtml, /Data Feminism sources/);
@@ -140,6 +183,7 @@ test("renders separate methods, all-answers, and respondent pages", async () => 
   assert.match(allAnswersHtml, /114<\/strong><span>written answers/);
   assert.match(allAnswersHtml, /Handle with care/);
   assert.match(respondentsHtml, /Loading the respondent/);
+  assert.match(areasHtml, /How the AREAS reading was made/);
 });
 
 test("accounts for every substantive written answer without source identifiers", async () => {

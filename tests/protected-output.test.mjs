@@ -19,7 +19,7 @@ async function filesBelow(directory) {
 test("every exported page is password protected and page-data files are removed", async () => {
   const files = await filesBelow(outDir);
   const htmlFiles = files.filter((file) => file.endsWith(".html"));
-  assert.ok(htmlFiles.length >= 8);
+  assert.ok(htmlFiles.length >= 9);
   for (const file of htmlFiles) {
     const html = await readFile(file, "utf8");
     assert.match(html, /Enter the password to continue/);

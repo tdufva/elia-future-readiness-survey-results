@@ -1,0 +1,199 @@
+{
+  "respondentCount": 38,
+  "answerCount": 114,
+  "codedRespondentCount": 30,
+  "multiplePositionCount": 17,
+  "positions": [
+    {
+      "key": "architecting",
+      "label": "Architecting",
+      "count": 16,
+      "percent": 42,
+      "definition": "Actively designing or building the rules, infrastructure, programmes and governing mechanisms through which transformation is handled.",
+      "recognition": "Who is setting a direction, creating an institutional mechanism, redesigning a curriculum or convening decisions about what comes next?",
+      "analysis": [
+        "Architecting appears in 16 of the 38 accounts. Respondents described AI guidelines, curriculum redesign, future workshops, quality architecture, strategic planning, new committees, cross-institutional programmes and resilience projects. Most examples operate at a programme, unit or institution scale rather than at the level of national policy or global technology platforms.",
+        "This is meaningful agency, but it is often nested inside systems respondents do not control. Several of the same records are also coded as Shaped because local rule-making happens under funding pressure, platform decisions, war or wider policy change. The overlap shows that architecting and being shaped can happen at the same time."
+      ],
+      "quotes": [
+        {
+          "respondentId": "respondent-11",
+          "respondentLabel": "Respondent 11",
+          "question": "Institutional practice",
+          "text": "We are developing a quality architecture that combines continuous monitoring, quality dialogues and periodic programme reviews with dedicated future-oriented activities."
+        },
+        {
+          "respondentId": "respondent-22",
+          "respondentLabel": "Respondent 22",
+          "question": "Institutional practice",
+          "text": "Our institution has recently used an extensive futures-oriented strategy process to explore possible futures relevant to the university."
+        }
+      ],
+      "evidence": [
+        { "respondentId": "respondent-07", "respondentLabel": "Respondent 07", "question": "Institutional practice", "excerpt": "All faculties have or are about to develop guidelines for use of AI." },
+        { "respondentId": "respondent-08", "respondentLabel": "Respondent 08", "question": "Institutional practice", "excerpt": "We have our futur geneartion in doors and have 6 tracks with diverse programmes to teach them." },
+        { "respondentId": "respondent-09", "respondentLabel": "Respondent 09", "question": "Institutional practice", "excerpt": "Workshops with Future-thinking items, Taking to students about their needs." },
+        { "respondentId": "respondent-11", "respondentLabel": "Respondent 11", "question": "Institutional practice", "excerpt": "We are developing a quality architecture that combines continuous monitoring, quality dialogues and periodic programme reviews." },
+        { "respondentId": "respondent-13", "respondentLabel": "Respondent 13", "question": "Institutional practice", "excerpt": "We ask our head of study programms to project themselves 5 years ahead." },
+        { "respondentId": "respondent-15", "respondentLabel": "Respondent 15", "question": "Institutional practice", "excerpt": "planning conference of team before each semester, identifying overall topic and developing seminars, studio projects and exhibitions/publications" },
+        { "respondentId": "respondent-19", "respondentLabel": "Respondent 19", "question": "Future concerns", "excerpt": "From Crisis Experience to Future Preparedness: Building Action Archives for Urban Resilience in Times of Prolonged Crisis" },
+        { "respondentId": "respondent-20", "respondentLabel": "Respondent 20", "question": "Institutional practice", "excerpt": "co-creational processes are offered to shape the future of the institution together" },
+        { "respondentId": "respondent-22", "respondentLabel": "Respondent 22", "question": "Institutional practice", "excerpt": "an extensive futures-oriented strategy process to explore possible futures relevant to the university" },
+        { "respondentId": "respondent-23", "respondentLabel": "Respondent 23", "question": "Institutional practice", "excerpt": "We organize the annual international scientific conference Current Issues in Modern Design" },
+        { "respondentId": "respondent-27", "respondentLabel": "Respondent 27", "question": "Institutional practice", "excerpt": "the Future Art School Committee ... discussed and proposed curriculum changes" },
+        { "respondentId": "respondent-28", "respondentLabel": "Respondent 28", "question": "Institutional practice", "excerpt": "to be able to deliver educational program ... based on the balance - it requires testing" },
+        { "respondentId": "respondent-31", "respondentLabel": "Respondent 31", "question": "Institutional practice", "excerpt": "another practice is the introduction of an anthropology lecture" },
+        { "respondentId": "respondent-35", "respondentLabel": "Respondent 35", "question": "Institutional practice", "excerpt": "bigger strategic planning occurring every five years where the whole university community is involved" },
+        { "respondentId": "respondent-37", "respondentLabel": "Respondent 37", "question": "Institutional practice", "excerpt": "we are building a culture that is able to deal with this" },
+        { "respondentId": "respondent-38", "respondentLabel": "Respondent 38", "question": "Institutional practice", "excerpt": "Creating and making more firm communities and networks of resistance" }
+      ]
+    },
+    {
+      "key": "resisting",
+      "label": "Resisting",
+      "count": 5,
+      "percent": 13,
+      "definition": "Working to prevent, slow or reverse a transformation that threatens existing interests, practices or values.",
+      "recognition": "Who is organising opposition, defending a valued practice or trying to influence decisions against a perceived threat?",
+      "analysis": [
+        "Explicit resistance appears in five accounts. It includes fighting digital replacement, building internal advocacy coalitions, refusing generative AI, protecting continuity from technology hype and forming networks of resistance. These are mainly personal, peer-led or coalition-based practices rather than institution-wide campaigns.",
+        "Many more respondents voiced worry about AI, polarisation, funding or the erosion of human values, but concern alone was not coded as Resisting. The relatively small count therefore means that organised or deliberate opposition was less often described in these three questions—not that disagreement or defence of values is absent."
+      ],
+      "quotes": [
+        {
+          "respondentId": "respondent-06",
+          "respondentLabel": "Respondent 06",
+          "question": "Institutional practice",
+          "text": "In small circles of collegues from different departments, we discuss scenarios and from our positions try to influence formal decisions - it could be named internal advocacy and coalitions building."
+        },
+        {
+          "respondentId": "respondent-38",
+          "respondentLabel": "Respondent 38",
+          "question": "Institutional practice",
+          "text": "Creating and making more firm communities and networks of resistance"
+        }
+      ],
+      "evidence": [
+        { "respondentId": "respondent-01", "respondentLabel": "Respondent 01", "question": "Future concerns", "excerpt": "My interests is a mix of fighting and documenting this reality." },
+        { "respondentId": "respondent-06", "respondentLabel": "Respondent 06", "question": "Institutional practice", "excerpt": "internal advocacy and coalitions building" },
+        { "respondentId": "respondent-16", "respondentLabel": "Respondent 16", "question": "Future concerns", "excerpt": "a lot of Artists and Game developers refused it ... and I am one of those people" },
+        { "respondentId": "respondent-29", "respondentLabel": "Respondent 29", "question": "Institutional practice", "excerpt": "one track for tradition and continuity and not overstate things like AI" },
+        { "respondentId": "respondent-38", "respondentLabel": "Respondent 38", "question": "Institutional practice", "excerpt": "Creating and making more firm communities and networks of resistance" }
+      ]
+    },
+    {
+      "key": "exploiting",
+      "label": "Exploiting",
+      "count": 5,
+      "percent": 13,
+      "definition": "Using opportunities, gaps or contradictions created by transformation to build value, gain position or connect systems that do not otherwise meet.",
+      "recognition": "Who is turning uncertainty into an opening, brokering between groups, finding new partners or creating a service that becomes useful during the shift?",
+      "analysis": [
+        "Five accounts show Exploiting in the framework’s non-moral sense. Respondents described using uncertainty as a resource, learning across networks, navigating an AI teaching market, seeking new commercial partners and building direct-support alternatives around independent creative work.",
+        "Profit is not required for this code: strategic value can also come from translation, brokerage or seeing a newly useful role. Even so, this position is less visible than Architecting or Shaped. The survey asked about concerns, sensing and institutional routines—not explicitly about advantage, business models or strategic positioning—so opportunity-seeking may be under-described."
+      ],
+      "quotes": [
+        {
+          "respondentId": "respondent-02",
+          "respondentLabel": "Respondent 02",
+          "question": "Future concerns",
+          "text": "how we can use uncertainty as a resource rather than seeing it as an obstacle."
+        },
+        {
+          "respondentId": "respondent-16",
+          "respondentLabel": "Respondent 16",
+          "question": "Future concerns",
+          "text": "as a reaction artists started to collaborate and indie studios are getting more popular artists have a scene for their own work and people can support them directly without the need for big budgets."
+        }
+      ],
+      "evidence": [
+        { "respondentId": "respondent-02", "respondentLabel": "Respondent 02", "question": "Future concerns", "excerpt": "use uncertainty as a resource rather than seeing it as an obstacle" },
+        { "respondentId": "respondent-08", "respondentLabel": "Respondent 08", "question": "Institutional practice", "excerpt": "connect with peers abroad and having the future generation indoors" },
+        { "respondentId": "respondent-12", "respondentLabel": "Respondent 12", "question": "Institutional practice", "excerpt": "institution: navigating the education market, currently in the AI teaching race" },
+        { "respondentId": "respondent-16", "respondentLabel": "Respondent 16", "question": "Future concerns", "excerpt": "indie studios are getting more popular ... people can support them directly without the need for big budgets" },
+        { "respondentId": "respondent-17", "respondentLabel": "Respondent 17", "question": "Personal sensing", "excerpt": "try to find new vendors/ commercial partners" }
+      ]
+    },
+    {
+      "key": "avoiding",
+      "label": "Avoiding",
+      "count": 3,
+      "percent": 8,
+      "definition": "Trying to stay outside a transformation’s direct effects by creating distance, insulation or a protected parallel practice.",
+      "recognition": "Who is limiting exposure, stepping away from a system or preserving a separate space where older or alternative practices can continue?",
+      "analysis": [
+        "Avoiding is the least visible position, appearing explicitly in three accounts. The examples involve limiting technology exposure, declining to use AI and protecting a line of tradition and continuity from what one respondent called hype.",
+        "These are mostly individual or practice-level boundaries, not evidence of institutions building large protective walls. A low count should be read cautiously: the questions did not ask directly about withdrawal, neutrality or insulation, and silence about avoidance is not proof that it does not occur."
+      ],
+      "quotes": [
+        {
+          "respondentId": "respondent-16",
+          "respondentLabel": "Respondent 16",
+          "question": "Institutional practice",
+          "text": "I am leaning towards the not using it at all as I noticed that my critical thinking skills were decreasing the more I relied on such tools."
+        },
+        {
+          "respondentId": "respondent-29",
+          "respondentLabel": "Respondent 29",
+          "question": "Institutional practice",
+          "text": "In my opinion you should have one track for tradition and continuity and not overstate things like AI. It is a clever strategy to stay avaw from all kind of hype."
+        }
+      ],
+      "evidence": [
+        { "respondentId": "respondent-01", "respondentLabel": "Respondent 01", "question": "Personal sensing", "excerpt": "trying not to be devoured by technologies" },
+        { "respondentId": "respondent-16", "respondentLabel": "Respondent 16", "question": "Institutional practice", "excerpt": "I am leaning towards the not using it at all" },
+        { "respondentId": "respondent-29", "respondentLabel": "Respondent 29", "question": "Institutional practice", "excerpt": "It is a clever strategy to stay avaw from all kind of hype." }
+      ]
+    },
+    {
+      "key": "shaped",
+      "label": "Shaped",
+      "count": 22,
+      "percent": 58,
+      "definition": "Experiencing transformation without enough immediate power to determine its direction, while adapting or building resilience within conditions set elsewhere.",
+      "recognition": "Who is responding to changes they did not choose, adapting because the alternatives narrowed or navigating conditions set by more powerful actors?",
+      "analysis": [
+        "Shaped is the most visible position, appearing in 22 accounts. Respondents described AI embedded by vendors or institutions, funding cuts and employment metrics, war and safety, climate and political pressure, and routines that react to momentum without protected space to set direction.",
+        "Being Shaped does not mean being passive. Many of these respondents also improvise, collaborate, resist or architect local responses. The central tension in the survey is therefore layered agency: arts communities can reshape curricula, practices and relationships while still navigating platforms, policies, markets and crises whose rules are largely written elsewhere."
+      ],
+      "quotes": [
+        {
+          "respondentId": "respondent-07",
+          "respondentLabel": "Respondent 07",
+          "question": "Personal sensing",
+          "text": "Many changes are implemented without choice: My university (and many other universities) has incorporated Co-Pilot in our Microsoft package and AI is used for many purposes that affect my daily life."
+        },
+        {
+          "respondentId": "respondent-32",
+          "respondentLabel": "Respondent 32",
+          "question": "Institutional practice",
+          "text": "Institutions are struggling to survive and so take a wholistic approach which can impact on areas that are not seem as producing outcomes that enhance metrics"
+        }
+      ],
+      "evidence": [
+        { "respondentId": "respondent-01", "respondentLabel": "Respondent 01", "question": "Institutional practice", "excerpt": "There is no nook where AI isn't considered absolutely vital." },
+        { "respondentId": "respondent-06", "respondentLabel": "Respondent 06", "question": "Institutional practice", "excerpt": "Infromal practices are dominant, instituion is very traditional." },
+        { "respondentId": "respondent-07", "respondentLabel": "Respondent 07", "question": "Personal sensing", "excerpt": "Many changes are implemented without choice" },
+        { "respondentId": "respondent-11", "respondentLabel": "Respondent 11", "question": "Future concerns", "excerpt": "facing increasing pressure to justify their existence and secure their funding" },
+        { "respondentId": "respondent-12", "respondentLabel": "Respondent 12", "question": "Institutional practice", "excerpt": "navigating the education market, currently in the AI teaching race" },
+        { "respondentId": "respondent-14", "respondentLabel": "Respondent 14", "question": "Future concerns", "excerpt": "how to adapt to major societal shifts, the evolving needs of younger generations, emerging technologies, and new teaching methodologies" },
+        { "respondentId": "respondent-16", "respondentLabel": "Respondent 16", "question": "Institutional practice", "excerpt": "they try to adapt new technologies in a responsible way even though untill now I haven’t seen been excuted successfully" },
+        { "respondentId": "respondent-19", "respondentLabel": "Respondent 19", "question": "Institutional practice", "excerpt": "a huge shift that speaks volumes about how fast actions and reactions need to happen in war time" },
+        { "respondentId": "respondent-20", "respondentLabel": "Respondent 20", "question": "Personal sensing", "excerpt": "sensing pressure and stress ... wars, environmental catastrophe(s), economic uncertainty and pressure" },
+        { "respondentId": "respondent-21", "respondentLabel": "Respondent 21", "question": "Institutional practice", "excerpt": "No habitual routine ... but I have an informal group with two fellow research students" },
+        { "respondentId": "respondent-22", "respondentLabel": "Respondent 22", "question": "Future concerns", "excerpt": "amid competing policy priorities and fiscal pressures" },
+        { "respondentId": "respondent-23", "respondentLabel": "Respondent 23", "question": "Future concerns", "excerpt": "In the context of the ongoing war in Ukraine, my primary concern is safety" },
+        { "respondentId": "respondent-24", "respondentLabel": "Respondent 24", "question": "Future concerns", "excerpt": "rising conservativsm and nationalism ... rising Social gaps and inequality" },
+        { "respondentId": "respondent-25", "respondentLabel": "Respondent 25", "question": "Institutional practice", "excerpt": "None that I'm aware of" },
+        { "respondentId": "respondent-26", "respondentLabel": "Respondent 26", "question": "Institutional practice", "excerpt": "the momentum of ongoing activities drives the direction forward" },
+        { "respondentId": "respondent-27", "respondentLabel": "Respondent 27", "question": "Future concerns", "excerpt": "funding cuts and cutting of positions, among and other threats" },
+        { "respondentId": "respondent-28", "respondentLabel": "Respondent 28", "question": "Institutional practice", "excerpt": "we are slowly preparing and having a discussion ... a bit late" },
+        { "respondentId": "respondent-29", "respondentLabel": "Respondent 29", "question": "Institutional practice", "excerpt": "technological plattforms and powerstructures is a steady concern hard to adress" },
+        { "respondentId": "respondent-31", "respondentLabel": "Respondent 31", "question": "Future concerns", "excerpt": "the rise of fascism frightening ... ways in which i can shape my life and my art so it keeps me focused and present" },
+        { "respondentId": "respondent-32", "respondentLabel": "Respondent 32", "question": "Institutional practice", "excerpt": "Institutions are struggling to survive" },
+        { "respondentId": "respondent-35", "respondentLabel": "Respondent 35", "question": "Future concerns", "excerpt": "go from reacting to changes in climate, political environment etc to proactive approach" },
+        { "respondentId": "respondent-36", "respondentLabel": "Respondent 36", "question": "Institutional practice", "excerpt": "Not many. We are a difficult institution as we span different fields and regions." }
+      ]
+    }
+  ]
+}
