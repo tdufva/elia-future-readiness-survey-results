@@ -106,6 +106,10 @@ test("renders a transparent and verifiable AREAS analysis", async () => {
   const data = JSON.parse(dataText);
   assert.match(html, /<title>AREAS analysis · ELIA Future Readiness Survey Results<\/title>/i);
   assert.match(html, /Five positions in transformation/);
+  assert.match(html, /What is AREAS\?/);
+  assert.match(html, /A framework for seeing position and power in transformation/);
+  assert.match(html, /strategic foresight framework developed by the 10F Consortium/);
+  assert.match(html, /Explore the AREAS framework at 10F Consortium/);
   assert.match(html, /AI-assisted first coding pass/);
   assert.match(html, /Exploiting.*neutral term/s);
   assert.match(html, /https:\/\/www\.10fconsortium\.org\/areas/);
