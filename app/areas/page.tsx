@@ -28,6 +28,66 @@ function TraceLinks({ ids, label = "Evidence" }: { ids: string[]; label?: string
   return <p className="areas-trace"><strong>{label}:</strong>{ids.map((id, index) => <span key={id}>{index > 0 && ", "}<a href={respondentLink(id)}>{respondentLabel(id)}</a></span>)}</p>;
 }
 
+function AreasPositionMap() {
+  return <figure className="areas-map-card">
+    <figcaption><p className="eyebrow">Map 01 · Position landscape</p><h3>Where the five positions sit</h3><p>Vertical placement follows the framework’s account of agency. Horizontal placement shows whether action pushes against, steps away from, navigates or helps produce the transformation. Circle area approximates the number of coded respondents.</p></figcaption>
+    <div className="areas-map-scroll"><svg className="areas-map" viewBox="0 0 900 610" role="img" aria-labelledby="position-map-title position-map-desc">
+      <title id="position-map-title">AREAS position landscape for the survey</title>
+      <desc id="position-map-desc">Conceptual map with Architecting at high agency, Exploiting and Resisting at moderate agency, Avoiding at variable agency and Shaped at minimal agency. Circle size represents respondent counts.</desc>
+      <defs><marker id="areas-axis-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" /></marker></defs>
+      <rect className="areas-map-field" x="86" y="52" width="752" height="476" rx="24" />
+      <g className="areas-map-grid" aria-hidden="true"><line x1="86" y1="170" x2="838" y2="170" /><line x1="86" y1="290" x2="838" y2="290" /><line x1="86" y1="410" x2="838" y2="410" /><line x1="274" y1="52" x2="274" y2="528" /><line x1="462" y1="52" x2="462" y2="528" /><line x1="650" y1="52" x2="650" y2="528" /></g>
+      <g className="areas-map-axes" aria-hidden="true"><line x1="66" y1="518" x2="66" y2="66" markerEnd="url(#areas-axis-arrow)" /><line x1="100" y1="554" x2="824" y2="554" markerEnd="url(#areas-axis-arrow)" /><text x="42" y="92" transform="rotate(-90 42 92)">MORE AGENCY</text><text x="42" y="514" transform="rotate(-90 42 514)">LESS AGENCY</text><text x="100" y="584">OPPOSE / STEP AWAY</text><text x="824" y="584" textAnchor="end">BUILD / USE</text></g>
+      <a href="#architecting" aria-label="Architecting: 16 respondents, maximum agency"><g className="areas-map-node areas-map-node--architecting"><circle cx="690" cy="142" r="67" /><text x="690" y="134" textAnchor="middle">Architecting</text><text className="areas-map-count" x="690" y="166" textAnchor="middle">16</text></g></a>
+      <a href="#resisting" aria-label="Resisting: 5 respondents, moderate agency"><g className="areas-map-node areas-map-node--resisting"><circle cx="235" cy="278" r="46" /><text x="235" y="272" textAnchor="middle">Resisting</text><text className="areas-map-count" x="235" y="298" textAnchor="middle">5</text></g></a>
+      <a href="#exploiting" aria-label="Exploiting: 5 respondents, moderate-high agency"><g className="areas-map-node areas-map-node--exploiting"><circle cx="675" cy="305" r="46" /><text x="675" y="299" textAnchor="middle">Exploiting</text><text className="areas-map-count" x="675" y="325" textAnchor="middle">5</text></g></a>
+      <a href="#avoiding" aria-label="Avoiding: 3 respondents, variable agency"><g className="areas-map-node areas-map-node--avoiding"><ellipse cx="275" cy="420" rx="42" ry="32" /><text x="275" y="414" textAnchor="middle">Avoiding</text><text className="areas-map-count" x="275" y="440" textAnchor="middle">3</text></g></a>
+      <a href="#shaped" aria-label="Shaped: 22 respondents, minimal agency"><g className="areas-map-node areas-map-node--shaped"><circle cx="520" cy="454" r="76" /><text x="520" y="445" textAnchor="middle">Shaped</text><text className="areas-map-count" x="520" y="480" textAnchor="middle">22</text></g></a>
+      <text className="areas-map-note" x="275" y="474" textAnchor="middle">variable agency</text>
+    </svg></div>
+    <p className="areas-map-caveat"><strong>How to read:</strong> Placement is conceptual, based on the AREAS definitions—not a measured score. Select a circle to inspect that position’s respondent evidence.</p>
+  </figure>;
+}
+
+function AreasOverlapMap() {
+  return <figure className="areas-map-card">
+    <figcaption><p className="eyebrow">Map 02 · Position overlaps</p><h3>How the positions coexist</h3><p>Every line represents respondents coded in both connected positions. Wider lines mean more shared respondents; the number on each line gives the exact overlap.</p></figcaption>
+    <div className="areas-map-scroll"><svg className="areas-map areas-overlap-map" viewBox="0 0 900 610" role="img" aria-labelledby="overlap-map-title overlap-map-desc">
+      <title id="overlap-map-title">Network map of overlaps between the five AREAS positions</title>
+      <desc id="overlap-map-desc">The strongest overlap is Architecting and Shaped with 10 respondents. All other non-zero pairwise overlaps range from one to four respondents. Architecting and Avoiding have no overlap.</desc>
+      <rect className="areas-map-field" x="38" y="38" width="824" height="530" rx="24" />
+      <g className="areas-map-links" aria-hidden="true">
+        <path className="areas-link areas-link--1" d="M392 134 C305 150 230 184 191 218" />
+        <path className="areas-link areas-link--1" d="M508 134 C598 150 669 184 709 218" />
+        <path className="areas-link areas-link--10" d="M465 172 C482 290 535 375 575 414" />
+        <path className="areas-link areas-link--1" d="M207 250 C355 205 548 205 693 250" />
+        <path className="areas-link areas-link--3" d="M181 291 C197 358 222 420 240 452" />
+        <path className="areas-link areas-link--4" d="M198 281 C331 344 459 406 535 452" />
+        <path className="areas-link areas-link--1" d="M700 275 C565 334 411 420 290 477" />
+        <path className="areas-link areas-link--2" d="M706 286 C675 353 645 392 628 410" />
+        <path className="areas-link areas-link--3" d="M291 492 C399 519 494 511 530 495" />
+      </g>
+      <g className="areas-map-link-labels" aria-hidden="true">
+        <g transform="translate(286 167)"><circle r="16" /><text y="5" textAnchor="middle">1</text></g>
+        <g transform="translate(614 167)"><circle r="16" /><text y="5" textAnchor="middle">1</text></g>
+        <g transform="translate(516 301)"><circle r="19" /><text y="6" textAnchor="middle">10</text></g>
+        <g transform="translate(450 214)"><circle r="16" /><text y="5" textAnchor="middle">1</text></g>
+        <g transform="translate(207 378)"><circle r="16" /><text y="5" textAnchor="middle">3</text></g>
+        <g transform="translate(363 375)"><circle r="16" /><text y="5" textAnchor="middle">4</text></g>
+        <g transform="translate(493 386)"><circle r="16" /><text y="5" textAnchor="middle">1</text></g>
+        <g transform="translate(674 359)"><circle r="16" /><text y="5" textAnchor="middle">2</text></g>
+        <g transform="translate(414 516)"><circle r="16" /><text y="5" textAnchor="middle">3</text></g>
+      </g>
+      <a href="#architecting" aria-label="Architecting, 16 respondents"><g className="areas-map-node areas-map-node--architecting"><circle cx="450" cy="110" r="72" /><text x="450" y="102" textAnchor="middle">Architecting</text><text className="areas-map-count" x="450" y="136" textAnchor="middle">16</text></g></a>
+      <a href="#resisting" aria-label="Resisting, 5 respondents"><g className="areas-map-node areas-map-node--resisting"><circle cx="160" cy="250" r="48" /><text x="160" y="244" textAnchor="middle">Resisting</text><text className="areas-map-count" x="160" y="270" textAnchor="middle">5</text></g></a>
+      <a href="#exploiting" aria-label="Exploiting, 5 respondents"><g className="areas-map-node areas-map-node--exploiting"><circle cx="740" cy="250" r="48" /><text x="740" y="244" textAnchor="middle">Exploiting</text><text className="areas-map-count" x="740" y="270" textAnchor="middle">5</text></g></a>
+      <a href="#avoiding" aria-label="Avoiding, 3 respondents"><g className="areas-map-node areas-map-node--avoiding"><circle cx="250" cy="490" r="38" /><text x="250" y="484" textAnchor="middle">Avoiding</text><text className="areas-map-count" x="250" y="510" textAnchor="middle">3</text></g></a>
+      <a href="#shaped" aria-label="Shaped, 22 respondents"><g className="areas-map-node areas-map-node--shaped"><circle cx="610" cy="480" r="82" /><text x="610" y="471" textAnchor="middle">Shaped</text><text className="areas-map-count" x="610" y="506" textAnchor="middle">22</text></g></a>
+    </svg></div>
+    <p className="areas-map-caveat"><strong>Missing line:</strong> Architecting + Avoiding has no shared respondents. The network shows all nine non-zero pairwise overlaps, not only the strongest ones.</p>
+  </figure>;
+}
+
 export default function AreasPage() {
   return <>
     <a className="skip-link" href="#areas-content">Skip to AREAS analysis</a>
@@ -70,6 +130,7 @@ export default function AreasPage() {
           </a>)}
         </div>
         <aside className="areas-overlap-note"><strong>{areasData.multiplePositionCount} respondents</strong><span>had evidence for two or more positions. Eight records did not meet the evidence threshold; that means the answers were not specific enough for this lens, not that those respondents lack agency.</span></aside>
+        <div className="areas-visual-map-grid"><AreasPositionMap /><AreasOverlapMap /></div>
       </section>
 
       <section className="areas-strategic" aria-label="Strategic analysis of the present map">
@@ -101,7 +162,7 @@ export default function AreasPage() {
               <article><h3>AI boundary-setters + curriculum and rule builders</h3><p>Refusal and selective distance are usually framed separately from governance. Here they concern the same system. Boundary-setters identify harms and limits; local architects decide how AI enters teaching and institutional practice.</p><TraceLinks ids={["respondent-16", "respondent-29", "respondent-07", "respondent-27"]} /></article>
               <article><h3>Opportunity brokers + institutional rule-setters</h3><p>This connection is mostly missing. Respondents 12 and 17 see market or partnership openings, while the Architecting group focuses on internal mechanisms. Respondent 08 is the only observed overlap. A coalition cannot be claimed from that evidence; the absence itself is the finding.</p><TraceLinks ids={["respondent-08", "respondent-12", "respondent-17"]} /></article>
             </div>
-            <aside className="areas-overlap-table" aria-label="Observed overlaps between AREAS positions"><p className="eyebrow">Observed overlaps</p><h3>Where positions meet</h3><dl><div><dt>Architecting + Shaped</dt><dd>10</dd></div><div><dt>Resisting + Shaped</dt><dd>4</dd></div><div><dt>Resisting + Avoiding</dt><dd>3</dd></div><div><dt>Avoiding + Shaped</dt><dd>3</dd></div><div><dt>Exploiting + Shaped</dt><dd>2</dd></div><div><dt>Architecting + Exploiting</dt><dd>1</dd></div><div><dt>Architecting + Avoiding</dt><dd>0</dd></div></dl><p>Counts refer to respondent records coded in both positions.</p></aside>
+            <aside className="areas-overlap-table" aria-label="Observed overlaps between AREAS positions"><p className="eyebrow">Observed overlaps</p><h3>Where positions meet</h3><dl><div><dt>Architecting + Shaped</dt><dd>10</dd></div><div><dt>Resisting + Shaped</dt><dd>4</dd></div><div><dt>Resisting + Avoiding</dt><dd>3</dd></div><div><dt>Avoiding + Shaped</dt><dd>3</dd></div><div><dt>Exploiting + Shaped</dt><dd>2</dd></div><div><dt>Architecting + Resisting</dt><dd>1</dd></div><div><dt>Architecting + Exploiting</dt><dd>1</dd></div><div><dt>Resisting + Exploiting</dt><dd>1</dd></div><div><dt>Exploiting + Avoiding</dt><dd>1</dd></div><div><dt>Architecting + Avoiding</dt><dd>0</dd></div></dl><p>All ten pairwise combinations are shown. Counts refer to respondent records coded in both positions.</p></aside>
           </div>
         </section>
       </section>

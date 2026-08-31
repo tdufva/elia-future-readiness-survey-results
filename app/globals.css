@@ -346,6 +346,41 @@ summary { padding: 16px 0; cursor: pointer; font-size: .76rem; font-weight: 800;
 .areas-overlap-note { display: grid; margin-top: 28px; padding: 24px 26px; grid-template-columns: 220px 1fr; gap: 24px; color: var(--paper-light); background: var(--elia-slate); border-radius: 18px; }
 .areas-overlap-note strong { color: var(--elia-mint); font-family: var(--serif); font-size: 1.4rem; }
 .areas-overlap-note span { color: var(--on-dark-soft); }
+.areas-visual-map-grid { display: grid; margin-top: 56px; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.areas-map-card { min-width: 0; margin: 0; padding: 28px; color: var(--paper-light); background: var(--elia-slate); border-radius: 20px; }
+.areas-map-card figcaption { min-height: 164px; }
+.areas-map-card figcaption .eyebrow { color: var(--elia-mint); }
+.areas-map-card figcaption h3 { margin: 0 0 12px; color: var(--paper-light); font-size: 1.65rem; }
+.areas-map-card figcaption > p:last-child { max-width: 610px; margin: 0; color: var(--on-dark-soft); font-size: .84rem; }
+.areas-map-scroll { overflow-x: auto; scrollbar-color: var(--elia-mint) rgb(255 255 255 / 10%); }
+.areas-map { display: block; width: 100%; height: auto; margin-top: 18px; font-family: var(--sans); }
+.areas-map-field { fill: rgb(0 0 0 / 16%); stroke: rgb(255 255 255 / 14%); stroke-width: 2; }
+.areas-map-grid line { stroke: rgb(255 255 255 / 10%); stroke-width: 1; }
+.areas-map-axes { color: var(--elia-mint); }
+.areas-map-axes line { stroke: currentcolor; stroke-width: 2; }
+.areas-map-axes path { fill: currentcolor; }
+.areas-map-axes text, .areas-map-note { fill: var(--on-dark-soft); font-size: 16px; font-weight: 750; letter-spacing: .09em; }
+.areas-map-node { cursor: pointer; }
+.areas-map-node circle, .areas-map-node ellipse { stroke: rgb(255 255 255 / 70%); stroke-width: 3; transition: stroke-width .16s ease, filter .16s ease; }
+.areas-map a:hover .areas-map-node circle, .areas-map a:hover .areas-map-node ellipse, .areas-map a:focus .areas-map-node circle, .areas-map a:focus .areas-map-node ellipse { stroke: #fff; stroke-width: 7; filter: drop-shadow(0 8px 15px rgb(0 0 0 / 28%)); }
+.areas-map-node text { fill: #000; font-family: var(--serif); font-size: 20px; font-weight: 900; pointer-events: none; }
+.areas-map-node .areas-map-count { font-size: 27px; }
+.areas-map-node--architecting circle { fill: var(--elia-mint); }
+.areas-map-node--resisting circle { fill: var(--elia-pink); }
+.areas-map-node--resisting text, .areas-map-node--shaped text { fill: #fff; }
+.areas-map-node--exploiting circle { fill: var(--elia-turquoise); }
+.areas-map-node--avoiding circle, .areas-map-node--avoiding ellipse { fill: var(--elia-gray); }
+.areas-map-node--shaped circle { fill: var(--elia-blue); }
+.areas-map-links { fill: none; stroke: var(--elia-mint); stroke-linecap: round; opacity: .62; }
+.areas-link--1 { stroke-width: 3; }
+.areas-link--2 { stroke-width: 6; }
+.areas-link--3 { stroke-width: 9; }
+.areas-link--4 { stroke-width: 12; }
+.areas-link--10 { stroke-width: 24; opacity: .42; }
+.areas-map-link-labels circle { fill: var(--paper-light); stroke: var(--elia-slate); stroke-width: 2; }
+.areas-map-link-labels text { fill: #000; font-size: 14px; font-weight: 900; }
+.areas-map-caveat { margin: 8px 0 0; padding-top: 18px; color: var(--on-dark-soft); border-top: 1px solid rgb(255 255 255 / 15%); font-size: .72rem; }
+.areas-map-caveat strong { color: var(--elia-mint); }
 
 .areas-strategic { background: rgb(255 255 255 / 38%); border-top: 1px solid rgb(45 60 65 / 18%); border-bottom: 1px solid rgb(45 60 65 / 18%); }
 .areas-analysis-section { width: min(var(--content), calc(100% - 72px)); margin: 0 auto; padding: 104px 0; scroll-margin-top: 94px; }
@@ -614,6 +649,8 @@ h2 { letter-spacing: -.042em; line-height: .98; }
   .areas-hero { grid-template-columns: 1fr; gap: 44px; } .areas-scope { max-width: 660px; }
   .areas-framework-intro { grid-template-columns: 1fr; gap: 24px; }
   .areas-transformation-grid { grid-template-columns: 1fr; }
+  .areas-visual-map-grid { grid-template-columns: 1fr; }
+  .areas-map-card figcaption { min-height: 0; }
   .areas-analysis-head { grid-template-columns: 1fr; gap: 24px; }
   .areas-coalition-layout { grid-template-columns: 1fr; }
   .areas-blind-grid { grid-template-columns: repeat(2, 1fr); }
@@ -658,6 +695,7 @@ h2 { letter-spacing: -.042em; line-height: .98; }
   .areas-hero, .areas-position-list { width: min(100% - 28px, 680px); } .areas-hero { padding: 52px 0 58px; }
   .areas-framework-intro { width: min(100% - 28px, 680px); padding: 52px 0 0; }
   .areas-reading-note { padding: 24px 14px; }
+  .areas-visual-map-grid { margin-top: 42px; } .areas-map-card { padding: 22px; } .areas-map { min-width: 620px; }
   .areas-analysis-section { width: min(100% - 28px, 680px); padding: 76px 0; }
   .areas-insight-grid { grid-template-columns: 1fr; } .areas-insight-grid article { min-height: 0; padding: 24px; }
   .areas-coalition-list article, .areas-overlap-table { padding: 24px; }

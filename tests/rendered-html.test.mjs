@@ -75,7 +75,7 @@ test("renders a navigable and privacy-checked respondent voices page", async () 
   assert.doesNotMatch(html, /Newcastle|Lviv|Concordia|Unbroken University|Respondent ID|Collector ID|IP Address|Email Address/);
 });
 
-test("uses a four-page sticky main menu with AREAS and All answers promoted", async () => {
+test("uses a four-page sticky main menu with AREAS last", async () => {
   const [overviewHtml, areasHtml, voicesHtml, allAnswersHtml, methodsHtml, respondentsHtml, styles] = await Promise.all([
     readFile(htmlUrl, "utf8"),
     readFile(areasHtmlUrl, "utf8"),
@@ -92,6 +92,9 @@ test("uses a four-page sticky main menu with AREAS and All answers promoted", as
     assert.match(mainNav, />AREAS<\/a>/);
     assert.match(mainNav, />Respondent voices<\/a>/);
     assert.match(mainNav, />All answers<\/a>/);
+    assert.ok(mainNav.indexOf(">Overview</a>") < mainNav.indexOf(">Respondent voices</a>"));
+    assert.ok(mainNav.indexOf(">Respondent voices</a>") < mainNav.indexOf(">All answers</a>"));
+    assert.ok(mainNav.indexOf(">All answers</a>") < mainNav.indexOf(">AREAS</a>"));
   }
   assert.match(areasHtml, /class="nav-current" aria-current="page" href="\/elia-future-readiness-survey-results\/areas\/"/);
   assert.match(allAnswersHtml, /class="nav-current" aria-current="page" href="\/elia-future-readiness-survey-results\/all-answers\/"/);
@@ -116,8 +119,19 @@ test("renders a transparent and verifiable AREAS analysis", async () => {
   assert.match(html, /Local architecture does not equal control/);
   assert.match(html, /Agency without control is the main fragility/);
   assert.match(html, /Shared interests cross the five positions/);
+  assert.match(html, /Map 01 · Position landscape/);
+  assert.match(html, /Where the five positions sit/);
+  assert.match(html, /Map 02 · Position overlaps/);
+  assert.match(html, /How the positions coexist/);
+  assert.match(html, /MORE AGENCY/);
+  assert.match(html, /OPPOSE \/ STEP AWAY/);
+  assert.match(html, /The network shows all nine non-zero pairwise overlaps/);
+  assert.equal((html.match(/class="areas-link areas-link--/g) ?? []).length, 9);
   assert.match(html, /Architecting \+ Shaped<\/dt><dd>10/);
+  assert.match(html, /Architecting \+ Resisting<\/dt><dd>1/);
   assert.match(html, /Architecting \+ Exploiting<\/dt><dd>1/);
+  assert.match(html, /Resisting \+ Exploiting<\/dt><dd>1/);
+  assert.match(html, /Exploiting \+ Avoiding<\/dt><dd>1/);
   assert.match(html, /Architecting \+ Avoiding<\/dt><dd>0/);
   assert.match(html, /no Global architects are observed in the sample/i);
   assert.match(html, /No preferred future map was supplied/);
