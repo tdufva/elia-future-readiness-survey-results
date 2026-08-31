@@ -126,6 +126,8 @@ test("renders a clear, expandable and verifiable AREAS analysis", async () => {
   assert.doesNotMatch(html, />Counted<|>Not enough</);
   assert.doesNotMatch(html, /Why it matters to ELIA|What the map contains|What it combines|Preferred future map|No gap analysis was invented/);
   assert.match(html, /This is not a validated map of named organisations/);
+  assert.match(html, /<nav class="areas-page-nav" aria-label="On this AREAS page">/);
+  assert.match(html, /Use the <strong>A\+<\/strong> control in the header if you prefer larger text/);
   assert.match(html, /Most respondents are adapting to change\. Some are also shaping local responses/);
   assert.match(html, /Shaped appears in 22 responses\. Architecting appears in 16/);
   assert.match(html, /<div class="section-index" aria-hidden="true">01<\/div>/);
@@ -134,6 +136,8 @@ test("renders a clear, expandable and verifiable AREAS analysis", async () => {
   assert.match(html, /Shaping a local response is not the same as controlling the wider change/);
   assert.match(html, /03 · Where positions may be fragile/);
   assert.match(html, /Local action depends on decisions and resources from elsewhere/);
+  assert.match(html, /The vulnerability is not a lack of effort; it is limited authority and dependence on resources controlled elsewhere/);
+  assert.match(html, /The survey shows the beginnings of coordination, but not yet shared decision-making power/);
   assert.match(html, /04 · Possible connections/);
   assert.match(html, /Different positions can still share practical interests/);
   assert.match(html, /05 · Position details/);
@@ -143,6 +147,11 @@ test("renders a clear, expandable and verifiable AREAS analysis", async () => {
   assert.match(html, /Where the five positions sit/);
   assert.match(html, /Overlap view/);
   assert.match(html, /How the positions coexist/);
+  assert.equal((html.match(/class="areas-map-scroll" role="region" tabindex="0"/g) ?? []).length, 2);
+  assert.equal((html.match(/class="areas-map(?: areas-overlap-map)?" viewBox="0 0 900 610" role="group"/g) ?? []).length, 2);
+  assert.match(html, /<nav class="areas-bars" aria-label="Counts by AREAS position">/);
+  assert.doesNotMatch(html, /class="areas-bars" role="img"/);
+  assert.match(html, /id="vulnerabilities" aria-labelledby="vulnerabilities-title"/);
   assert.doesNotMatch(html, /Present map|Shaped is crowded|Architecting is local|downstream-heavy|Agency without control is the main fragility|Map 01|Map 02/);
   assert.match(html, /MORE AGENCY/);
   assert.match(html, /OPPOSE \/ STEP AWAY/);
@@ -174,6 +183,8 @@ test("renders a clear, expandable and verifiable AREAS analysis", async () => {
   assert.match(quoteCard, /respondent\.answers\.map/);
   assert.match(quoteCard, /\.\.\/all-answers\/#\$\{respondent\.id\}/);
   assert.match(styles, /\.areas-quote:hover \.areas-respondent-popover, \.areas-quote:focus \.areas-respondent-popover, \.areas-quote:focus-within \.areas-respondent-popover/);
+  assert.match(styles, /\.areas-map-scroll:focus-visible\s*\{[^}]*outline:\s*3px solid var\(--elia-mint\)/s);
+  assert.match(styles, /\.areas-quick-item p\s*\{[^}]*font-size:\s*\.95rem;[^}]*line-height:\s*1\.55/s);
 
   assert.equal(data.respondentCount, 38);
   assert.equal(data.answerCount, 114);

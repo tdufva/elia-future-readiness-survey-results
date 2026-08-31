@@ -40,7 +40,7 @@ function TraceLinks({ ids, label = "Evidence" }: { ids: string[]; label?: string
 function AreasPositionMap() {
   return <figure className="areas-map-card">
     <figcaption><p className="eyebrow">Position view</p><h3>Where the five positions sit</h3><p>Vertical placement shows how much influence actors have. Horizontal placement shows whether they oppose, step away from, adapt to or help produce the change. Larger circles represent more respondents.</p></figcaption>
-    <div className="areas-map-scroll"><svg className="areas-map" viewBox="0 0 900 610" role="img" aria-labelledby="position-map-title position-map-desc">
+    <div className="areas-map-scroll" role="region" tabIndex={0} aria-label="Scrollable AREAS position map. Use the position links before the map for a text-based alternative."><svg className="areas-map" viewBox="0 0 900 610" role="group" aria-labelledby="position-map-title position-map-desc">
       <title id="position-map-title">AREAS position landscape for the survey</title>
       <desc id="position-map-desc">Conceptual map with Architecting at high agency, Exploiting and Resisting at moderate agency, Avoiding at variable agency and Shaped at minimal agency. Circle size represents respondent counts.</desc>
       <defs><marker id="areas-axis-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" /></marker></defs>
@@ -61,7 +61,7 @@ function AreasPositionMap() {
 function AreasOverlapMap() {
   return <figure className="areas-map-card">
     <figcaption><p className="eyebrow">Overlap view</p><h3>How the positions coexist</h3><p>Each line connects positions found in the same respondent’s answers. Wider lines mean more shared respondents; the number gives the exact overlap.</p></figcaption>
-    <div className="areas-map-scroll"><svg className="areas-map areas-overlap-map" viewBox="0 0 900 610" role="img" aria-labelledby="overlap-map-title overlap-map-desc">
+    <div className="areas-map-scroll" role="region" tabIndex={0} aria-label="Scrollable AREAS overlap map. The exact overlap counts are listed in the Possible connections section."><svg className="areas-map areas-overlap-map" viewBox="0 0 900 610" role="group" aria-labelledby="overlap-map-title overlap-map-desc">
       <title id="overlap-map-title">Network map of overlaps between the five AREAS positions</title>
       <desc id="overlap-map-desc">The strongest overlap is Architecting and Shaped with 10 respondents. All other non-zero pairwise overlaps range from one to four respondents. Architecting and Avoiding have no overlap.</desc>
       <rect className="areas-map-field" x="38" y="38" width="824" height="530" rx="24" />
@@ -118,29 +118,35 @@ export default function AreasPage() {
 
       <section className="reading-note areas-reading-note" aria-label="How to read the AREAS analysis"><p className="eyebrow">Read this first</p><p>This is not a validated map of named organisations. It is a map of actions narrated by anonymous respondents at personal, team, institutional and sectoral scales. It can show patterns in the survey; it cannot show the full power structure around higher arts education.</p></section>
 
-      <section className="areas-framework-intro" aria-labelledby="areas-framework-title"><div><p className="eyebrow">What is AREAS?</p><h2 id="areas-framework-title">A framework for seeing position and power in transformation.</h2></div><div><p>AREAS is a strategic foresight framework developed by the 10F Consortium. It examines what actors are doing through five positions—Architecting, Resisting, Exploiting, Avoiding and Shaped—rather than treating identity or stated intention as strategy.</p><p>The same actor can occupy several positions at once: setting local rules while being constrained by a global platform, for example. Positions can also change as resources, crises and capabilities change. No position is treated as morally superior.</p><a href="https://www.10fconsortium.org/areas">Explore the AREAS framework at 10F Consortium <span aria-hidden="true">↗</span></a></div></section>
+      <nav className="areas-page-nav" aria-label="On this AREAS page">
+        <strong>On this page</strong>
+        <div><a href="#about-areas">AREAS explained</a><a href="#position-guide">Five positions</a><a href="#present-map">Survey pattern</a><a href="#landscape">Where power sits</a><a href="#vulnerabilities">Where action is fragile</a><a href="#coalitions">Possible connections</a><a href="#position-details">Position details</a><a href="#blind-spots">Limits</a><a href="#areas-method">Method</a></div>
+        <p>Use the <strong>A+</strong> control in the header if you prefer larger text.</p>
+      </nav>
 
-      <section className="areas-quick-guide" id="position-guide">
-        <header><p className="eyebrow">The five positions</p><h2>AREAS at a glance.</h2><p>A concise guide to how actors respond to transformation.</p></header>
-        <div className="areas-quick-list">{positionGuide.map((position) => <a className={`areas-quick-item areas-quick-item--${position.key}`} href={`#${position.key}`} key={position.key}><span className="areas-quick-letter" aria-hidden="true">{position.label[0]}</span><div><h3>{position.label}</h3><p>{position.description}</p></div></a>)}</div>
+      <section className="areas-framework-intro" id="about-areas" aria-labelledby="areas-framework-title"><div><p className="eyebrow">What is AREAS?</p><h2 id="areas-framework-title">A framework for seeing position and power in transformation.</h2></div><div><p>AREAS is a strategic foresight framework developed by the 10F Consortium. It examines what actors are doing through five positions—Architecting, Resisting, Exploiting, Avoiding and Shaped—rather than treating identity or stated intention as strategy.</p><p>The same actor can occupy several positions at once: setting local rules while being constrained by a global platform, for example. Positions can also change as resources, crises and capabilities change. No position is treated as morally superior.</p><a href="https://www.10fconsortium.org/areas">Explore the AREAS framework at 10F Consortium <span aria-hidden="true">↗</span></a></div></section>
+
+      <section className="areas-quick-guide" id="position-guide" aria-labelledby="position-guide-title">
+        <header><p className="eyebrow">The five positions</p><h2 id="position-guide-title">AREAS at a glance.</h2><p>A concise guide to how actors respond to transformation.</p></header>
+        <nav className="areas-quick-list" aria-label="Jump to evidence for an AREAS position">{positionGuide.map((position) => <a className={`areas-quick-item areas-quick-item--${position.key}`} href={`#${position.key}`} key={position.key}><span className="areas-quick-letter" aria-hidden="true">{position.label[0]}</span><div><h3>{position.label}</h3><p>{position.description}</p></div></a>)}</nav>
       </section>
 
-      <section className="section areas-overview" id="present-map">
-        <header className="section-head"><div className="section-index" aria-hidden="true">01</div><div><p className="eyebrow">What the responses show</p><h2>Most respondents are adapting to change. Some are also shaping local responses.</h2><p className="section-intro">In AREAS, <strong>Shaped</strong> means adapting to conditions set by others. <strong>Architecting</strong> means designing rules or responses. Shaped appears in 22 responses. Architecting appears in 16, mainly through local work such as guidelines, curricula, committees and institutional strategies. The same respondent can appear in both groups, so the percentages overlap.</p></div></header>
-        <div className="areas-bars" role="img" aria-label="AREAS positions: Architecting 16 of 38 or 42 percent; Resisting 5 or 13 percent; Exploiting 5 or 13 percent; Avoiding 3 or 8 percent; Shaped 22 or 58 percent.">
-          {areasData.positions.map((position) => <a className={`areas-bar areas-bar--${position.key}`} href={`#${position.key}`} key={position.key}>
+      <section className="section areas-overview" id="present-map" aria-labelledby="present-map-title">
+        <header className="section-head"><div className="section-index" aria-hidden="true">01</div><div><p className="eyebrow">What the responses show</p><h2 id="present-map-title">Most respondents are adapting to change. Some are also shaping local responses.</h2><p className="section-intro">In AREAS, <strong>Shaped</strong> means adapting to conditions set by others. <strong>Architecting</strong> means designing rules or responses. Shaped appears in 22 responses. Architecting appears in 16, mainly through local work such as guidelines, curricula, committees and institutional strategies. The same respondent can appear in both groups, so the percentages overlap.</p></div></header>
+        <nav className="areas-bars" aria-label="Counts by AREAS position">
+          {areasData.positions.map((position) => <a className={`areas-bar areas-bar--${position.key}`} href={`#${position.key}`} aria-label={`${position.label}: ${position.count} of ${areasData.respondentCount} respondents, ${position.percent} percent. Jump to ${position.label} details.`} key={position.key}>
             <span className="areas-bar-label"><strong>{position.label}</strong><small>{position.count} of {areasData.respondentCount}</small></span>
             <span className="areas-bar-track" aria-hidden="true"><span style={{ width: `${position.percent}%` }} /></span>
             <b>{position.percent}%</b>
           </a>)}
-        </div>
+        </nav>
         <aside className="areas-overlap-note"><strong>{areasData.multiplePositionCount} respondents</strong><span>had evidence for two or more positions. Eight records did not meet the evidence threshold; that means the answers were not specific enough for this lens, not that those respondents lack agency.</span></aside>
         <div className="areas-visual-map-grid"><AreasPositionMap /><AreasOverlapMap /></div>
       </section>
 
       <section className="areas-strategic" aria-label="Strategic analysis of the present map">
-        <section className="areas-analysis-section" id="landscape">
-          <header className="areas-analysis-head"><div><p className="eyebrow">02 · Where power sits</p><h2>The biggest decisions are mostly made elsewhere.</h2></div><p>Respondents can act inside their teams and institutions, but platforms, funders, governments and regulators usually set the wider conditions.</p></header>
+        <section className="areas-analysis-section" id="landscape" aria-labelledby="landscape-title">
+          <header className="areas-analysis-head"><div><p className="eyebrow">02 · Where power sits</p><h2 id="landscape-title">The biggest decisions are mostly made elsewhere.</h2></div><p>Respondents can act inside their teams and institutions, but platforms, funders, governments and regulators usually set the wider conditions.</p></header>
           <div className="areas-insight-grid">
             <article><span>01</span><h3>Most respondents are responding to decisions made elsewhere.</h3><p>Shaped is the largest position, with 22 respondents. Architecting follows with 16. Because no global actors or C-level decision-makers answered the survey, it mainly shows local action under outside constraints.</p><TraceLinks ids={["respondent-07", "respondent-22", "respondent-27", "respondent-32"]} /></article>
             <article><span>02</span><h3>Shaping a local response is not the same as controlling the wider change.</h3><p>Ten of the 16 Architecting respondents are also Shaped. They create guidelines, strategies, curricula and decision processes while platforms, funding, war or policy set the wider conditions.</p><TraceLinks ids={["respondent-07", "respondent-11", "respondent-22", "respondent-27"]} /></article>
@@ -149,18 +155,18 @@ export default function AreasPage() {
           </div>
         </section>
 
-        <section className="areas-analysis-section" id="vulnerabilities">
-          <header className="areas-analysis-head"><div><p className="eyebrow">03 · Where positions may be fragile</p><h2>Local action depends on decisions and resources from elsewhere.</h2></div><p>Respondents may be active inside their institutions while still depending on outside software, funding, policy and authority.</p></header>
+        <section className="areas-analysis-section" id="vulnerabilities" aria-labelledby="vulnerabilities-title">
+          <header className="areas-analysis-head"><div><p className="eyebrow">03 · Where positions may be fragile</p><h2 id="vulnerabilities-title">Local action depends on decisions and resources from elsewhere.</h2></div><p>Respondents are not inactive. Many are building guidelines, groups and institutional responses. Their influence is fragile because the money, software, rules and final authority often sit outside those local efforts.</p></header>
           <div className="areas-insight-grid areas-insight-grid--three">
-            <article><span>01</span><h3>Local change-makers depend on outside support.</h3><p>Guidelines, committees and strategies can guide an institution, but imposed software, funding pressure and cuts can quickly limit what they achieve.</p><TraceLinks ids={["respondent-07", "respondent-22", "respondent-27", "respondent-35"]} /></article>
-            <article><span>02</span><h3>Resistance lacks formal backing.</h3><p>Four of the five Resisting respondents are also Shaped. The evidence shows personal refusal, informal advocacy and networks—not regulatory power or coordinated institutional opposition.</p><TraceLinks ids={["respondent-01", "respondent-06", "respondent-16", "respondent-29", "respondent-38"]} /></article>
-            <article><span>03</span><h3>Staying outside the change is difficult.</h3><p>The three Avoiding respondents still depend on the technologies and power structures they seek to limit. They are setting boundaries, not building fully independent alternatives.</p><TraceLinks ids={["respondent-01", "respondent-16", "respondent-29"]} /></article>
-            <article><span>04</span><h3>Some constrained actors are already organising.</h3><p>Informal coalitions, peer groups, regular meetings and cross-field expertise could help people move from adapting to influencing decisions.</p><TraceLinks ids={["respondent-06", "respondent-21", "respondent-26", "respondent-36"]} /></article>
+            <article><span>01</span><h3>Local change-makers depend on outside support.</h3><p>Respondents describe committees, strategies, guidelines and curriculum work that can influence everyday practice. However, these tools operate within budgets, software contracts and policies that local teams do not control. A funding cut or an imposed platform can force their work to change direction. The vulnerability is not a lack of effort; it is limited authority and dependence on resources controlled elsewhere.</p><TraceLinks ids={["respondent-07", "respondent-22", "respondent-27", "respondent-35"]} /></article>
+            <article><span>02</span><h3>Resistance lacks formal backing.</h3><p>Four of the five Resisting respondents are also Shaped. Their resistance appears as personal refusal, informal advocacy and peer networks. These actions can protect important values and make harms visible, but they can be isolated or overruled without leadership support, a budget or formal policy. The survey does not show coordinated institution-wide opposition with the power to change the wider rules.</p><TraceLinks ids={["respondent-01", "respondent-06", "respondent-16", "respondent-29", "respondent-38"]} /></article>
+            <article><span>03</span><h3>Staying outside the change is difficult.</h3><p>The three Avoiding respondents limit their use of a technology or protect a practice from outside pressure. This can reduce immediate exposure, but it does not create a fully independent alternative. Funding requirements, digital infrastructure and institutional expectations still connect them to the systems they are trying to limit. Their distance is therefore partial and may be difficult to maintain.</p><TraceLinks ids={["respondent-01", "respondent-16", "respondent-29"]} /></article>
+            <article><span>04</span><h3>Some constrained actors are already organising.</h3><p>Several respondents describe peer groups, regular meetings, informal coalitions and expertise shared across fields. These routines can turn scattered observations into a common account of what needs to change. To gain more influence, they would still need a route into budgets, policy, curricula or leadership decisions. The survey shows the beginnings of coordination, but not yet shared decision-making power.</p><TraceLinks ids={["respondent-06", "respondent-21", "respondent-26", "respondent-36"]} /></article>
           </div>
         </section>
 
-        <section className="areas-analysis-section" id="coalitions">
-          <header className="areas-analysis-head"><div><p className="eyebrow">04 · Possible connections</p><h2>Different positions can still share practical interests.</h2></div><p>The same issue can connect people who are building, resisting, finding opportunities, stepping away or adapting.</p></header>
+        <section className="areas-analysis-section" id="coalitions" aria-labelledby="coalitions-title">
+          <header className="areas-analysis-head"><div><p className="eyebrow">04 · Possible connections</p><h2 id="coalitions-title">Different positions can still share practical interests.</h2></div><p>The same issue can connect people who are building, resisting, finding opportunities, stepping away or adapting.</p></header>
           <div className="areas-coalition-layout">
             <div className="areas-coalition-list">
               <article><h3>People who build formal plans + peer networks</h3><p>Both groups want early signs of change to influence decisions. The survey shows formal planning on one side and informal discussion on the other, but it does not show a reliable way of connecting them.</p><TraceLinks ids={["respondent-11", "respondent-22", "respondent-06", "respondent-21", "respondent-26"]} /></article>
@@ -172,8 +178,8 @@ export default function AreasPage() {
         </section>
       </section>
 
-      <section className="areas-position-list" aria-label="Five AREAS position analyses">
-        <header className="areas-evidence-intro"><p className="eyebrow">05 · Position details</p><h2>Scan first. Expand when needed.</h2><p>Open a position for its interpretation, respondent quotations and complete coding evidence.</p></header>
+      <section className="areas-position-list" id="position-details" aria-labelledby="position-details-title">
+        <header className="areas-evidence-intro"><p className="eyebrow">05 · Position details</p><h2 id="position-details-title">Scan first. Expand when needed.</h2><p>Open a position for its interpretation, respondent quotations and complete coding evidence.</p></header>
         {areasData.positions.map((position, index) => <details className={`areas-position areas-position--${position.key}`} id={position.key} key={position.key}>
           <summary className="areas-position-summary">
             <span className="areas-summary-letter" aria-hidden="true">{position.label[0]}</span>
@@ -183,15 +189,15 @@ export default function AreasPage() {
           <div className="areas-position-body">
             <div className="areas-position-intro"><div><p className="areas-recognition"><strong>Look for</strong>{position.recognition}</p><p className="areas-scale"><strong>Observed scale</strong>{position.scale}</p></div><div className="areas-analysis">{position.analysis.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</div></div>
             <h3 className="areas-quote-heading">Respondent examples</h3>
-            <p className="areas-quote-intro">Hover over or focus a quotation to preview all three written answers from that respondent.</p>
+            <p className="areas-quote-intro">Each quotation links to the respondent’s complete answers. Hover over or focus the quote for a quick preview.</p>
             <div className="areas-quote-grid">{position.quotes.map((quote) => <AreasQuoteCard quote={quote} key={`${position.key}-${quote.respondentId}`} />)}</div>
             <details className="areas-evidence"><summary><span>Verify the coding evidence</span><strong>{position.evidence.length} respondent records</strong></summary><div><p>Each row shows the passage used for this position. Excerpts are shortened with ellipses where shown; spelling and wording otherwise follow the response. Follow a respondent link to read all three answers in context.</p><ul>{position.evidence.map((item) => <li key={`${position.key}-${item.respondentId}`}><div><span>{item.question}</span><q>{item.excerpt}</q></div><a href={respondentLink(item.respondentId)}>{item.respondentLabel} <span aria-hidden="true">→</span></a></li>)}</ul></div></details>
           </div>
         </details>)}
       </section>
 
-      <section className="areas-blind-spots" id="blind-spots">
-        <header className="areas-analysis-head"><div><p className="eyebrow">06 · What the survey cannot show</p><h2>The most powerful actors are missing from the responses.</h2></div><p>These limits affect what we can conclude from the AREAS analysis.</p></header>
+      <section className="areas-blind-spots" id="blind-spots" aria-labelledby="blind-spots-title">
+        <header className="areas-analysis-head"><div><p className="eyebrow">06 · What the survey cannot show</p><h2 id="blind-spots-title">The most powerful actors are missing from the responses.</h2></div><p>These limits affect what we can conclude from the AREAS analysis.</p></header>
         <div className="areas-blind-grid">
           <article><h3>The main decision-makers are missing.</h3><p>Platforms, ministries, funders, regulators, accreditors and governing boards are mentioned, but they did not answer the survey. We therefore do not know how they understand the change or why they make their decisions.</p></article>
           <article><h3>No senior executives answered.</h3><p>The responses tell us more about noticing change and acting locally than about budgets, formal authority or organisation-wide decisions.</p></article>
@@ -202,8 +208,8 @@ export default function AreasPage() {
         </div>
       </section>
 
-      <section className="areas-method" id="areas-method">
-        <div className="areas-method-head"><p className="eyebrow">Method and verification</p><h2>How the AREAS reading was made</h2><p>This is a transparent, AI-assisted first coding pass. It extends the report’s earlier thematic analysis but does not replace participant interpretation or an independently reviewed qualitative study.</p></div>
+      <section className="areas-method" id="areas-method" aria-labelledby="areas-method-title">
+        <div className="areas-method-head"><p className="eyebrow">Method and verification</p><h2 id="areas-method-title">How the AREAS reading was made</h2><p>This is a transparent, AI-assisted first coding pass. It extends the report’s earlier thematic analysis but does not replace participant interpretation or an independently reviewed qualitative study.</p></div>
         <div className="areas-method-grid">
           <article><span>01</span><h3>Corpus</h3><p>All three open-ended answers from each of the 38 substantive respondents were read together: 114 answers in total. The unit counted is a respondent record, not a keyword or sentence.</p></article>
           <article><span>02</span><h3>Deductive codebook</h3><p>The five positions and recognition patterns were adapted from the 10F Consortium’s AREAS framework. Codes were non-exclusive, so one record could receive any number of positions.</p></article>
