@@ -7,11 +7,11 @@ import AreasQuoteCard from "./areas-quote-card";
 const siteUrl = "https://tdufva.github.io/elia-future-readiness-survey-results/areas/";
 
 const positionGuide = [
-  { key: "architecting", label: "Architecting", counted: "Rules, curricula, governance, infrastructure, programmes or decision forums being designed or built.", notEnough: "A wish that change should happen." },
-  { key: "resisting", label: "Resisting", counted: "Deliberate refusal, opposition, advocacy or defence of a threatened practice or value.", notEnough: "Concern, dislike or criticism without action." },
-  { key: "exploiting", label: "Exploiting", counted: "An opening used strategically through value creation, brokerage, positioning, new partners or a parallel service.", notEnough: "General curiosity about an opportunity." },
-  { key: "avoiding", label: "Avoiding", counted: "Distance, insulation, withdrawal or a protected parallel practice intended to limit exposure.", notEnough: "No routine, no answer or simple inaction." },
-  { key: "shaped", label: "Shaped", counted: "Forced adaptation, constrained choice or navigation of rules and pressures set by more powerful actors.", notEnough: "Awareness that the wider world is changing." },
+  { key: "architecting", label: "Architecting", description: "Designing and building rules, curricula, governance, infrastructure, programmes or decision forums." },
+  { key: "resisting", label: "Resisting", description: "Actively opposing change or defending threatened practices and values." },
+  { key: "exploiting", label: "Exploiting", description: "Using openings created by change through value creation, brokerage, positioning, partnerships or new services." },
+  { key: "avoiding", label: "Avoiding", description: "Limiting exposure through distance, insulation, withdrawal or protected parallel practices." },
+  { key: "shaped", label: "Shaped", description: "Adapting within constraints set by more powerful actors, without enough control to determine the direction." },
 ] as const;
 
 export const metadata: Metadata = {
@@ -121,8 +121,8 @@ export default function AreasPage() {
       <section className="areas-framework-intro" aria-labelledby="areas-framework-title"><div><p className="eyebrow">What is AREAS?</p><h2 id="areas-framework-title">A framework for seeing position and power in transformation.</h2></div><div><p>AREAS is a strategic foresight framework developed by the 10F Consortium. It examines what actors are doing through five positions—Architecting, Resisting, Exploiting, Avoiding and Shaped—rather than treating identity or stated intention as strategy.</p><p>The same actor can occupy several positions at once: setting local rules while being constrained by a global platform, for example. Positions can also change as resources, crises and capabilities change. No position is treated as morally superior.</p><a href="https://www.10fconsortium.org/areas">Explore the AREAS framework at 10F Consortium <span aria-hidden="true">↗</span></a></div></section>
 
       <section className="areas-quick-guide" id="position-guide">
-        <header><p className="eyebrow">The five positions</p><h2>AREAS at a glance.</h2><p>What counted in this analysis—and what did not count on its own.</p></header>
-        <div className="areas-quick-list">{positionGuide.map((position) => <a className={`areas-quick-item areas-quick-item--${position.key}`} href={`#${position.key}`} key={position.key}><span className="areas-quick-letter" aria-hidden="true">{position.label[0]}</span><div><h3>{position.label}</h3><p><strong>Counted</strong>{position.counted}</p><p><strong>Not enough</strong>{position.notEnough}</p></div></a>)}</div>
+        <header><p className="eyebrow">The five positions</p><h2>AREAS at a glance.</h2><p>A concise guide to how actors respond to transformation.</p></header>
+        <div className="areas-quick-list">{positionGuide.map((position) => <a className={`areas-quick-item areas-quick-item--${position.key}`} href={`#${position.key}`} key={position.key}><span className="areas-quick-letter" aria-hidden="true">{position.label[0]}</span><div><h3>{position.label}</h3><p>{position.description}</p></div></a>)}</div>
       </section>
 
       <section className="section areas-overview" id="present-map">
