@@ -105,18 +105,32 @@ test("renders a transparent and verifiable AREAS analysis", async () => {
   ]);
   const data = JSON.parse(dataText);
   assert.match(html, /<title>AREAS analysis · ELIA Future Readiness Survey Results<\/title>/i);
-  assert.match(html, /Five positions in transformation/);
+  assert.match(html, /Who is steering—and who is navigating\?/);
   assert.match(html, /What is AREAS\?/);
   assert.match(html, /A framework for seeing position and power in transformation/);
   assert.match(html, /strategic foresight framework developed by the 10F Consortium/);
   assert.match(html, /Explore the AREAS framework at 10F Consortium/);
+  assert.match(html, /From informal response to deliberate system-shaping/);
+  assert.match(html, /This is not a validated map of named organisations/);
+  assert.match(html, /This map is downstream-heavy/);
+  assert.match(html, /Local architecture does not equal control/);
+  assert.match(html, /Agency without control is the main fragility/);
+  assert.match(html, /Shared interests cross the five positions/);
+  assert.match(html, /Architecting \+ Shaped<\/dt><dd>10/);
+  assert.match(html, /Architecting \+ Exploiting<\/dt><dd>1/);
+  assert.match(html, /Architecting \+ Avoiding<\/dt><dd>0/);
+  assert.match(html, /no Global architects are observed in the sample/i);
+  assert.match(html, /No preferred future map was supplied/);
+  assert.match(html, /The survey cannot map the actors with the most power/);
+  assert.match(html, /Observed scale/);
+  assert.match(html, /Mostly Local or personal; one Regional\/Sectoral resistance network/);
   assert.match(html, /AI-assisted first coding pass/);
-  assert.match(html, /Exploiting.*neutral term/s);
+  assert.match(html, /No position is treated as morally superior/);
   assert.match(html, /https:\/\/www\.10fconsortium\.org\/areas/);
   assert.match(html, /Quote from an anonymous survey respondent · excerpt/);
   assert.match(html, /Read all answers from (?:<!-- -->)?Respondent 11/);
   assert.match(html, /Verify the coding evidence/);
-  assert.match(html, /No second coder or respondent validation has yet been completed/);
+  assert.match(html, /There is no second coder, respondent validation or independent actor evidence/);
   assert.doesNotMatch(html, /Collector ID|IP Address|Email Address|Respondent ID/);
 
   assert.equal(data.respondentCount, 38);
@@ -130,6 +144,7 @@ test("renders a transparent and verifiable AREAS analysis", async () => {
     assert.equal(position.evidence.length, position.count);
     assert.equal(new Set(position.evidence.map((item) => item.respondentId)).size, position.count);
     assert.ok(position.quotes.length >= 2);
+    assert.ok(position.scale.length > 20);
   }
   const positionCountsByRespondent = new Map();
   for (const position of data.positions) for (const item of position.evidence) {

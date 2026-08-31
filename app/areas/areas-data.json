@@ -9,11 +9,12 @@
       "label": "Architecting",
       "count": 16,
       "percent": 42,
+      "scale": "Mostly Local; some Regional/Sectoral projects and networks. No Global architects are observed in the respondent sample.",
       "definition": "Actively designing or building the rules, infrastructure, programmes and governing mechanisms through which transformation is handled.",
       "recognition": "Who is setting a direction, creating an institutional mechanism, redesigning a curriculum or convening decisions about what comes next?",
       "analysis": [
-        "Architecting appears in 16 of the 38 accounts. Respondents described AI guidelines, curriculum redesign, future workshops, quality architecture, strategic planning, new committees, cross-institutional programmes and resilience projects. Most examples operate at a programme, unit or institution scale rather than at the level of national policy or global technology platforms.",
-        "This is meaningful agency, but it is often nested inside systems respondents do not control. Several of the same records are also coded as Shaped because local rule-making happens under funding pressure, platform decisions, war or wider policy change. The overlap shows that architecting and being shaped can happen at the same time."
+        "Architecting appears in 16 accounts, but almost all of it is local: AI guidelines, curriculum changes, workshops, committees, quality processes and institutional strategies. These actors can set parameters inside programmes or institutions. The mapping does not show them controlling the larger technological, financial or political transformation.",
+        "Ten of the 16 Architecting records are also Shaped. Their local authority sits inside platform decisions, funding pressure, war and policy change controlled elsewhere. Calling this simply “high agency” would hide the scale mismatch: they steer local responses while remaining downstream of the forces producing the response."
       ],
       "quotes": [
         {
@@ -53,11 +54,12 @@
       "label": "Resisting",
       "count": 5,
       "percent": 13,
+      "scale": "Mostly Local or personal; one Regional/Sectoral resistance network. No institution-wide opposition is clearly described.",
       "definition": "Working to prevent, slow or reverse a transformation that threatens existing interests, practices or values.",
       "recognition": "Who is organising opposition, defending a valued practice or trying to influence decisions against a perceived threat?",
       "analysis": [
-        "Explicit resistance appears in five accounts. It includes fighting digital replacement, building internal advocacy coalitions, refusing generative AI, protecting continuity from technology hype and forming networks of resistance. These are mainly personal, peer-led or coalition-based practices rather than institution-wide campaigns.",
-        "Many more respondents voiced worry about AI, polarisation, funding or the erosion of human values, but concern alone was not coded as Resisting. The relatively small count therefore means that organised or deliberate opposition was less often described in these three questions—not that disagreement or defence of values is absent."
+        "Five accounts describe active resistance: fighting digital replacement, building internal advocacy coalitions, refusing generative AI, defending continuity from technology hype and forming resistance networks. Four of these five are also Shaped, which means opposition is usually mounted from inside conditions the actor does not control.",
+        "Resistance is therefore thin and weakly institutionalised in this map. Concern is widespread, but concern was not counted as resistance without action. The evidence shows personal refusal, informal coalition-building and one wider network—not regulatory power or a coordinated sectoral campaign."
       ],
       "quotes": [
         {
@@ -86,11 +88,12 @@
       "label": "Exploiting",
       "count": 5,
       "percent": 13,
+      "scale": "Local and Regional/Sectoral opportunity-seeking. No Global market-maker or infrastructure broker is represented.",
       "definition": "Using opportunities, gaps or contradictions created by transformation to build value, gain position or connect systems that do not otherwise meet.",
       "recognition": "Who is turning uncertainty into an opening, brokering between groups, finding new partners or creating a service that becomes useful during the shift?",
       "analysis": [
-        "Five accounts show Exploiting in the framework’s non-moral sense. Respondents described using uncertainty as a resource, learning across networks, navigating an AI teaching market, seeking new commercial partners and building direct-support alternatives around independent creative work.",
-        "Profit is not required for this code: strategic value can also come from translation, brokerage or seeing a newly useful role. Even so, this position is less visible than Architecting or Shaped. The survey asked about concerns, sensing and institutional routines—not explicitly about advantage, business models or strategic positioning—so opportunity-seeking may be under-described."
+        "Five accounts show Exploiting in the framework’s non-moral sense: uncertainty used as a resource, brokerage across networks and generations, positioning in an AI teaching market, new commercial partnerships and direct-support models for independent creative work.",
+        "Only one record is both Exploiting and Architecting. In this mapping, actors who notice or use openings are rarely the same actors described as setting institutional rules. That separation may be real, but the survey did not ask directly about profit, advantage or brokerage, so this is one of the least secure parts of the map."
       ],
       "quotes": [
         {
@@ -119,11 +122,12 @@
       "label": "Avoiding",
       "count": 3,
       "percent": 8,
+      "scale": "Local or personal only. No institutional parallel system is clearly described.",
       "definition": "Trying to stay outside a transformation’s direct effects by creating distance, insulation or a protected parallel practice.",
       "recognition": "Who is limiting exposure, stepping away from a system or preserving a separate space where older or alternative practices can continue?",
       "analysis": [
-        "Avoiding is the least visible position, appearing explicitly in three accounts. The examples involve limiting technology exposure, declining to use AI and protecting a line of tradition and continuity from what one respondent called hype.",
-        "These are mostly individual or practice-level boundaries, not evidence of institutions building large protective walls. A low count should be read cautiously: the questions did not ask directly about withdrawal, neutrality or insulation, and silence about avoidance is not proof that it does not occur."
+        "Avoiding is the least visible position. Three accounts describe limiting technology exposure, declining AI use or protecting a line of tradition and continuity from hype. None describes an institution building a durable parallel system.",
+        "All three Avoiding records are also both Resisting and Shaped. Their distance from the transformation is therefore partial: they oppose or limit participation while still depending on systems they cannot escape. Avoiding looks more like boundary-setting than a stable outside position."
       ],
       "quotes": [
         {
@@ -150,11 +154,12 @@
       "label": "Shaped",
       "count": 22,
       "percent": 58,
+      "scale": "Local actors and institutions describing the effects of Regional or Global platforms, policies, markets, war and ecological pressures.",
       "definition": "Experiencing transformation without enough immediate power to determine its direction, while adapting or building resilience within conditions set elsewhere.",
       "recognition": "Who is responding to changes they did not choose, adapting because the alternatives narrowed or navigating conditions set by more powerful actors?",
       "analysis": [
-        "Shaped is the most visible position, appearing in 22 accounts. Respondents described AI embedded by vendors or institutions, funding cuts and employment metrics, war and safety, climate and political pressure, and routines that react to momentum without protected space to set direction.",
-        "Being Shaped does not mean being passive. Many of these respondents also improvise, collaborate, resist or architect local responses. The central tension in the survey is therefore layered agency: arts communities can reshape curricula, practices and relationships while still navigating platforms, policies, markets and crises whose rules are largely written elsewhere."
+        "Shaped is the most crowded position, appearing in 22 accounts. Respondents describe AI embedded by vendors or institutions, funding cuts and employment metrics, war and safety, climate and political pressure, and routines that follow momentum without protected space to set direction.",
+        "This is not passivity. Ten Shaped records are also Architecting, four are Resisting and two are Exploiting. The pattern is layered agency: actors adapt, organise and build locally while the decisive parameters of platforms, policy, finance and crisis remain outside their control."
       ],
       "quotes": [
         {
