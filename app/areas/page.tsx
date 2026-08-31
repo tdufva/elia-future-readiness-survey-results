@@ -2,8 +2,17 @@ import type { Metadata } from "next";
 import SiteHeader from "../site-header";
 import { sitePath } from "../site-path";
 import areasData from "./areas-data.json";
+import AreasQuoteCard from "./areas-quote-card";
 
 const siteUrl = "https://tdufva.github.io/elia-future-readiness-survey-results/areas/";
+
+const positionGuide = [
+  { key: "architecting", label: "Architecting", counted: "Rules, curricula, governance, infrastructure, programmes or decision forums being designed or built.", notEnough: "A wish that change should happen." },
+  { key: "resisting", label: "Resisting", counted: "Deliberate refusal, opposition, advocacy or defence of a threatened practice or value.", notEnough: "Concern, dislike or criticism without action." },
+  { key: "exploiting", label: "Exploiting", counted: "An opening used strategically through value creation, brokerage, positioning, new partners or a parallel service.", notEnough: "General curiosity about an opportunity." },
+  { key: "avoiding", label: "Avoiding", counted: "Distance, insulation, withdrawal or a protected parallel practice intended to limit exposure.", notEnough: "No routine, no answer or simple inaction." },
+  { key: "shaped", label: "Shaped", counted: "Forced adaptation, constrained choice or navigation of rules and pressures set by more powerful actors.", notEnough: "Awareness that the wider world is changing." },
+] as const;
 
 export const metadata: Metadata = {
   title: "AREAS analysis · ELIA Future Readiness Survey Results",
@@ -111,13 +120,9 @@ export default function AreasPage() {
 
       <section className="areas-framework-intro" aria-labelledby="areas-framework-title"><div><p className="eyebrow">What is AREAS?</p><h2 id="areas-framework-title">A framework for seeing position and power in transformation.</h2></div><div><p>AREAS is a strategic foresight framework developed by the 10F Consortium. It examines what actors are doing through five positions—Architecting, Resisting, Exploiting, Avoiding and Shaped—rather than treating identity or stated intention as strategy.</p><p>The same actor can occupy several positions at once: setting local rules while being constrained by a global platform, for example. Positions can also change as resources, crises and capabilities change. No position is treated as morally superior.</p><a href="https://www.10fconsortium.org/areas">Explore the AREAS framework at 10F Consortium <span aria-hidden="true">↗</span></a></div></section>
 
-      <section className="section areas-transformation" id="transformation">
-        <header className="section-head"><div className="section-index" aria-hidden="true">01</div><div><p className="eyebrow">The transformation being tracked</p><h2>From informal response to deliberate system-shaping.</h2><p className="section-intro">Higher arts education is responding to accelerating AI, funding, political, ecological and social pressures. The strategic question is not whether change is happening, but who can determine how institutions respond.</p></div></header>
-        <div className="areas-transformation-grid">
-          <article><h3>Why it matters to ELIA</h3><p>The distribution of agency affects who sets curricula, AI rules, quality processes and funding responses—and whether signals from staff, students and partners enter formal decisions.</p></article>
-          <article><h3>What the map contains</h3><p>The units are respondent accounts, not verified organisations. A passage was coded only when it described an action, mechanism, opportunity, boundary or constraint. Eight records did not contain enough specific evidence for an AREAS position.</p></article>
-          <article><h3>What it combines</h3><p>The survey brings several connected transformations into one view. AI, austerity, war, climate pressure and political change are not one system, so a position visible in one domain may not transfer to another.</p></article>
-        </div>
+      <section className="areas-quick-guide" id="position-guide">
+        <header><p className="eyebrow">The five positions</p><h2>AREAS at a glance.</h2><p>What counted in this analysis—and what did not count on its own.</p></header>
+        <div className="areas-quick-list">{positionGuide.map((position) => <a className={`areas-quick-item areas-quick-item--${position.key}`} href={`#${position.key}`} key={position.key}><span className="areas-quick-letter" aria-hidden="true">{position.label[0]}</span><div><h3>{position.label}</h3><p><strong>Counted</strong>{position.counted}</p><p><strong>Not enough</strong>{position.notEnough}</p></div></a>)}</div>
       </section>
 
       <section className="section areas-overview" id="present-map">
@@ -168,18 +173,21 @@ export default function AreasPage() {
       </section>
 
       <section className="areas-position-list" aria-label="Five AREAS position analyses">
-        <header className="areas-evidence-intro"><p className="eyebrow">06 · Present-map evidence</p><h2>Inspect every position and its evidence.</h2><p>Each section gives the working definition, observed scale, interpretation, selected respondent quotations and the complete evidence ledger used for the count.</p></header>
-        {areasData.positions.map((position, index) => <article className={`areas-position areas-position--${position.key}`} id={position.key} key={position.key}>
-          <header className="areas-position-head">
-            <div><span className="areas-letter" aria-hidden="true">{position.label[0]}</span><p className="eyebrow">Position {String(index + 1).padStart(2, "0")} of 05</p><h2>{position.label}</h2></div>
-            <div className="areas-position-count"><strong>{position.percent}%</strong><span>{position.count} of {areasData.respondentCount} respondents</span></div>
-          </header>
-          <div className="areas-position-intro"><div><p className="areas-definition">{position.definition}</p><p className="areas-recognition"><strong>Recognition pattern</strong>{position.recognition}</p><p className="areas-scale"><strong>Observed scale</strong>{position.scale}</p></div><div className="areas-analysis">{position.analysis.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</div></div>
-
-          <div className="areas-quote-grid">{position.quotes.map((quote) => <blockquote className="areas-quote" key={`${position.key}-${quote.respondentId}`}><p>“{quote.text}”</p><footer><span>Quote from an anonymous survey respondent · excerpt from {quote.question}</span><a href={respondentLink(quote.respondentId)}>Read all answers from {quote.respondentLabel} <span aria-hidden="true">→</span></a></footer></blockquote>)}</div>
-
-          <details className="areas-evidence"><summary><span>Verify the coding evidence</span><strong>{position.evidence.length} respondent records</strong></summary><div><p>Each row shows the passage used for this position. Excerpts are shortened with ellipses where shown; spelling and wording otherwise follow the response. Follow a respondent link to read all three answers in context.</p><ul>{position.evidence.map((item) => <li key={`${position.key}-${item.respondentId}`}><div><span>{item.question}</span><q>{item.excerpt}</q></div><a href={respondentLink(item.respondentId)}>{item.respondentLabel} <span aria-hidden="true">→</span></a></li>)}</ul></div></details>
-        </article>)}
+        <header className="areas-evidence-intro"><p className="eyebrow">06 · Position details</p><h2>Scan first. Expand when needed.</h2><p>Open a position for its interpretation, respondent quotations and complete coding evidence.</p></header>
+        {areasData.positions.map((position, index) => <details className={`areas-position areas-position--${position.key}`} id={position.key} key={position.key}>
+          <summary className="areas-position-summary">
+            <span className="areas-summary-letter" aria-hidden="true">{position.label[0]}</span>
+            <div className="areas-summary-copy"><p className="eyebrow">Position {String(index + 1).padStart(2, "0")} of 05</p><h2>{position.label}</h2><p>{position.definition}</p></div>
+            <div className="areas-position-count"><strong>{position.percent}%</strong><span>{position.count} of {areasData.respondentCount}</span><em>Expand details</em></div>
+          </summary>
+          <div className="areas-position-body">
+            <div className="areas-position-intro"><div><p className="areas-recognition"><strong>Look for</strong>{position.recognition}</p><p className="areas-scale"><strong>Observed scale</strong>{position.scale}</p></div><div className="areas-analysis">{position.analysis.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</div></div>
+            <h3 className="areas-quote-heading">Respondent examples</h3>
+            <p className="areas-quote-intro">Hover over or focus a quotation to preview all three written answers from that respondent.</p>
+            <div className="areas-quote-grid">{position.quotes.map((quote) => <AreasQuoteCard quote={quote} key={`${position.key}-${quote.respondentId}`} />)}</div>
+            <details className="areas-evidence"><summary><span>Verify the coding evidence</span><strong>{position.evidence.length} respondent records</strong></summary><div><p>Each row shows the passage used for this position. Excerpts are shortened with ellipses where shown; spelling and wording otherwise follow the response. Follow a respondent link to read all three answers in context.</p><ul>{position.evidence.map((item) => <li key={`${position.key}-${item.respondentId}`}><div><span>{item.question}</span><q>{item.excerpt}</q></div><a href={respondentLink(item.respondentId)}>{item.respondentLabel} <span aria-hidden="true">→</span></a></li>)}</ul></div></details>
+          </div>
+        </details>)}
       </section>
 
       <section className="areas-blind-spots" id="blind-spots">
@@ -192,7 +200,6 @@ export default function AreasPage() {
           <article><h3>Some positions are under-asked.</h3><p>The survey asked about concerns, sensing and institutional practice. It did not directly ask who profits from friction, who is blocking change, who is building parallel systems or who controls infrastructure. Exploiting, Resisting and Avoiding are therefore likely less visible.</p></article>
           <article><h3>The coding is interpretive.</h3><p>This is one AI-assisted deductive coding pass on self-reported answers. There is no second coder, respondent validation or independent actor evidence. The ledgers make the interpretation auditable, not objective.</p></article>
         </div>
-        <aside className="areas-gap-note"><p className="eyebrow">Preferred future map</p><h3>No gap analysis was invented.</h3><p>No preferred future map was supplied, so this page does not claim which repositionings ELIA wants or which dependency chains would serve that future. The vulnerability and coalition sections describe the present evidence only.</p></aside>
       </section>
 
       <section className="areas-method" id="areas-method">
@@ -205,15 +212,6 @@ export default function AreasPage() {
           <article><span>05</span><h3>Counting and overlap</h3><p>Each position was counted at most once per respondent. Percentages use 38 as the denominator and are rounded. Because positions overlap, their percentages should not be added together.</p></article>
           <article><span>06</span><h3>Audit trail</h3><p>Every position exposes its full evidence ledger. Selected quotations and analytical claims link to the anonymous respondent page, where all three original answers can be checked together.</p></article>
         </div>
-
-        <div className="areas-codebook"><h3>Operational codebook</h3><div role="table" aria-label="Operational definitions used in the AREAS analysis">
-          <div className="areas-codebook-row areas-codebook-row--head" role="row"><span role="columnheader">Position</span><span role="columnheader">Counted when the answer described</span><span role="columnheader">Not enough on its own</span></div>
-          <div className="areas-codebook-row" role="row"><strong role="cell">Architecting</strong><span role="cell">Rules, curricula, governance, infrastructure, programmes or decision forums being designed or built.</span><span role="cell">A wish that change should happen.</span></div>
-          <div className="areas-codebook-row" role="row"><strong role="cell">Resisting</strong><span role="cell">Deliberate refusal, opposition, advocacy or defence of a threatened practice or value.</span><span role="cell">Concern, dislike or criticism without action.</span></div>
-          <div className="areas-codebook-row" role="row"><strong role="cell">Exploiting</strong><span role="cell">An opening used strategically through value creation, brokerage, positioning, new partners or a parallel service.</span><span role="cell">General curiosity about an opportunity.</span></div>
-          <div className="areas-codebook-row" role="row"><strong role="cell">Avoiding</strong><span role="cell">Distance, insulation, withdrawal or a protected parallel practice intended to limit exposure.</span><span role="cell">No routine, no answer or simple inaction.</span></div>
-          <div className="areas-codebook-row" role="row"><strong role="cell">Shaped</strong><span role="cell">Forced adaptation, constrained choice or navigation of rules and pressures set by more powerful actors.</span><span role="cell">Awareness that the wider world is changing.</span></div>
-        </div></div>
 
         <div className="areas-source"><p className="eyebrow">Framework source</p><h3>The Five Positions in AREAS</h3><p>Definitions and recognition patterns were adapted from the 10F Consortium’s open AREAS framework. The source stresses that positions are relational, can overlap and shift, and describe what actors do rather than who they are.</p><a href="https://www.10fconsortium.org/areas">Read the AREAS framework at 10F Consortium <span aria-hidden="true">↗</span></a></div>
       </section>

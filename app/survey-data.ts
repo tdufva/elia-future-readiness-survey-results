@@ -41,6 +41,8 @@ type EncryptedPayload = {
 };
 
 const fallbackKeyStorage = "elia-survey-access-key-v1";
+let cachedSurveyData: SurveyData | null = null;
+let sessionLoad: Promise<SurveyData | null> | null = null;
 
 function siteBasePath() {
   return window.location.pathname.startsWith("/elia-future-readiness-survey-results")
@@ -107,20 +109,31 @@ async function keyFromSession(config: AccessConfig) {
 }
 
 async function loadSurveyData(password?: string) {
-  const { config, payload } = await readFiles();
-  const key = password ? await deriveKey(password, config) : await keyFromSession(config);
-  if (!key) return null;
-  try {
-    const data = await decryptPayload(key, payload);
-    if (password) {
-      const rawKey = await crypto.subtle.exportKey("raw", key);
-      sessionStorage.setItem(config.keyStorage || fallbackKeyStorage, encodeBase64(rawKey));
+  if (!password && cachedSurveyData) return cachedSurveyData;
+  if (!password && sessionLoad) return sessionLoad;
+
+  const request = (async () => {
+    const { config, payload } = await readFiles();
+    const key = password ? await deriveKey(password, config) : await keyFromSession(config);
+    if (!key) return null;
+    try {
+      const data = await decryptPayload(key, payload);
+      cachedSurveyData = data;
+      if (password) {
+        const rawKey = await crypto.subtle.exportKey("raw", key);
+        sessionStorage.setItem(config.keyStorage || fallbackKeyStorage, encodeBase64(rawKey));
+      }
+      return data;
+    } catch {
+      sessionStorage.removeItem(config.keyStorage || fallbackKeyStorage);
+      throw new Error("That password did not unlock the survey data.");
     }
-    return data;
-  } catch {
-    sessionStorage.removeItem(config.keyStorage || fallbackKeyStorage);
-    throw new Error("That password did not unlock the survey data.");
-  }
+  })();
+
+  if (password) return request;
+  sessionLoad = request;
+  try { return await request; }
+  finally { sessionLoad = null; }
 }
 
 export function useSurveyData() {

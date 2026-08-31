@@ -12,6 +12,7 @@ const methodsHtmlUrl = new URL("../out/methods/index.html", import.meta.url);
 const respondentsHtmlUrl = new URL("../out/respondents/index.html", import.meta.url);
 const voicesDataUrl = new URL("../app/voices/voice-data.json", import.meta.url);
 const areasDataUrl = new URL("../app/areas/areas-data.json", import.meta.url);
+const areasQuoteCardUrl = new URL("../app/areas/areas-quote-card.tsx", import.meta.url);
 const voiceExplorerUrl = new URL("../app/voices/voice-explorer.tsx", import.meta.url);
 const encryptedDataUrl = new URL("../public/data/respondents.enc.json", import.meta.url);
 const accessConfigUrl = new URL("../public/access-config.json", import.meta.url);
@@ -101,10 +102,12 @@ test("uses a four-page sticky main menu with AREAS last", async () => {
   assert.match(styles, /\.site-header\s*\{[^}]*position:\s*sticky;/s);
 });
 
-test("renders a transparent and verifiable AREAS analysis", async () => {
-  const [html, dataText] = await Promise.all([
+test("renders a clear, expandable and verifiable AREAS analysis", async () => {
+  const [html, dataText, quoteCard, styles] = await Promise.all([
     readFile(areasHtmlUrl, "utf8"),
     readFile(areasDataUrl, "utf8"),
+    readFile(areasQuoteCardUrl, "utf8"),
+    readFile(stylesUrl, "utf8"),
   ]);
   const data = JSON.parse(dataText);
   assert.match(html, /<title>AREAS analysis · ELIA Future Readiness Survey Results<\/title>/i);
@@ -113,7 +116,15 @@ test("renders a transparent and verifiable AREAS analysis", async () => {
   assert.match(html, /A framework for seeing position and power in transformation/);
   assert.match(html, /strategic foresight framework developed by the 10F Consortium/);
   assert.match(html, /Explore the AREAS framework at 10F Consortium/);
-  assert.match(html, /From informal response to deliberate system-shaping/);
+  assert.match(html, /AREAS at a glance/);
+  assert.match(html, /What counted in this analysis—and what did not count on its own/);
+  assert.match(html, /Rules, curricula, governance, infrastructure, programmes or decision forums being designed or built/);
+  assert.match(html, /A wish that change should happen/);
+  assert.match(html, /Deliberate refusal, opposition, advocacy or defence of a threatened practice or value/);
+  assert.match(html, /General curiosity about an opportunity/);
+  assert.match(html, /No routine, no answer or simple inaction/);
+  assert.match(html, /Awareness that the wider world is changing/);
+  assert.doesNotMatch(html, /Why it matters to ELIA|What the map contains|What it combines|Preferred future map|No gap analysis was invented/);
   assert.match(html, /This is not a validated map of named organisations/);
   assert.match(html, /This map is downstream-heavy/);
   assert.match(html, /Local architecture does not equal control/);
@@ -134,18 +145,25 @@ test("renders a transparent and verifiable AREAS analysis", async () => {
   assert.match(html, /Exploiting \+ Avoiding<\/dt><dd>1/);
   assert.match(html, /Architecting \+ Avoiding<\/dt><dd>0/);
   assert.match(html, /no Global architects are observed in the sample/i);
-  assert.match(html, /No preferred future map was supplied/);
   assert.match(html, /The survey cannot map the actors with the most power/);
   assert.match(html, /Observed scale/);
   assert.match(html, /Mostly Local or personal; one Regional\/Sectoral resistance network/);
   assert.match(html, /AI-assisted first coding pass/);
   assert.match(html, /No position is treated as morally superior/);
   assert.match(html, /https:\/\/www\.10fconsortium\.org\/areas/);
+  assert.match(html, /Scan first\. Expand when needed/);
+  assert.equal((html.match(/<details class="areas-position areas-position--/g) ?? []).length, 5);
+  assert.match(html, /Expand details/);
   assert.match(html, /Quote from an anonymous survey respondent · excerpt/);
-  assert.match(html, /Read all answers from (?:<!-- -->)?Respondent 11/);
+  assert.match(html, /Open (?:<!-- -->)?Respondent 11/);
+  assert.match(html, /All answers page/);
   assert.match(html, /Verify the coding evidence/);
   assert.match(html, /There is no second coder, respondent validation or independent actor evidence/);
   assert.doesNotMatch(html, /Collector ID|IP Address|Email Address|Respondent ID/);
+  assert.match(quoteCard, /useSurveyData/);
+  assert.match(quoteCard, /respondent\.answers\.map/);
+  assert.match(quoteCard, /\.\.\/all-answers\/#\$\{respondent\.id\}/);
+  assert.match(styles, /\.areas-quote:hover \.areas-respondent-popover, \.areas-quote:focus \.areas-respondent-popover, \.areas-quote:focus-within \.areas-respondent-popover/);
 
   assert.equal(data.respondentCount, 38);
   assert.equal(data.answerCount, 114);
