@@ -9,6 +9,7 @@ const areasHtmlUrl = new URL("../out/areas/index.html", import.meta.url);
 const voicesHtmlUrl = new URL("../out/voices/index.html", import.meta.url);
 const allAnswersHtmlUrl = new URL("../out/all-answers/index.html", import.meta.url);
 const methodsHtmlUrl = new URL("../out/methods/index.html", import.meta.url);
+const frameworkHtmlUrl = new URL("../out/framework-method/index.html", import.meta.url);
 const respondentsHtmlUrl = new URL("../out/respondents/index.html", import.meta.url);
 const voicesDataUrl = new URL("../app/voices/voice-data.json", import.meta.url);
 const areasDataUrl = new URL("../app/areas/areas-data.json", import.meta.url);
@@ -17,6 +18,8 @@ const voiceExplorerUrl = new URL("../app/voices/voice-explorer.tsx", import.meta
 const encryptedDataUrl = new URL("../public/data/respondents.enc.json", import.meta.url);
 const accessConfigUrl = new URL("../public/access-config.json", import.meta.url);
 const stylesUrl = new URL("../app/globals.css", import.meta.url);
+const frameworkWorkspaceUrl = new URL("../app/framework-method/framework-workspace.tsx", import.meta.url);
+const frameworkPromptsUrl = new URL("../app/framework-method/framework-prompts.ts", import.meta.url);
 
 test("renders the complete public report", async () => {
   const html = await readFile(htmlUrl, "utf8");
@@ -89,30 +92,80 @@ test("renders a navigable and privacy-checked respondent voices page", async () 
   assert.doesNotMatch(html, /Newcastle|Lviv|Concordia|Unbroken University|Respondent ID|Collector ID|IP Address|Email Address/);
 });
 
-test("uses a four-page sticky main menu with AREAS last", async () => {
-  const [overviewHtml, areasHtml, voicesHtml, allAnswersHtml, methodsHtml, respondentsHtml, styles] = await Promise.all([
+test("uses a five-page sticky main menu with Framework Method before AREAS and AREAS last", async () => {
+  const [overviewHtml, areasHtml, voicesHtml, allAnswersHtml, methodsHtml, respondentsHtml, frameworkHtml, styles] = await Promise.all([
     readFile(htmlUrl, "utf8"),
     readFile(areasHtmlUrl, "utf8"),
     readFile(voicesHtmlUrl, "utf8"),
     readFile(allAnswersHtmlUrl, "utf8"),
     readFile(methodsHtmlUrl, "utf8"),
     readFile(respondentsHtmlUrl, "utf8"),
+    readFile(frameworkHtmlUrl, "utf8"),
     readFile(stylesUrl, "utf8"),
   ]);
-  for (const html of [overviewHtml, areasHtml, voicesHtml, allAnswersHtml, methodsHtml, respondentsHtml]) {
+  for (const html of [overviewHtml, areasHtml, voicesHtml, allAnswersHtml, methodsHtml, respondentsHtml, frameworkHtml]) {
     const mainNav = html.match(/<nav class="primary-nav"[^>]*>(.*?)<\/nav>/)?.[1] ?? "";
-    assert.equal((mainNav.match(/<a /g) ?? []).length, 4);
+    assert.equal((mainNav.match(/<a /g) ?? []).length, 5);
     assert.match(mainNav, />Overview<\/a>/);
     assert.match(mainNav, />AREAS<\/a>/);
     assert.match(mainNav, />Respondent voices<\/a>/);
     assert.match(mainNav, />All answers<\/a>/);
+    assert.match(mainNav, />Framework Method<\/a>/);
     assert.ok(mainNav.indexOf(">Overview</a>") < mainNav.indexOf(">Respondent voices</a>"));
     assert.ok(mainNav.indexOf(">Respondent voices</a>") < mainNav.indexOf(">All answers</a>"));
-    assert.ok(mainNav.indexOf(">All answers</a>") < mainNav.indexOf(">AREAS</a>"));
+    assert.ok(mainNav.indexOf(">All answers</a>") < mainNav.indexOf(">Framework Method</a>"));
+    assert.ok(mainNav.indexOf(">Framework Method</a>") < mainNav.indexOf(">AREAS</a>"));
   }
   assert.match(areasHtml, /class="nav-current" aria-current="page" href="\/elia-future-readiness-survey-results\/areas\/"/);
   assert.match(allAnswersHtml, /class="nav-current" aria-current="page" href="\/elia-future-readiness-survey-results\/all-answers\/"/);
+  assert.match(frameworkHtml, /class="nav-current" aria-current="page" href="\/elia-future-readiness-survey-results\/framework-method\/"/);
   assert.match(styles, /\.site-header\s*\{[^}]*position:\s*sticky;/s);
+});
+
+test("renders the Framework Method route and ships its auditable research controls", async () => {
+  const [html, workspace, prompts, styles] = await Promise.all([
+    readFile(frameworkHtmlUrl, "utf8"),
+    readFile(frameworkWorkspaceUrl, "utf8"),
+    readFile(frameworkPromptsUrl, "utf8"),
+    readFile(stylesUrl, "utf8"),
+  ]);
+  assert.match(html, /<title>Framework Method · ELIA Future Readiness Survey Results<\/title>/i);
+  assert.match(html, /Trace every interpretation back to text/);
+  assert.match(html, /A systematic comparison that keeps context in view/);
+  assert.match(html, /Familiarisation/);
+  assert.match(html, /Meaning-unit frequencies are sensitive to segmentation/);
+  assert.match(html, /Using the framework method for the analysis of qualitative data/);
+  assert.match(html, /Causal layered analysis: Poststructuralism as method/);
+  assert.match(html, /Alternative Futures at the Manoa School/);
+  assert.match(workspace, /Accept/);
+  assert.match(workspace, /Mark modified/);
+  assert.match(workspace, /Reject/);
+  assert.match(workspace, /Split at text cursor/);
+  assert.match(workspace, /Merge into previous unit/);
+  assert.match(workspace, /average words per answer/);
+  assert.match(workspace, /missing answers/);
+  assert.match(workspace, /Code one or many selected units/);
+  assert.match(workspace, /Select all visible units/);
+  assert.match(workspace, /Related codes or themes/);
+  assert.match(workspace, /Delete theme/);
+  assert.match(workspace, /Question × broader theme/);
+  assert.match(workspace, /Respondent × broader theme/);
+  assert.match(workspace, /Theme × Dator/);
+  assert.match(workspace, /Dator × orientation/);
+  assert.match(workspace, /CLA × theme/);
+  assert.match(workspace, /Question × Dator/);
+  assert.match(workspace, /Download coded data CSV/);
+  assert.match(workspace, /Download workspace JSON/);
+  assert.match(workspace, /Absences and underrepresented futures/);
+  assert.match(workspace, /Counts are doors back into the material/);
+  assert.match(prompts, /Preserve the respondent's wording exactly/);
+  assert.match(prompts, /Return valid JSON only/);
+  assert.match(prompts, /additionalProperties: false/);
+  assert.match(prompts, /meaningUnitText must always be an exact supporting span/);
+  assert.match(styles, /\.fm-table-scroll:focus-visible/);
+  assert.match(styles, /\.fm-status--human-reviewed/);
+  assert.match(styles, /\.fm-status--human-modified/);
+  assert.match(styles, /\.fm-status--rejected/);
 });
 
 test("renders a clear, expandable and verifiable AREAS analysis", async () => {

@@ -2,7 +2,7 @@
 
 An accessible overview of 38 substantive responses to the ELIA Future Readiness Survey, collected in July and August 2026.
 
-The protected report combines descriptive counts with reflexive thematic analysis. It keeps counts beside percentages, documents exclusions and limitations, and preserves overlapping categories. Respondent voices links each thematic quote to an anonymous profile. The encrypted All answers reader groups all 114 original written answers by respondent and includes country, age group and standardised institutional position; direct source identifiers are excluded.
+The protected report combines descriptive counts with reflexive thematic analysis. It keeps counts beside percentages, documents exclusions and limitations, and preserves overlapping categories. Respondent voices links each thematic quote to an anonymous profile. The encrypted All answers reader groups all 114 original written answers by respondent and includes country, age group and standardised institutional position; direct source identifiers are excluded. The Framework Method route adds a local, human-reviewable workspace for meaning-unit coding, qualitative matrices, futures lenses and audit exports without sending protected text to an external service.
 
 ## Local development
 
