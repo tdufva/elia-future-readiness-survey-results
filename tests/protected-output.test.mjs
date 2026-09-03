@@ -56,5 +56,6 @@ test("the configured password decrypts the protected overview", async () => {
   decipher.setAuthTag(Buffer.from(payload.tag, "base64"));
   const clear = Buffer.concat([decipher.update(Buffer.from(payload.ciphertext, "base64")), decipher.final()]).toString("utf8");
   assert.match(clear, /<title>ELIA Future Readiness Survey Results<\/title>/i);
-  assert.match(clear, /Three findings organise the picture/);
+  assert.match(clear, /The three survey questions, answered/);
+  assert.match(clear, /Concerns named by respondents/);
 });

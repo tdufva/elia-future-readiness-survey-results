@@ -3,7 +3,7 @@ import { sitePath } from "./site-path";
 import TextSizeButton from "./text-size-button";
 
 const overviewSections = [
-  { href: "/#findings", label: "Findings" },
+  { href: "/#findings", label: "Three questions" },
   { href: "/#concerns", label: "Concerns" },
   { href: "/#sensing", label: "Sensing" },
   { href: "/#practices", label: "Practices" },
