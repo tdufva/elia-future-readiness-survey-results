@@ -1,0 +1,56 @@
+{
+  "future-concerns": {
+    "headline": "Respondents place arts education inside a wider struggle over social and democratic futures.",
+    "reading": "The future of arts education and creative practice is the most frequent concern. Social cohesion and political pressure follow closely, showing that respondents often understand educational change, public value and democratic conditions as connected rather than separate issues.",
+    "quotes": {
+      "arts_education_practice": {
+        "entryId": "future-concerns-voice-08",
+        "text": "As agents and pioneers of social change, art universities will continue to play a central role in society in the future – perhaps an even greater one – whilst at the same time facing increasing pressure to justify their existence and secure their funding."
+      },
+      "social_cohesion_equity": {
+        "entryId": "future-concerns-voice-11",
+        "text": "I'm interested in highlighting knowledge that connects people across cultures, disciplines, and perspectives."
+      },
+      "politics_conflict": {
+        "entryId": "future-concerns-voice-12",
+        "text": "I am also very concerned with how the arts will be perceived in times of conflict, war, climate change, far-right extremism."
+      }
+    }
+  },
+  "personal-sensing": {
+    "headline": "Change is sensed through information and relationships together.",
+    "reading": "Reading, research and media are the most common sensing practice, but dialogue and professional networks appear almost as often. Listening to students and younger generations adds a distinct source of insight: lived experience from people who will inhabit emerging conditions for longer.",
+    "quotes": {
+      "published_information": {
+        "entryId": "personal-sensing-voice-05",
+        "text": "I read the news locally and internationally at least once a day, and try to keep abreast of what my peers/colleagues/students are discussing."
+      },
+      "dialogue_networks": {
+        "entryId": "personal-sensing-voice-27",
+        "text": "I keep track of emerging changes by regularly exchanging ideas with colleagues and staying informed about what is happening at the university, both on a micro level within my own department and on a macro level across the institution."
+      },
+      "students_youth": {
+        "entryId": "personal-sensing-voice-35",
+        "text": "For me the best way is to talk with students and listen what they say because from those conversations I see the reality and visions they have for present but also about the future."
+      }
+    }
+  },
+  "institutional-practices": {
+    "headline": "Collective reflection is common, but it does not always become a structured foresight practice.",
+    "reading": "Meetings, workshops and recurring dialogue lead the institutional practices. Yet nearly half of respondents also describe routines as informal, reactive or absent. External networks are the third leading theme, extending institutional learning beyond the organisation itself.",
+    "quotes": {
+      "dialogue_reflection": {
+        "entryId": "institutional-practices-voice-20",
+        "text": "We ask our head of study programms to project themselves 5 years ahead and to describe how their progamm will look like and what challenges they will have overcome. They present their visions in a retreat with all the heads of programms and the directors of the school."
+      },
+      "informal_reactive_gap": {
+        "entryId": "institutional-practices-voice-03",
+        "text": "We have regular meetings and opportunities to exchange, but it often feels like the momentum of ongoing activities drives the direction forward. There is less of a structured space for stepping back together, reflecting on emerging changes, and proactively shaping future directions."
+      },
+      "external_networks": {
+        "entryId": "institutional-practices-voice-09",
+        "text": "We organize [a named annual international scientific conference removed for privacy] and regularly participate in conferences hosted by other universities. We are also involved in grant projects focused on innovation and actively participate in professional networks and communities, such as ELIA."
+      }
+    }
+  }
+}

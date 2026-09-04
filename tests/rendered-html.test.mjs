@@ -10,6 +10,7 @@ const voicesHtmlUrl = new URL("../out/voices/index.html", import.meta.url);
 const allAnswersHtmlUrl = new URL("../out/all-answers/index.html", import.meta.url);
 const methodsHtmlUrl = new URL("../out/methods/index.html", import.meta.url);
 const frameworkHtmlUrl = new URL("../out/framework-method/index.html", import.meta.url);
+const presentationHtmlUrl = new URL("../out/presentation/index.html", import.meta.url);
 const respondentsHtmlUrl = new URL("../out/respondents/index.html", import.meta.url);
 const voicesDataUrl = new URL("../app/voices/voice-data.json", import.meta.url);
 const areasDataUrl = new URL("../app/areas/areas-data.json", import.meta.url);
@@ -20,6 +21,8 @@ const accessConfigUrl = new URL("../public/access-config.json", import.meta.url)
 const stylesUrl = new URL("../app/globals.css", import.meta.url);
 const frameworkWorkspaceUrl = new URL("../app/framework-method/framework-workspace.tsx", import.meta.url);
 const frameworkPromptsUrl = new URL("../app/framework-method/framework-prompts.ts", import.meta.url);
+const presentationDataUrl = new URL("../app/presentation/presentation-data.json", import.meta.url);
+const presentationQuoteUrl = new URL("../app/presentation/presentation-quote.tsx", import.meta.url);
 
 test("renders the complete public report", async () => {
   const html = await readFile(htmlUrl, "utf8");
@@ -92,8 +95,8 @@ test("renders a navigable and privacy-checked respondent voices page", async () 
   assert.doesNotMatch(html, /Newcastle|Lviv|Concordia|Unbroken University|Respondent ID|Collector ID|IP Address|Email Address/);
 });
 
-test("uses a five-page sticky main menu with Framework Method before AREAS and AREAS last", async () => {
-  const [overviewHtml, areasHtml, voicesHtml, allAnswersHtml, methodsHtml, respondentsHtml, frameworkHtml, styles] = await Promise.all([
+test("uses a six-page sticky main menu with Presentation after Overview and AREAS last", async () => {
+  const [overviewHtml, areasHtml, voicesHtml, allAnswersHtml, methodsHtml, respondentsHtml, frameworkHtml, presentationHtml, styles] = await Promise.all([
     readFile(htmlUrl, "utf8"),
     readFile(areasHtmlUrl, "utf8"),
     readFile(voicesHtmlUrl, "utf8"),
@@ -101,17 +104,20 @@ test("uses a five-page sticky main menu with Framework Method before AREAS and A
     readFile(methodsHtmlUrl, "utf8"),
     readFile(respondentsHtmlUrl, "utf8"),
     readFile(frameworkHtmlUrl, "utf8"),
+    readFile(presentationHtmlUrl, "utf8"),
     readFile(stylesUrl, "utf8"),
   ]);
-  for (const html of [overviewHtml, areasHtml, voicesHtml, allAnswersHtml, methodsHtml, respondentsHtml, frameworkHtml]) {
+  for (const html of [overviewHtml, areasHtml, voicesHtml, allAnswersHtml, methodsHtml, respondentsHtml, frameworkHtml, presentationHtml]) {
     const mainNav = html.match(/<nav class="primary-nav"[^>]*>(.*?)<\/nav>/)?.[1] ?? "";
-    assert.equal((mainNav.match(/<a /g) ?? []).length, 5);
+    assert.equal((mainNav.match(/<a /g) ?? []).length, 6);
     assert.match(mainNav, />Overview<\/a>/);
+    assert.match(mainNav, />Presentation<\/a>/);
     assert.match(mainNav, />AREAS<\/a>/);
     assert.match(mainNav, />Respondent voices<\/a>/);
     assert.match(mainNav, />All answers<\/a>/);
     assert.match(mainNav, />Framework Method<\/a>/);
-    assert.ok(mainNav.indexOf(">Overview</a>") < mainNav.indexOf(">Respondent voices</a>"));
+    assert.ok(mainNav.indexOf(">Overview</a>") < mainNav.indexOf(">Presentation</a>"));
+    assert.ok(mainNav.indexOf(">Presentation</a>") < mainNav.indexOf(">Respondent voices</a>"));
     assert.ok(mainNav.indexOf(">Respondent voices</a>") < mainNav.indexOf(">All answers</a>"));
     assert.ok(mainNav.indexOf(">All answers</a>") < mainNav.indexOf(">Framework Method</a>"));
     assert.ok(mainNav.indexOf(">Framework Method</a>") < mainNav.indexOf(">AREAS</a>"));
@@ -119,7 +125,50 @@ test("uses a five-page sticky main menu with Framework Method before AREAS and A
   assert.match(areasHtml, /class="nav-current" aria-current="page" href="\/elia-future-readiness-survey-results\/areas\/"/);
   assert.match(allAnswersHtml, /class="nav-current" aria-current="page" href="\/elia-future-readiness-survey-results\/all-answers\/"/);
   assert.match(frameworkHtml, /class="nav-current" aria-current="page" href="\/elia-future-readiness-survey-results\/framework-method\/"/);
+  assert.match(presentationHtml, /class="nav-current" aria-current="page" href="\/elia-future-readiness-survey-results\/presentation\/"/);
   assert.match(styles, /\.site-header\s*\{[^}]*position:\s*sticky;/s);
+});
+
+test("renders a presentation summary with nine verified leading themes and linked quotes", async () => {
+  const [html, presentationText, voicesText, quoteComponent, styles] = await Promise.all([
+    readFile(presentationHtmlUrl, "utf8"),
+    readFile(presentationDataUrl, "utf8"),
+    readFile(voicesDataUrl, "utf8"),
+    readFile(presentationQuoteUrl, "utf8"),
+    readFile(stylesUrl, "utf8"),
+  ]);
+  const presentation = JSON.parse(presentationText);
+  const voices = JSON.parse(voicesText);
+  assert.match(html, /<title>Presentation · ELIA Future Readiness Survey Results<\/title>/i);
+  assert.match(html, /The three strongest themes emerging from each open-ended question/);
+  assert.match(html, /Counts show how many of the 38 responses/);
+  assert.equal((html.match(/class="presentation-theme-grid"/g) ?? []).length, 3);
+  assert.equal((html.match(/class="presentation-quote"/g) ?? []).length, 9);
+  assert.match(html, /Future of arts education and creative practice/);
+  assert.match(html, /Reading, research and media/);
+  assert.match(html, /Recurring dialogue and collective reflection/);
+  assert.match(html, /22(?:<!-- -->)? of (?:<!-- -->)?38(?:<!-- -->)? · (?:<!-- -->)?58(?:<!-- -->)?%/);
+  assert.match(html, /28(?:<!-- -->)? of (?:<!-- -->)?38(?:<!-- -->)? · (?:<!-- -->)?74(?:<!-- -->)?%/);
+  assert.match(html, /31(?:<!-- -->)? of (?:<!-- -->)?38(?:<!-- -->)? · (?:<!-- -->)?82(?:<!-- -->)?%/);
+  assert.match(html, /Quote from an anonymous survey respondent · excerpt/);
+  assert.match(html, /A connected picture of concern, sensing and institutional response/);
+  assert.match(quoteComponent, /data\?\.voiceIndex\[entryId\]/);
+  assert.match(quoteComponent, /\.\.\/all-answers\/#\$\{respondentId\}/);
+  assert.match(styles, /\.presentation-bars/);
+
+  for (const section of voices.sections) {
+    const topThemes = section.themes.slice(0, 3);
+    const summary = presentation[section.key];
+    assert.ok(summary, `missing presentation summary for ${section.key}`);
+    assert.deepEqual(Object.keys(summary.quotes), topThemes.map((theme) => theme.key));
+    for (const theme of topThemes) {
+      const quote = summary.quotes[theme.key];
+      const entry = section.entries.find((candidate) => candidate.id === quote.entryId);
+      assert.ok(entry, `missing source entry ${quote.entryId}`);
+      assert.ok(entry.themes.includes(theme.key), `${quote.entryId} is not coded to ${theme.key}`);
+      assert.ok(entry.text.includes(quote.text), `${quote.entryId} does not contain the exact excerpt`);
+    }
+  }
 });
 
 test("renders the Framework Method route and ships its auditable research controls", async () => {

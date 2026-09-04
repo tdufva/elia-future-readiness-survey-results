@@ -11,12 +11,13 @@ const overviewSections = [
   { href: "/methods/", label: "Methods" },
 ];
 
-export default function SiteHeader({ current }: { current?: "overview" | "areas" | "voices" | "answers" | "framework" }) {
+export default function SiteHeader({ current }: { current?: "overview" | "presentation" | "areas" | "voices" | "answers" | "framework" }) {
   return <header className="site-header">
     <div className="site-header-main">
       <a className="wordmark" href={sitePath("/")} aria-label="ELIA Future Readiness results home"><span className="wordmark-mark" aria-hidden="true">E·F</span><span>ELIA Future Readiness</span></a>
       <div className="header-actions"><nav className="primary-nav" aria-label="Main pages">
         <a className={current === "overview" ? "nav-current" : ""} aria-current={current === "overview" ? "page" : undefined} href={sitePath("/")}>Overview</a>
+        <a className={current === "presentation" ? "nav-current" : ""} aria-current={current === "presentation" ? "page" : undefined} href={sitePath("/presentation/")}>Presentation</a>
         <a className={current === "voices" ? "nav-current" : ""} aria-current={current === "voices" ? "page" : undefined} href={sitePath("/voices/")}>Respondent voices</a>
         <a className={current === "answers" ? "nav-current" : ""} aria-current={current === "answers" ? "page" : undefined} href={sitePath("/all-answers/")}>All answers</a>
         <a className={current === "framework" ? "nav-current" : ""} aria-current={current === "framework" ? "page" : undefined} href={sitePath("/framework-method/")}>Framework Method</a>
